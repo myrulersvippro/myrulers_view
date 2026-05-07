@@ -15,7 +15,7 @@ if __name__ == "__main__":
             f.write(
                 f"""
 server {{
-    set $php_sock unix:/run/php/php8.2-fpm.sock;
+    set $php_sock unix:/run/php/php8.3-fpm.sock;
 
     listen 443 ssl;
     server_name {folder};
