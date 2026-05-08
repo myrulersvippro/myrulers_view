@@ -81,7 +81,7 @@ def delete_txt_cf(zone_id, record_id):
 
 def save_certificates(dom_path, fullchain_pem, privkey_pem):
     """Tách và lưu các file chứng chỉ"""
-    with open(os.path.join(dom_path, "fullchain.pem"), "wb") as f:
+    with open(os.path.join(dom_path, "cert.crt"), "wb") as f:
         # Nếu muốn đảm bảo các cert cách nhau bởi đúng 1 dấu xuống dòng
         parts = fullchain_pem.strip().split(b"-----END CERTIFICATE-----")
         cleaned_content = b"\n".join([p.strip() + b"\n-----END CERTIFICATE-----" for p in parts if p.strip()]) + b"\n"
@@ -94,7 +94,7 @@ def save_certificates(dom_path, fullchain_pem, privkey_pem):
         format=PrivateFormat.PKCS8,
         encryption_algorithm=NoEncryption(),
     )
-    with open(os.path.join(dom_path, "private.key"), "wb") as f:
+    with open(os.path.join(dom_path, "prv.key"), "wb") as f:
         f.write(pkcs8_key)
 
 def renew_all_domains():
