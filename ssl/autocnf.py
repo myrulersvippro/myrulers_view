@@ -4,7 +4,7 @@ BASE_DIR = os.getcwd()
 
 if __name__ == "__main__":
     with open("default", "w") as f:
-        f.write('server {{\n    listen 80;\n    server_name _;\n    return 301 https://$host$request_uri;\n}}\n\n')
+        f.write('server {\n    listen 80;\n    server_name _;\n    return 301 https://$host$request_uri;\n}\n\n')
     with open("default", "a") as f:
         for folder in os.listdir(BASE_DIR):
             dom_path = os.path.join(BASE_DIR, folder)
