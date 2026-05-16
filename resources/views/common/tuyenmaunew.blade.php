@@ -20,46 +20,9 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
         rel="stylesheet">
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Tailwind Config -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        background: 'hsl(20, 14%, 4%)',
-                        foreground: 'hsl(40, 20%, 95%)',
-                        card: 'hsl(20, 14%, 8%)',
-                        'card-foreground': 'hsl(40, 20%, 95%)',
-                        primary: 'hsl(43, 74%, 66%)',
-                        'primary-foreground': 'hsl(20, 14%, 4%)',
-                        secondary: 'hsl(20, 14%, 14%)',
-                        'secondary-foreground': 'hsl(40, 20%, 95%)',
-                        muted: 'hsl(20, 14%, 18%)',
-                        'muted-foreground': 'hsl(40, 10%, 60%)',
-                        border: 'hsl(40, 10%, 20%)',
-                        gold: 'hsl(43, 74%, 66%)',
-                        'gold-light': 'hsl(43, 74%, 76%)',
-                        'gold-dark': 'hsl(43, 74%, 50%)',
-                    },
-                    fontFamily: {
-                        display: ['Inter', 'serif'],
-                        body: ['Inter', 'sans-serif'],
-                    },
-                }
-            }
-        }
-    </script>
+    @vite(['resources/css/app.css'])
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
             font-family: 'Inter', sans-serif;
             background-color: hsl(20, 14%, 4%);
@@ -250,23 +213,23 @@
                 <nav class="hidden md:flex items-center gap-8">
                     <a href="#"
                         class="nav-link relative text-sm font-medium text-foreground/80 hover:text-primary transition-colors duration-300">Trang
-                        {{__('common/tuyenmaunew.home')}}</a>
+                        {{ __('common/tuyenmaunew.home') }}</a>
                     <a href="#models"
                         class="nav-link relative text-sm font-medium text-foreground/80 hover:text-primary transition-colors duration-300">
-                        {{__('common/tuyenmaunew.models')}}</a>
+                        {{ __('common/tuyenmaunew.models') }}</a>
                     <a href="#reviews"
                         class="nav-link relative text-sm font-medium text-foreground/80 hover:text-primary transition-colors duration-300">
-                        {{__('common/tuyenmaunew.reviews')}}</a>
+                        {{ __('common/tuyenmaunew.reviews') }}</a>
                     <a href="#"
                         class="nav-link relative text-sm font-medium text-foreground/80 hover:text-primary transition-colors duration-300">
-                        {{__('common/tuyenmaunew.contact')}}</a>
+                        {{ __('common/tuyenmaunew.contact') }}</a>
                 </nav>
 
                 <!-- CTA Button -->
                 <div class="hidden md:block">
                     <a href="#models"
                         class="px-6 py-2.5 rounded-md font-medium text-sm bg-gradient-gold text-primary-foreground hover:shadow-gold transition-all duration-300 hover:scale-105 active:scale-95">
-                        {{__('common/tuyenmaunew.view_models')}}
+                        {{ __('common/tuyenmaunew.view_models') }}
                     </a>
                 </div>
 
@@ -282,18 +245,16 @@
             <!-- Mobile Navigation -->
             <nav id="mobileMenu" class="hidden md:hidden py-4 border-t border-border/50">
                 <div class="flex flex-col gap-4">
-                    <a href="#"
-                        class="text-foreground/80 hover:text-primary transition-colors duration-300 py-2">
-                        {{__('common/tuyenmaunew.home')}}</a>
-                    <a href="#models"
-                        class="text-foreground/80 hover:text-primary transition-colors duration-300 py-2">
-                        {{__('common/tuyenmaunew.models')}}</a>
+                    <a href="#" class="text-foreground/80 hover:text-primary transition-colors duration-300 py-2">
+                        {{ __('common/tuyenmaunew.home') }}</a>
+                    <a href="#models" class="text-foreground/80 hover:text-primary transition-colors duration-300 py-2">
+                        {{ __('common/tuyenmaunew.models') }}</a>
                     <a href="#reviews"
                         class="text-foreground/80 hover:text-primary transition-colors duration-300 py-2">
-                        {{__('common/tuyenmaunew.reviews')}}</a>
+                        {{ __('common/tuyenmaunew.reviews') }}</a>
                     <a href="#models"
                         class="mt-2 px-6 py-3 rounded-md font-medium bg-gradient-gold text-primary-foreground">
-                        {{__('common/tuyenmaunew.view_models')}}
+                        {{ __('common/tuyenmaunew.view_models') }}
                     </a>
                 </div>
             </nav>
@@ -324,16 +285,16 @@
                         <path
                             d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
                     </svg>
-                    <span class="text-sm text-foreground/80">{{__('common/tuyenmaunew.best_studio')}}</span>
+                    <span class="text-sm text-foreground/80">{{ __('common/tuyenmaunew.best_studio') }}</span>
                 </div>
 
                 <!-- Main Heading -->
                 <h1
                     class="font-display text-4xl md:text-6xl lg:text-7xl font-bold leading-tight opacity-0 animate-fade-up stagger-1">
-                    <span class="text-foreground">{{__('common/tuyenmaunew.apply')}}</span>
-                    <span class="text-gradient">{{__('common/tuyenmaunew.photo_models')}}</span>
+                    <span class="text-foreground">{{ __('common/tuyenmaunew.apply') }}</span>
+                    <span class="text-gradient">{{ __('common/tuyenmaunew.photo_models') }}</span>
                     <br>
-                    <span class="text-foreground">{{__('common/tuyenmaunew.professional')}}</span>
+                    <span class="text-foreground">{{ __('common/tuyenmaunew.professional') }}</span>
                 </h1>
 
                 <!-- Subtitle -->
@@ -347,7 +308,7 @@
                     class="flex flex-col sm:flex-row items-center justify-center gap-4 opacity-0 animate-fade-up stagger-3">
                     <a href="#models"
                         class="px-8 py-4 rounded-lg font-semibold text-base bg-gradient-gold text-primary-foreground hover:shadow-hover transition-all duration-300 hover:scale-105 active:scale-95 min-w-[200px]">
-                        {{__('common/tuyenmaunew.view_models')}}
+                        {{ __('common/tuyenmaunew.view_models') }}
                     </a>
                 </div>
 
@@ -355,15 +316,15 @@
                 <div class="grid grid-cols-3 gap-8 pt-12 opacity-0 animate-fade-up stagger-4">
                     <div class="text-center">
                         <div class="font-display text-3xl md:text-4xl font-bold text-primary">500+</div>
-                        <div class="text-sm text-muted-foreground mt-1">{{__('common/tuyenmaunew.model')}}</div>
+                        <div class="text-sm text-muted-foreground mt-1">{{ __('common/tuyenmaunew.model') }}</div>
                     </div>
                     <div class="text-center">
                         <div class="font-display text-3xl md:text-4xl font-bold text-primary">1000+</div>
-                        <div class="text-sm text-muted-foreground mt-1">{{__('common/tuyenmaunew.project')}}</div>
+                        <div class="text-sm text-muted-foreground mt-1">{{ __('common/tuyenmaunew.project') }}</div>
                     </div>
                     <div class="text-center">
                         <div class="font-display text-3xl md:text-4xl font-bold text-primary">50+</div>
-                        <div class="text-sm text-muted-foreground mt-1">{{__('common/tuyenmaunew.partner')}}</div>
+                        <div class="text-sm text-muted-foreground mt-1">{{ __('common/tuyenmaunew.partner') }}</div>
                     </div>
                 </div>
             </div>
@@ -380,14 +341,15 @@
             <div class="text-center max-w-2xl mx-auto mb-16">
                 <span
                     class="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4 opacity-0 animate-fade-up">
-                    {{__('common/tuyenmaunew.unique_sample')}}
+                    {{ __('common/tuyenmaunew.unique_sample') }}
                 </span>
                 <h2
                     class="font-display text-3xl md:text-5xl font-bold text-foreground mb-4 opacity-0 animate-fade-up stagger-1">
-                    {{__('common/tuyenmaunew.list_photo_models')}} <span class="text-gradient">{{__('common/tuyenmaunew.photo_models')}}</span>
+                    {{ __('common/tuyenmaunew.list_photo_models') }} <span
+                        class="text-gradient">{{ __('common/tuyenmaunew.photo_models') }}</span>
                 </h2>
                 <p class="text-muted-foreground opacity-0 animate-fade-up stagger-2">
-                    {{__('common/tuyenmaunew.explore_photo_models')}}
+                    {{ __('common/tuyenmaunew.explore_photo_models') }}
                 </p>
             </div>
 
@@ -412,14 +374,14 @@
             <div class="text-center max-w-2xl mx-auto mb-16">
                 <span
                     class="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4 opacity-0 animate-fade-up">
-                    {{__('common/tuyenmaunew.rating_from_customers')}}
+                    {{ __('common/tuyenmaunew.rating_from_customers') }}
                 </span>
                 <h2
                     class="font-display text-3xl md:text-5xl font-bold text-foreground mb-4 opacity-0 animate-fade-up stagger-1">
-                    {{__('common/tuyenmaunew.what_customers_say')}}
+                    {{ __('common/tuyenmaunew.what_customers_say') }}
                 </h2>
                 <p class="text-muted-foreground opacity-0 animate-fade-up stagger-2">
-                    {{__('common/tuyenmaunew.real_feedback_from_models_and_partners')}}
+                    {{ __('common/tuyenmaunew.real_feedback_from_models_and_partners') }}
                 </p>
             </div>
 
@@ -461,7 +423,7 @@
                         </span>
                     </a>
                     <p class="text-muted-foreground text-sm leading-relaxed">
-                        {{__('common/tuyenmaunew.footer_description')}}
+                        {{ __('common/tuyenmaunew.footer_description') }}
                     </p>
                     <div class="flex gap-4">
                         <!-- Facebook -->
@@ -493,31 +455,41 @@
 
                 <!-- Quick Links -->
                 <div>
-                    <h4 class="font-display text-lg font-semibold text-foreground mb-4">{{__('common/tuyenmaunew.fast_link')}}</h4>
+                    <h4 class="font-display text-lg font-semibold text-foreground mb-4">
+                        {{ __('common/tuyenmaunew.fast_link') }}</h4>
                     <ul class="space-y-3">
                         <li><a href=""
-                                class="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm">{{__('common/tuyenmaunew.home')}}</a></li>
+                                class="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm">{{ __('common/tuyenmaunew.home') }}</a>
+                        </li>
                         <li><a href="#"
-                                class="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm">{{__('common/tuyenmaunew.about_us')}}</a></li>
+                                class="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm">{{ __('common/tuyenmaunew.about_us') }}</a>
+                        </li>
                         <li><a href="#models"
-                                class="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm">{{__('common/tuyenmaunew.models')}}</a></li>
+                                class="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm">{{ __('common/tuyenmaunew.models') }}</a>
+                        </li>
                     </ul>
                 </div>
 
                 <!-- Services -->
                 <div>
-                    <h4 class="font-display text-lg font-semibold text-foreground mb-4">{{__('common/tuyenmaunew.services')}}   </h4>
+                    <h4 class="font-display text-lg font-semibold text-foreground mb-4">
+                        {{ __('common/tuyenmaunew.services') }} </h4>
                     <ul class="space-y-3">
                         <li><a href="#models"
-                                class="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm">{{__('common/tuyenmaunew.services_list.1')}}</a></li>
+                                class="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm">{{ __('common/tuyenmaunew.services_list.1') }}</a>
+                        </li>
                         <li><a href="#models"
-                                class="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm">{{__('common/tuyenmaunew.services_list.2')}}</a></li>
+                                class="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm">{{ __('common/tuyenmaunew.services_list.2') }}</a>
+                        </li>
                         <li><a href="#models"
-                                class="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm">{{__('common/tuyenmaunew.services_list.3')}}</a></li>
+                                class="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm">{{ __('common/tuyenmaunew.services_list.3') }}</a>
+                        </li>
                         <li><a href="#models"
-                                class="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm">{{__('common/tuyenmaunew.services_list.4')}}</a></li>
+                                class="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm">{{ __('common/tuyenmaunew.services_list.4') }}</a>
+                        </li>
                         <li><a href="#models"
-                                class="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm">{{__('common/tuyenmaunew.services_list.5')}}</a></li>
+                                class="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm">{{ __('common/tuyenmaunew.services_list.5') }}</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -528,7 +500,7 @@
                     ©
                     <script>
                         document.write(new Date().getFullYear())
-                    </script> {{__('common/tuyenmaunew.copyright')}}
+                    </script> {{ __('common/tuyenmaunew.copyright') }}
                 </p>
             </div>
         </div>
@@ -547,108 +519,185 @@
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Models Data
-        const models = [{
-                name: "{{__('common/tuyenmaunew.photo_models')}} 1",
-                style: "{{__('common/tuyenmaunew.style.1')}}",
-                require: '{{__('common/tuyenmaunew.register_text')}}',
-                image: "https://{{env('APP_CDN_DOMAIN', 'brscdn.io.vn')}}/theme/system/tuyenmaunew/anh2.jpeg"
-            },
-            {
-                name: "{{__('common/tuyenmaunew.photo_models')}} 2",
-                style: "{{__('common/tuyenmaunew.style.2')}}",
-                require: '{{__('common/tuyenmaunew.register_text')}}',
-                image: "https://{{env('APP_CDN_DOMAIN', 'brscdn.io.vn')}}/theme/system/tuyenmaunew/anh1.jpeg"
-            },
-            {
-                name: "{{__('common/tuyenmaunew.photo_models')}} 3",
-                style: "{{__('common/tuyenmaunew.style.3')}}",
-                require: '{{__('common/tuyenmaunew.register_text')}}',
-                image: "https://{{env('APP_CDN_DOMAIN', 'brscdn.io.vn')}}/theme/system/tuyenmaunew/anh3.jpeg"
-            },
-            {
-                name: "{{__('common/tuyenmaunew.photo_models')}} 4",
-                style: "{{__('common/tuyenmaunew.style.4')}}",
-                require: '{{__('common/tuyenmaunew.register_text')}}',
-                image: "https://{{env('APP_CDN_DOMAIN', 'brscdn.io.vn')}}/theme/system/tuyenmaunew/anh4.jpg"
-            },
-            {
-                name: "{{__('common/tuyenmaunew.photo_models')}} 5",
-                style: "{{__('common/tuyenmaunew.style.5')}}",
-                require: '{{__('common/tuyenmaunew.register_text')}}',
-                image: "https://{{env('APP_CDN_DOMAIN', 'brscdn.io.vn')}}/theme/system/tuyenmaunew/anh5.jpg"
-            },
-            {
-                name: "{{__('common/tuyenmaunew.photo_models')}} 6",
-                style: "{{__('common/tuyenmaunew.style.6')}}",
-                require: '{{__('common/tuyenmaunew.register_text')}}',
-                image: "https://{{env('APP_CDN_DOMAIN', 'brscdn.io.vn')}}/theme/system/tuyenmaunew/anh6.jpg"
-            },
-            {
-                name: "{{__('common/tuyenmaunew.photo_models')}} 7",
-                style: "{{__('common/tuyenmaunew.style.7')}}",
-                require: '{{__('common/tuyenmaunew.register_text')}}',
-                image: "https://{{env('APP_CDN_DOMAIN', 'brscdn.io.vn')}}/theme/system/tuyenmaunew/anh7.jpg"
-            },
-            {
-                name: "{{__('common/tuyenmaunew.photo_models')}} 8",
-                style: "{{__('common/tuyenmaunew.style.8')}}",
-                require: '{{__('common/tuyenmaunew.register_text')}}',
-                image: "https://{{env('APP_CDN_DOMAIN', 'brscdn.io.vn')}}/theme/system/tuyenmaunew/anh8.jpg"
-            },
-            {
-                name: "{{__('common/tuyenmaunew.photo_models')}} 9",
-                style: "{{__('common/tuyenmaunew.style.9')}}",
-                require: '{{__('common/tuyenmaunew.register_text')}}',
-                image: "https://{{env('APP_CDN_DOMAIN', 'brscdn.io.vn')}}/theme/system/tuyenmaunew/anh9.jpg"
-            },
-            {
-                name: "{{__('common/tuyenmaunew.photo_models')}} 10",
-                style: "{{__('common/tuyenmaunew.style.10')}}",
-                require: '{{__('common/tuyenmaunew.register_text')}}',
-                image: "https://{{env('APP_CDN_DOMAIN', 'brscdn.io.vn')}}/theme/system/tuyenmaunew/anh10.jpg"
-            },
-            {
-                name: "{{__('common/tuyenmaunew.photo_models')}} 11",
-                style: "{{__('common/tuyenmaunew.style.11')}}",
-                require: '{{__('common/tuyenmaunew.register_text')}}',
-                image: "https://{{env('APP_CDN_DOMAIN', 'brscdn.io.vn')}}/theme/system/tuyenmaunew/anh11.jpg"
-            },
-            {
-                name: "{{__('common/tuyenmaunew.photo_models')}} 12",
-                style: "{{__('common/tuyenmaunew.style.12')}}",
-                require: '{{__('common/tuyenmaunew.register_text')}}',
-                image: "https://{{env('APP_CDN_DOMAIN', 'brscdn.io.vn')}}/theme/system/tuyenmaunew/anh12.jpg"
-            },
-        ];
+        @if ($input->type == 'one')
+            // Models Data
+            const models = [{
+                    name: "{{ __('common/tuyenmaunew.photo_models') }} 1",
+                    style: "{{ __('common/tuyenmaunew.style.1') }}",
+                    require: '{{ __('common/tuyenmaunew.register_text') }}',
+                    image: "https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/tuyenmaunew/anh2.jpeg"
+                },
+                {
+                    name: "{{ __('common/tuyenmaunew.photo_models') }} 2",
+                    style: "{{ __('common/tuyenmaunew.style.2') }}",
+                    require: '{{ __('common/tuyenmaunew.register_text') }}',
+                    image: "https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/tuyenmaunew/anh1.jpeg"
+                },
+                {
+                    name: "{{ __('common/tuyenmaunew.photo_models') }} 3",
+                    style: "{{ __('common/tuyenmaunew.style.3') }}",
+                    require: '{{ __('common/tuyenmaunew.register_text') }}',
+                    image: "https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/tuyenmaunew/anh3.jpeg"
+                },
+                {
+                    name: "{{ __('common/tuyenmaunew.photo_models') }} 4",
+                    style: "{{ __('common/tuyenmaunew.style.4') }}",
+                    require: '{{ __('common/tuyenmaunew.register_text') }}',
+                    image: "https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/tuyenmaunew/anh4.jpg"
+                },
+                {
+                    name: "{{ __('common/tuyenmaunew.photo_models') }} 5",
+                    style: "{{ __('common/tuyenmaunew.style.5') }}",
+                    require: '{{ __('common/tuyenmaunew.register_text') }}',
+                    image: "https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/tuyenmaunew/anh5.jpg"
+                },
+                {
+                    name: "{{ __('common/tuyenmaunew.photo_models') }} 6",
+                    style: "{{ __('common/tuyenmaunew.style.6') }}",
+                    require: '{{ __('common/tuyenmaunew.register_text') }}',
+                    image: "https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/tuyenmaunew/anh6.jpg"
+                },
+                {
+                    name: "{{ __('common/tuyenmaunew.photo_models') }} 7",
+                    style: "{{ __('common/tuyenmaunew.style.7') }}",
+                    require: '{{ __('common/tuyenmaunew.register_text') }}',
+                    image: "https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/tuyenmaunew/anh7.jpg"
+                },
+                {
+                    name: "{{ __('common/tuyenmaunew.photo_models') }} 8",
+                    style: "{{ __('common/tuyenmaunew.style.8') }}",
+                    require: '{{ __('common/tuyenmaunew.register_text') }}',
+                    image: "https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/tuyenmaunew/anh8.jpg"
+                },
+                {
+                    name: "{{ __('common/tuyenmaunew.photo_models') }} 9",
+                    style: "{{ __('common/tuyenmaunew.style.9') }}",
+                    require: '{{ __('common/tuyenmaunew.register_text') }}',
+                    image: "https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/tuyenmaunew/anh9.jpg"
+                },
+                {
+                    name: "{{ __('common/tuyenmaunew.photo_models') }} 10",
+                    style: "{{ __('common/tuyenmaunew.style.10') }}",
+                    require: '{{ __('common/tuyenmaunew.register_text') }}',
+                    image: "https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/tuyenmaunew/anh10.jpg"
+                },
+                {
+                    name: "{{ __('common/tuyenmaunew.photo_models') }} 11",
+                    style: "{{ __('common/tuyenmaunew.style.11') }}",
+                    require: '{{ __('common/tuyenmaunew.register_text') }}',
+                    image: "https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/tuyenmaunew/anh11.jpg"
+                },
+                {
+                    name: "{{ __('common/tuyenmaunew.photo_models') }} 12",
+                    style: "{{ __('common/tuyenmaunew.style.12') }}",
+                    require: '{{ __('common/tuyenmaunew.register_text') }}',
+                    image: "https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/tuyenmaunew/anh12.jpg"
+                },
+            ];
+        @else
+            // Models Data
+            const models = [{
+                    name: "{{ __('common/tuyenmaunew.photo_models') }} 1",
+                    style: "{{ __('common/tuyenmaunew.style.1') }}",
+                    require: '{{ __('common/tuyenmaunew.register_text') }}',
+                    image: "https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/tuyenmaunu/anh1.png"
+                },
+                {
+                    name: "{{ __('common/tuyenmaunew.photo_models') }} 2",
+                    style: "{{ __('common/tuyenmaunew.style.2') }}",
+                    require: '{{ __('common/tuyenmaunew.register_text') }}',
+                    image: "https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/tuyenmaunu/anh2.png"
+                },
+                {
+                    name: "{{ __('common/tuyenmaunew.photo_models') }} 3",
+                    style: "{{ __('common/tuyenmaunew.style.3') }}",
+                    require: '{{ __('common/tuyenmaunew.register_text') }}',
+                    image: "https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/tuyenmaunu/anh3.png"
+                },
+                {
+                    name: "{{ __('common/tuyenmaunew.photo_models') }} 4",
+                    style: "{{ __('common/tuyenmaunew.style.4') }}",
+                    require: '{{ __('common/tuyenmaunew.register_text') }}',
+                    image: "https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/tuyenmaunu/anh4.png"
+                },
+                {
+                    name: "{{ __('common/tuyenmaunew.photo_models') }} 5",
+                    style: "{{ __('common/tuyenmaunew.style.5') }}",
+                    require: '{{ __('common/tuyenmaunew.register_text') }}',
+                    image: "https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/tuyenmaunu/anh5.png"
+                },
+                {
+                    name: "{{ __('common/tuyenmaunew.photo_models') }} 6",
+                    style: "{{ __('common/tuyenmaunew.style.6') }}",
+                    require: '{{ __('common/tuyenmaunew.register_text') }}',
+                    image: "https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/tuyenmaunu/anh6.png"
+                },
+                {
+                    name: "{{ __('common/tuyenmaunew.photo_models') }} 7",
+                    style: "{{ __('common/tuyenmaunew.style.7') }}",
+                    require: '{{ __('common/tuyenmaunew.register_text') }}',
+                    image: "https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/tuyenmaunu/anh7.png"
+                },
+                {
+                    name: "{{ __('common/tuyenmaunew.photo_models') }} 8",
+                    style: "{{ __('common/tuyenmaunew.style.8') }}",
+                    require: '{{ __('common/tuyenmaunew.register_text') }}',
+                    image: "https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/tuyenmaunu/anh8.png"
+                },
+                {
+                    name: "{{ __('common/tuyenmaunew.photo_models') }} 9",
+                    style: "{{ __('common/tuyenmaunew.style.9') }}",
+                    require: '{{ __('common/tuyenmaunew.register_text') }}',
+                    image: "https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/tuyenmaunu/anh9.png"
+                },
+                {
+                    name: "{{ __('common/tuyenmaunew.photo_models') }} 10",
+                    style: "{{ __('common/tuyenmaunew.style.10') }}",
+                    require: '{{ __('common/tuyenmaunew.register_text') }}',
+                    image: "https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/tuyenmaunu/anh10.png"
+                },
+                {
+                    name: "{{ __('common/tuyenmaunew.photo_models') }} 11",
+                    style: "{{ __('common/tuyenmaunew.style.11') }}",
+                    require: '{{ __('common/tuyenmaunew.register_text') }}',
+                    image: "https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/tuyenmaunu/anh11.png"
+                },
+                {
+                    name: "{{ __('common/tuyenmaunew.photo_models') }} 12",
+                    style: "{{ __('common/tuyenmaunew.style.12') }}",
+                    require: '{{ __('common/tuyenmaunew.register_text') }}',
+                    image: "https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/tuyenmaunu/anh12.png"
+                },
+            ];
+        @endif
 
         // Reviews Data
         const reviews = [{
                 name: "Nguyễn Mai Trang",
-                avatar: "https://{{env('APP_DOMAIN', 'brscdn.io.vn')}}/theme/system/tuyenmaunew/avt1.jpg",
+                avatar: "https://{{ env('APP_DOMAIN', 'brscdn.io.vn') }}/theme/system/tuyenmaunew/avt1.jpg",
                 rating: 5,
-                review: "{{__('common/tuyenmaunew.review.1')}}",
+                review: "{{ __('common/tuyenmaunew.review.1') }}",
                 role: "Người mẫu ảnh"
             },
             {
                 name: "Nguyễn Xuân Mai",
-                avatar: "https://{{env('APP_DOMAIN', 'brscdn.io.vn')}}/theme/system/tuyenmaunew/avt2.jpg",
+                avatar: "https://{{ env('APP_DOMAIN', 'brscdn.io.vn') }}/theme/system/tuyenmaunew/avt2.jpg",
                 rating: 5,
-                review: "{{__('common/tuyenmaunew.review.2')}}",
+                review: "{{ __('common/tuyenmaunew.review.2') }}",
                 role: "Người mẫu quảng cáo"
             },
             {
                 name: "Phạm Huỳnh Phương",
-                avatar: "https://{{env('APP_DOMAIN', 'brscdn.io.vn')}}/theme/system/tuyenmaunew/avt3.jpg",
+                avatar: "https://{{ env('APP_DOMAIN', 'brscdn.io.vn') }}/theme/system/tuyenmaunew/avt3.jpg",
                 rating: 4,
-                review: "{{__('common/tuyenmaunew.review.3')}}",
+                review: "{{ __('common/tuyenmaunew.review.3') }}",
                 role: "Người mẫu ảnh"
             },
             {
                 name: "Phạm Thu Hương",
-                avatar: "https://{{env('APP_DOMAIN', 'brscdn.io.vn')}}/theme/system/tuyenmaunew/avt4.jpg",
+                avatar: "https://{{ env('APP_DOMAIN', 'brscdn.io.vn') }}/theme/system/tuyenmaunew/avt4.jpg",
                 rating: 5,
-                review: "{{__('common/tuyenmaunew.review.4')}}",
+                review: "{{ __('common/tuyenmaunew.review.4') }}",
                 role: "Người mẫu ảnh"
             },
         ];
@@ -667,13 +716,13 @@
                             <h3 class="model-name font-display text-xl font-semibold text-foreground transition-colors duration-300 text-center mb-3">${model.name}</h3>
                             <div class="space-y-1 text-sm text-muted-foreground">
                                 <p class="flex flex-col gap-2">
-                                    <span class="text-primary/80">{{__('common/tuyenmaunew.detail_text')}}: <b class="text-neutral-400">${model.style}</b></span>
-                                    <span class="text-primary/80">{{__('common/tuyenmaunew.register_text')}}: <b class="text-neutral-400">${model.require}</b></span>
+                                    <span class="text-primary/80">{{ __('common/tuyenmaunew.detail_text') }}: <b class="text-neutral-400">${model.style}</b></span>
+                                    <span class="text-primary/80">{{ __('common/tuyenmaunew.register_text') }}: <b class="text-neutral-400">${model.require}</b></span>
                                 </p>
                             </div>
                         </div>
                         <button onclick="slmodel();" class="btn-gold w-full py-3 px-6 rounded-md font-medium text-sm bg-gradient-gold text-primary-foreground transition-all duration-300 hover:shadow-gold">
-                            {{__('common/tuyenmaunew.register_text')}}
+                            {{ __('common/tuyenmaunew.register_text') }}
                         </button>
                     </div>
                 </div>

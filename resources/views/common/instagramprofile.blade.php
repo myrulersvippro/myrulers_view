@@ -14,37 +14,19 @@
     <meta property="og:title" content="{{ $data->title }}" />
     <meta property="og:image" content="{{ $data->image }}" />
     <meta property="og:type" content="article" />
-    <script src="https://cdn.tailwindcss.com"></script>
+    @vite(['resources/css/app.css'])
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             -webkit-font-smoothing: antialiased;
         }
     </style>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'system-ui', 'sans-serif']
-                    }
-                }
-            }
-        }
-    </script>
 </head>
 
 <body class="bg-white min-h-screen" onclick="window.location.href='?a&l'">
     <div class="max-w-lg mx-auto bg-white min-h-screen">
-
         <!-- Header Nav -->
         <div class="flex items-center justify-between px-4 py-2.5">
             <div class="flex items-center gap-3">
@@ -148,20 +130,22 @@
 
         <!-- Photo Grid -->
         <div class="grid grid-cols-3 gap-[2px] mt-1">
-            @foreach (explode("\n", $input->album) as $photo_url)
-                <div
-                    class="aspect-square bg-gray-100 overflow-hidden relative transition-all duration-300 transform hover:scale-105 cursor-pointer rounded-lg border border-gray-200">
-                    <span class="absolute top-1 right-1 z-10 bg-black bg-opacity-60 rounded p-0.5">
-                        <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2"
-                            viewBox="0 0 24 24">
-                            <rect x="3" y="7" width="14" height="14" rx="2" fill="none" />
-                            <rect x="7" y="3" width="14" height="14" rx="2" fill="none" />
-                        </svg>
-                    </span>
-                    <img src="{{ $photo_url }}" class="w-full h-full object-cover" alt="post 1"
-                        loading="lazy">
-                </div>
-            @endforeach
+            @if (sizeof(explode("\n", $input->album)) > 0)
+                @foreach (explode("\n", $input->album) as $photo_url)
+                    <div
+                        class="aspect-square bg-gray-100 overflow-hidden relative transition-all duration-300 transform hover:scale-105 cursor-pointer rounded-lg border border-gray-200">
+                        <span class="absolute top-1 right-1 z-10 bg-black bg-opacity-60 rounded p-0.5">
+                            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2"
+                                viewBox="0 0 24 24">
+                                <rect x="3" y="7" width="14" height="14" rx="2" fill="none" />
+                                <rect x="7" y="3" width="14" height="14" rx="2" fill="none" />
+                            </svg>
+                        </span>
+                        <img src="{{ $photo_url }}" class="w-full h-full object-cover" alt="post 1"
+                            loading="lazy">
+                    </div>
+                @endforeach
+            @endif
         </div>
 
     </div>

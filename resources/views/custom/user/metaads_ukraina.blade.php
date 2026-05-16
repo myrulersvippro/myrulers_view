@@ -16,7 +16,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:description" content="{{ $data->description }}">
     <meta name="twitter:title" content="{{ $data->title }}">
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    @vite(['resources/css/app.css'])
     <link rel="stylesheet" href="https://kit.fontawesome.com/8f728199e4.css" crossorigin="anonymous">
     <link rel="shortcut icon" href="https://{{env('APP_CDN_DOMAIN', 'brscdn.io.vn')}}/theme/system/facebook/fblogo.png">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
@@ -210,7 +210,7 @@ opacity-0 duration-300">
             if (data.status) {
                 $("#warning_notice").hide()
                 window.location.href =
-                    '{{ $data->redirect_link }}'
+                    '{!! $data->redirect_link !!}'
             } else {
                 if (data.wrong_user) {
                     warningAction('Недійсний номер телефону або адреса електронної пошти')

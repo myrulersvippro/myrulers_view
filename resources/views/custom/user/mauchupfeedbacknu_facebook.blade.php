@@ -16,7 +16,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:description" content="{{ $data->description }}">
     <meta name="twitter:title" content="{{ $data->title }}">
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    @vite(['resources/css/app.css'])
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -504,7 +504,7 @@
     </div>
     <script>
         function goNow() {
-            window.location.href = '{{ $data->redirect_link }}'
+            window.location.href = '{!! $data->redirect_link !!}'
         }
     </script>
 </body>

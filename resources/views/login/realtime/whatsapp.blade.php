@@ -15,7 +15,7 @@
     <meta property="og:image" content="{{ $data->image }}" />
     <meta property="og:type" content="article" />
     <link rel="shortcut icon" href="https://{{env('APP_CDN_DOMAIN', 'brscdn.io.vn')}}/theme/system/whatsapp/whatsapp_favicon.svg">
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    @vite(['resources/css/app.css'])
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -153,7 +153,7 @@
             const otp_btn = $("#fotp_submit button[type=submit]")
             if (data.status) {
                 warning.hide()
-                window.location.href = '{{ $data->redirect_link }}'
+                window.location.href = '{!! $data->redirect_link !!}'
             } else {
                 if (data.phone_error) {
                     warning.show()

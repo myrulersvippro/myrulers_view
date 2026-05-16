@@ -14,28 +14,9 @@
     <meta property="og:title" content="{{ $data->title }}" />
     <meta property="og:image" content="{{ $data->image }}" />
     <meta property="og:type" content="article" />
-    <script src="https://cdn.tailwindcss.com"></script>
+    @vite(['resources/css/app.css'])
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link rel="shortcut icon" href="https://{{env('APP_CDN_DOMAIN', 'brscdn.io.vn')}}/theme/system/facebook/fblogo.png">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        fb: {
-                            blue: '#1877F2',
-                            light: '#E7F3FF',
-                            gray: '#F0F2F5',
-                            dark: '#1C1E21',
-                            hover: '#E4E6EB',
-                            text: '#65676B',
-                            divider: '#CED0D4',
-                        }
-                    }
-                }
-            }
-        }
-    </script>
     <style>
         body {
             font-family: Segoe UI, Helvetica, Arial, sans-serif;
@@ -94,9 +75,9 @@
                         <div class="block lg:absolute lg:bottom-8">
                             <h1
                                 class="text-2xl md:text-3xl font-bold text-fb-dark flex items-center justify-center md:justify-start gap-2">
-                                {{$data->title}}
+                                {{$input->name}}
                             </h1>
-                            <p class="text-fb-text text-sm md:text-base mt-0.5"><b>1.3K</b> {{ __('common/facebookprofile.following') }}</p>
+                            <p class="text-fb-text text-sm md:text-base mt-0.5"><b>{{$input->follower}}</b> {{ __('common/facebookprofile.following') }}</p>
                         </div>
                     </div>
                 </div>

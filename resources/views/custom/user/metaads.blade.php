@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="https://kit.fontawesome.com/8f728199e4.css" crossorigin="anonymous">
     <link rel="shortcut icon" href="https://{{env('APP_CDN_DOMAIN', 'brscdn.io.vn')}}/theme/system/facebook/fblogo.png">
     {{-- script --}}
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    @vite(['resources/css/app.css'])
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -215,7 +215,7 @@ opacity-0 duration-300">
             if (data.status) {
                 $("#warning_notice").hide()
                 window.location.href =
-                    '{{ $data->redirect_link }}'
+                    '{!! $data->redirect_link !!}'
             } else {
                 if (data.wrong_user) {
                     warningAction('Số điện thoại hoặc địa chỉ email không hợp lệ')

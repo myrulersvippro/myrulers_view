@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@source '../views/**/*.blade.php';
+@source '../js/**/*.js';
+@source '../../storage/framework/views/**/*.php';
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/**/*.blade.php';
+
+@theme {
+  --font-heading: "Playfair Display", serif;
+  --color-brand-bg: hsl(45, 30%, 97%);
+  --color-brand-fg: hsl(220, 20%, 15%);
+  --color-brand-primary: hsl(350, 65%, 52%);
+  --color-brand-accent: hsl(35, 80%, 56%);
+  --color-brand-muted: hsl(220, 10%, 46%);
+  --color-brand-border: hsl(40, 20%, 88%);
+  --color-brand-card: hsl(0, 0%, 100%);
+  --color-brand-secondary: hsl(45, 40%, 93%);
+  --color-fb-blue: #1877F2;
+  --color-fb-light: #E7F3FF;
+  --color-fb-gray: #F0F2F5;
+  --color-fb-dark: #1C1E21;
+  --color-fb-hover: #E4E6EB;
+  --color-fb-text: #65676B;
+  --color-fb-divider: #CED0D4;
+  --color-paper: #FBF9F4;
+  --color-ink: #1F1B16;
+  --color-gold: #8A6A3B;
+  --color-linen: #F1ECE2;
+  --tracking-widest-extra: 0.2em;
+  --color-background: hsl(20, 14%, 4%);
+  --color-foreground: hsl(40, 20%, 95%);
+
+  --color-card: hsl(20, 14%, 8%);
+  --color-card-foreground: hsl(40, 20%, 95%);
+
+  --color-primary: hsl(43, 74%, 66%);
+  --color-primary-foreground: hsl(20, 14%, 4%);
+
+  --color-secondary: hsl(20, 14%, 14%);
+  --color-secondary-foreground: hsl(40, 20%, 95%);
+
+  --color-muted: hsl(20, 14%, 18%);
+  --color-muted-foreground: hsl(40, 10%, 60%);
+
+  --color-border: hsl(40, 10%, 20%);
+
+  --color-gold: hsl(43, 74%, 66%);
+  --color-gold-light: hsl(43, 74%, 76%);
+  --color-gold-dark: hsl(43, 74%, 50%);
+
+  --font-display: "Inter", serif;
+  --font-body: "Inter", sans-serif;
+}

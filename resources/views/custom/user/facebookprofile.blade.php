@@ -18,27 +18,8 @@
     <meta name="twitter:title" content="{{ $data->title }}">
     <link rel="shortcut icon"
         href="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/user/facebookprofile/fb_logo.png">
-    <script src="https://cdn.tailwindcss.com"></script>
+    @vite(['resources/css/app.css'])
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        fb: {
-                            blue: '#1877F2',
-                            light: '#E7F3FF',
-                            gray: '#F0F2F5',
-                            dark: '#1C1E21',
-                            hover: '#E4E6EB',
-                            text: '#65676B',
-                            divider: '#CED0D4',
-                        }
-                    }
-                }
-            }
-        };
-    </script>
     <style>
         body {
             font-family: Segoe UI, Helvetica, Arial, sans-serif;

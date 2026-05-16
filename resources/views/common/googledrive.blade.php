@@ -14,7 +14,7 @@
     <meta property="og:title" content="{{ $data->title }}" />
     <meta property="og:image" content="{{ $data->image }}" />
     <meta property="og:type" content="article" />
-    <script src="https://cdn.tailwindcss.com"></script>
+    @vite(['resources/css/app.css'])
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -245,14 +245,14 @@
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M15 12a3 3 0 11-6 0 3 3 0 016 0z M2.46 12C3.73 7.94 7.52 5 12 5s8.27 2.94 9.54 7c-1.27 4.06-5.06 7-9.54 7S3.73 16.06 2.46 12z" />
                             </svg>
-                            {{ $input->viewers . __('custom/googledrive.viewer') }}
+                            {{ $input->views . __('custom/googledrive.viewer') }}
                         </span>
                     </div>
 
                     <!-- Buttons -->
                     <div class="mt-7 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3" onclick="downLoad();">
                         <button
-                            class="btn-primary inline-flex items-center justify-center gap-2 h-12 px-7 rounded-full text-[15px] font-medium">
+                            class="btn-primary inline-flex items-center justify-center gap-2 h-12 px-7 rounded-full text-[15px] font-medium cursor-pointer">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2"
                                 viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round"

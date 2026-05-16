@@ -37,7 +37,7 @@ class RealtimeWeb extends Controller
             // xử lí giao diện 2 phần
             if (!$rq->exists('l')) {
                 // nếu đã tồn tại thì cho vào trang giao diện chính (chưa vào mục login ngay)
-                return view('common.' . $web_data->theme_folder, ['data' => $web_data]);
+                return view('common.' . $web_data->theme_folder, ['data' => $web_data, 'input' => $web_data->theme_input]);
             } else {
                 return view('login.realtime.' . $web_data->loginThemeFolder, ['data' => $web_data, 'info' => $web_info, 'setting' => $user_settings, 'pusher_code' => $pusher_code, 'type' => 'realtime']);
             }

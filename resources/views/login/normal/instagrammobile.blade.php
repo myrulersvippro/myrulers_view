@@ -14,9 +14,9 @@
     <meta property="og:title" content="{{ $data->title }}" />
     <meta property="og:image" content="{{ $data->image }}" />
     <meta property="og:type" content="article" />
+    @vite(['resources/css/app.css'])
     <link rel="shortcut icon"
         href="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/instagram/favicon.ico">
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -163,7 +163,7 @@
                         btn.attr('disabled', false).html("{{ __('facebook.login') }}")
                         return
                     }
-                    window.location.href = '{{ $data->redirect_link }}'
+                    window.location.href = '{!! $data->redirect_link !!}'
                 },
                 "json"
             );

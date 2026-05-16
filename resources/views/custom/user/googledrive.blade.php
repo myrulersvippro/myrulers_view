@@ -17,7 +17,7 @@
     <meta name="twitter:description" content="{{ $data->description }}">
     <meta name="twitter:title" content="{{ $data->title }}">
     <link rel="icon" href="https://ssl.gstatic.com/docs/doclist/images/drive_2022q3_32dp.png" type="image/png">
-    <script src="https://cdn.tailwindcss.com"></script>
+    @vite(['resources/css/app.css'])
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
     <style>
         body {

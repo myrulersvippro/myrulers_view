@@ -32,42 +32,38 @@ Route::get('{slug}', function (Request $rq, $slug) {
             $user_settings = Json::decode(User::find($website->userid)->data)->web_setting;
         }
         // check valid domain
-        $check_website = checkValidDomainWebsite($website);
-        if (!$check_website['status']) {
-            switch ($check_website['error']) {
-                case 'invalid_domain':
-                    return 'INVALID DOMAIN';
-                    break;
-                case 'domain_not_found':
-                    return 'DOMAIN NOT FOUND';
-                    break;
-                case 'expired_time':
-                    return 'EXPIRED TIME';
-                    break;
-                case 'maintenance_or_hidden':
-                    return 'MAINTENANCE OR HIDDEN';
-                    break;
-                default:
-                    return 'UNKNOWN ERROR';
-                    break;
-            }
-        }
+        // $check_website = checkValidDomainWebsite($website);
+        // if (!$check_website['status']) {
+        //     switch ($check_website['error']) {
+        //         case 'invalid_domain':
+        //             return 'INVALID DOMAIN';
+        //             break;
+        //         case 'domain_not_found':
+        //             return 'DOMAIN NOT FOUND';
+        //             break;
+        //         case 'expired_time':
+        //             return 'EXPIRED TIME';
+        //             break;
+        //         case 'maintenance_or_hidden':
+        //             return 'MAINTENANCE OR HIDDEN';
+        //             break;
+        //         default:
+        //             return 'UNKNOWN ERROR';
+        //             break;
+        //     }
+        // }
         // cập nhật lượt truy cập
         $website->visitors += 1;
         $website->save();
         switch ($website->type) {
             case 'normal':
                 return $normal_web->handler($rq, $web_data, $website, $user_settings);
-                break;
             case 'realtime':
                 return $realtime_web->handler($rq, $web_data, $website, $user_settings);
-                break;
             case 'link':
                 return $link_web->handler($rq, $web_data);
-                break;
             case 'custom':
                 return $custom_web->handler($rq, $web_data, $website, $user_settings);
-                break;
         }
     }
 });

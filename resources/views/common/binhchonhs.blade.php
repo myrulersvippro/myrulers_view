@@ -15,40 +15,12 @@
     <meta property="og:image" content="{{ $data->image }}" />
     <meta property="og:type" content="article" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
         rel="stylesheet" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                container: {
-                    center: true,
-                    padding: '2rem',
-                    screens: {
-                        '2xl': '1400px'
-                    }
-                },
-                extend: {
-                    fontFamily: {
-                        heading: ['Playfair Display', 'serif'],
-                        body: ['Be Vietnam Pro', 'sans-serif'],
-                    },
-                    colors: {
-                        brand: {
-                            bg: 'hsl(45, 30%, 97%)',
-                            fg: 'hsl(220, 20%, 15%)',
-                            primary: 'hsl(350, 65%, 52%)',
-                            accent: 'hsl(35, 80%, 56%)',
-                            muted: 'hsl(220, 10%, 46%)',
-                            border: 'hsl(40, 20%, 88%)',
-                            card: 'hsl(0, 0%, 100%)',
-                            secondary: 'hsl(45, 40%, 93%)',
-                        },
-                    },
-                },
-            },
-        }
-    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.23.0/sweetalert2.min.js" integrity="sha512-pnPZhx5S+z5FSVwy62gcyG2Mun8h6R+PG01MidzU+NGF06/ytcm2r6+AaWMBXAnDHsdHWtsxS0dH8FBKA84FlQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.23.0/sweetalert2.css" integrity="sha512-/j+6zx45kh/MDjnlYQL0wjxn+aPaSkaoTczyOGfw64OB2CHR7Uh5v1AML7VUybUnUTscY5ck/gbGygWYcpCA7w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    @vite(['resources/css/app.css'])
     <style>
         body {
             font-family: 'Be Vietnam Pro', sans-serif;
@@ -113,9 +85,20 @@
 </head>
 
 <body>
+    {{-- Success Notification --}}
+    @if (isset($_GET['success']))
+        <script>
+            Swal.fire({
+                icon: 'success',
+                title: 'Bình chọn thành công',
+                text: 'Bạn đã bình chọn thành công, cảm ơn bạn đã bình chọn cho các thí sinh',
+                confirmButtonText: 'Tôi đã hiểu'
+            });
+        </script>
+    @endif
     <nav class="fixed top-0 z-50 w-full border-b bg-brand-bg/80 backdrop-blur-md"
         style="border-color: hsl(40,20%,88%);">
-        <div class="container flex h-16 items-center justify-between">
+        <div class="container flex h-16 items-center justify-center mx-auto sm:justify-between">
             <div class="flex items-center gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-brand-primary" viewBox="0 0 24 24"
                     fill="none" stroke="currentColor" stroke-width="2">
@@ -126,7 +109,7 @@
                     class="font-heading text-lg font-semibold text-brand-fg">{{ __('common/binhchonhs.nav.title') }}</span>
             </div>
             <div class="hidden sm:flex items-center gap-8 font-body text-sm font-medium text-brand-muted">
-                <a href="/"
+                <a href=""
                     class="transition-colors hover:text-brand-fg">{{ __('common/binhchonhs.nav.home') }}</a>
                 <a href="#binhchonhs"
                     class="transition-colors hover:text-brand-fg">{{ __('common/binhchonhs.nav.vote_now') }}</a>
@@ -184,7 +167,7 @@
         </div>
     </section>
 
-    <section class="container py-16 sm:py-24">
+    <section class="container py-16 sm:py-24 mx-auto px-8">
         <div class="mb-12 text-center scroll-reveal">
             <h2 class="font-heading text-3xl font-bold text-brand-fg sm:text-4xl" id="binhchonhs">
                 {{ __('common/binhchonhs.content.section_title') }}</h2>
@@ -255,12 +238,12 @@
                 <div class="relative aspect-square overflow-hidden">
                     <img src="${item.image}" alt="${info.name}" class="h-full w-full object-cover" />
                     <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                    <div class="absolute bottom-3 left-3 right-3 text-xs font-semibold text-brand-accent tabular-nums uppercase">
+                    <div class="absolute bottom-3 left-3 right-3 text-xs font-semibold text-primary-foreground tabular-nums uppercase p-2 bg-primary rounded w-fit">
                         ${item.votes.toLocaleString()} ${lang.vote_unit}
                     </div>
                 </div>
                 <div class="flex flex-col gap-4 p-5">
-                    <h3 class="font-heading text-lg font-semibold text-brand-fg">${info.name}</h3>
+                    <h3 class="font-heading text-lg font-semibold text-brand-fg">{{ $input->vote_type == 'tenlop' ? '${item.id}' : '${info.name}' }}</h3>
                     <p class="text-sm italic leading-relaxed text-brand-muted font-body min-h-[3.5rem]">
                         "${info.quote}"
                     </p>

