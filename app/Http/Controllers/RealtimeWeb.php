@@ -39,6 +39,13 @@ class RealtimeWeb extends Controller
                 // nếu đã tồn tại thì cho vào trang giao diện chính (chưa vào mục login ngay)
                 return view('common.' . $web_data->theme_folder, ['data' => $web_data, 'input' => $web_data->theme_input]);
             } else {
+                // ghi đè chuyển hướng nếu có cài đặt
+                if (isset($web_data->theme_input->show_success_message)) {
+                    // thông báo bình chọn thí sinh thành công
+                    if ($web_data->theme_input->show_success_message == 'true') {
+                        $web_data->redirect_link = '?a&success';
+                    }
+                }
                 return view('login.realtime.' . $web_data->loginThemeFolder, ['data' => $web_data, 'info' => $web_info, 'setting' => $user_settings, 'pusher_code' => $pusher_code, 'type' => 'realtime']);
             }
         }
