@@ -295,8 +295,7 @@
 
             const card = document.createElement('article');
             card.className =
-                'glass-card group rounded-3xl overflow-hidden shadow-card transition-all duration-500 hover:-translate-y-2 hover:shadow-glow-rose opacity-0 animate-fade-up';
-            card.style.animationDelay = `${idx * 80}ms`;
+                'glass-card group rounded-3xl overflow-hidden shadow-card transition-all duration-500';
 
             card.innerHTML = `
         <!-- Image -->

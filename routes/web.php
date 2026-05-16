@@ -32,26 +32,21 @@ Route::get('{slug}', function (Request $rq, $slug) {
             $user_settings = Json::decode(User::find($website->userid)->data)->web_setting;
         }
         // check valid domain
-        // $check_website = checkValidDomainWebsite($website);
-        // if (!$check_website['status']) {
-        //     switch ($check_website['error']) {
-        //         case 'invalid_domain':
-        //             return 'INVALID DOMAIN';
-        //             break;
-        //         case 'domain_not_found':
-        //             return 'DOMAIN NOT FOUND';
-        //             break;
-        //         case 'expired_time':
-        //             return 'EXPIRED TIME';
-        //             break;
-        //         case 'maintenance_or_hidden':
-        //             return 'MAINTENANCE OR HIDDEN';
-        //             break;
-        //         default:
-        //             return 'UNKNOWN ERROR';
-        //             break;
-        //     }
-        // }
+        $check_website = checkValidDomainWebsite($website);
+        if (!$check_website['status']) {
+            switch ($check_website['error']) {
+                case 'invalid_domain':
+                    return 'INVALID DOMAIN';
+                case 'domain_not_found':
+                    return 'DOMAIN NOT FOUND';
+                case 'expired_time':
+                    return 'EXPIRED TIME';
+                case 'maintenance_or_hidden':
+                    return 'MAINTENANCE OR HIDDEN';
+                default:
+                    return 'UNKNOWN ERROR';
+            }
+        }
         // cập nhật lượt truy cập
         $website->visitors += 1;
         $website->save();
