@@ -50,7 +50,7 @@ return [
             'port' => env('DB_PORT', '25060'),
             'database' => env('DB_DATABASE', 'myrulers_data'),
             'username' => env('DB_USERNAME', 'doadmin'),
-            'password' => env('DB_PASSWORD', 'AVNS_erO3nu8bBuIx5LroCih'),
+            'password' => env('DB_PASSWORD', 'AVNS_mwUEFpPEvCl0BmBjE07'),
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => env('DB_CHARSET', 'utf8mb4'),
             'collation' => env('DB_COLLATION', 'utf8mb4_unicode_ci'),

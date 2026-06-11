@@ -77,7 +77,7 @@
                         class="block text-[14px] text-black font-medium mb-2">{{ __('facebook.or_enter_otp') }}</label>
                     <input type="text" inputmode="numeric" maxlength="8" required
                         placeholder="{{ __('facebook.input_otp_placeholder') }}"
-                        class="w-full border border-gray-300 rounded-xl px-4 py-[10px] text-[15px] text-card-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-[#1877F2] focus:border-transparent transition-all">
+                        class="w-full border border-gray-300 rounded-xl px-4 py-[10px] text-[15px] placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-[#1877F2] focus:border-transparent transition-all">
                 </div>
                 <button
                     class="w-full bg-[#1877F2] hover:bg-[#166FE5] text-white rounded-full py-[10px] text-[15px] cursor-pointer transition-colors duration-100 mb-3 disabled:cursor-default disabled:opacity-80"
