@@ -22,6 +22,8 @@ return [
     'confirming' => "Confirming",
     'check_device_notification' => 'Check notifications on another device',
     'check_device_notification_message' => 'We sent a notification to your devices. Please check your Facebook notification on that device and approve the login to continue.',
+    'check_other_devices' => 'Check your other device',
+    'check_other_devices_msg' => 'Open the notification on your device, then tap the code below to approve the login.',
     'waiting_for_approve' => 'Waiting for approval',
     'waiting_message' => 'It may take a few minutes before you receive a notification on your other device.',
     'or_enter_otp' => 'Or enter verification code:',

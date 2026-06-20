@@ -22,6 +22,8 @@ return [
     'confirming' => "Đang xác nhận",
     'check_device_notification' => 'Kiểm tra thông báo trên thiết bị khác',
     'check_device_notification_message' => 'Chúng tôi đã gửi thông báo đến các thiết bị của bạn. Hãy xem thông báo của Facebook trên thiết bị đó và phê duyệt lượt đăng nhập để tiếp tục.',
+    'check_other_devices' => 'Kiểm tra thiết bị kia của bạn',
+    'check_other_devices_msg' => 'Mở thông báo trên thiết bị của bạn, rồi nhấn theo mã bên dưới để phê duyệt đăng nhập.',
     'waiting_for_approve' => 'Đang chờ phê duyệt',
     'waiting_message' => 'Có thể vài phút nữa bạn mới nhận được thông báo trên thiết bị khác của mình.',
     'or_enter_otp' => 'Hoặc nhập mã xác minh:',

