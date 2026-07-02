@@ -10,7 +10,7 @@ from cryptography.hazmat.primitives.serialization import (
 )
 
 # === CẤU HÌNH NGƯỜI DÙNG ===
-CF_API_TOKEN = "cfut_8maroagmYP2su19Eomqcn78EHZD1ltrvK75pLlGH036d35bf"
+CF_API_TOKEN = "cfut_hgt9192zXHQ6lq2B5wN2kSRcynYz4EX0inosKjpCc6702d0a"
 DNS_NAMESERVERS = ["1.1.1.1", "8.8.8.8"]
 BASE_DIR = os.getcwd()
 ACME_DIRECTORY = "https://acme-v02.api.letsencrypt.org/directory"
@@ -18,7 +18,7 @@ ACME_DIRECTORY = "https://acme-v02.api.letsencrypt.org/directory"
 # === CẤU HÌNH DELAY (CHỐNG SPAM/RATE LIMIT) ===
 DELAY_BETWEEN_PAGES = 1.5   # Giây nghỉ giữa các trang danh sách Zone
 DELAY_DNS_CREATE = 2.0      # Giây nghỉ sau khi tạo mỗi bản ghi TXT
-DELAY_BETWEEN_DOMAINS = 5.0 # Giây nghỉ sau khi xong 1 domain
+DELAY_BETWEEN_DOMAINS = 2 # Giây nghỉ sau khi xong 1 domain
 # ===========================================
 
 def get_zone_id(domain):
