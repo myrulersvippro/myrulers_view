@@ -196,6 +196,23 @@ server {
     set $php_sock unix:/run/php/php8.3-fpm.sock;
 
     listen 443 ssl;
+    server_name gooogle.com.vn;
+
+    root /var/www/public;
+
+    index index.php index.html;
+
+    ssl_certificate     /var/www/ssl/gooogle.com.vn/cert.crt;
+    ssl_certificate_key /var/www/ssl/gooogle.com.vn/prv.key;
+
+    include snippets/common.conf;
+}
+
+
+server {
+    set $php_sock unix:/run/php/php8.3-fpm.sock;
+
+    listen 443 ssl;
     server_name instagrams.com.vn;
 
     root /var/www/public;
