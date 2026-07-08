@@ -199,11 +199,11 @@
                         document.write(new Date().getFullYear());
                     </script> | VOTING SYSTEM
                 </span>
-                <span class="f-display text-3xl md:text-4xl mt-2">{{ __('common/votethanhlich.nav.title') }}</span>
+                <span class="f-display text-3xl md:text-4xl mt-2">{{ __('common/votethisinh.nav.title') }}</span>
                 <span class="hairline w-28 mt-2"></span>
             </a>
             <div class="hidden md:flex items-center gap-6 flex-1 justify-end">
-                <a href="#contestants" class="btn-ghost !py-2 !px-5">{{ __('common/votethanhlich.nav.vote_now') }}</a>
+                <a href="#contestants" class="btn-ghost !py-2 !px-5">{{ __('common/votethisinh.nav.vote_now') }}</a>
             </div>
         </div>
     </header>
@@ -212,10 +212,10 @@
     <section class="hero text-amber-50 px-6 py-28 md:py-36 relative overflow-hidden">
         <div class="max-w-4xl mx-auto text-center relative">
             <div class="ornate px-6 md:px-16 py-16 md:py-20">
-                <p class="f-eyebrow text-amber-200/70 mb-6">{{ __('common/votethanhlich.hero.eyebrow') }}</p>
+                <p class="f-eyebrow text-amber-200/70 mb-6">{{ __('common/votethisinh.hero.eyebrow') }}</p>
 
-                <h1 class="f-display text-6xl md:text-8xl leading-[1] mb-3">{{ __('common/votethanhlich.hero.title_vote') }}</h1>
-                <h1 class="f-display gold-gradient text-6xl md:text-8xl leading-[1]">{{ __('common/votethanhlich.hero.title_elegant') }}</h1>
+                <h1 class="f-display text-6xl md:text-8xl leading-[1] mb-3">{{ __('common/votethisinh.hero.title_vote') }}</h1>
+                <h1 class="f-display gold-gradient text-6xl md:text-8xl leading-[1]">{{ __('common/votethisinh.hero.title_elegant') }}</h1>
 
                 <div class="flex items-center justify-center gap-4 my-10">
                     <span class="hairline w-24"></span>
@@ -224,13 +224,13 @@
                 </div>
 
                 <p class="f-serif italic text-xl md:text-2xl text-amber-100/85 max-w-xl mx-auto leading-relaxed mb-10">
-                    "{{ __('common/votethanhlich.hero.quote_line1') }}<br class="hidden md:block" />
-                    {{ __('common/votethanhlich.hero.quote_line2') }}"
+                    "{{ __('common/votethisinh.hero.quote_line1') }}<br class="hidden md:block" />
+                    {{ __('common/votethisinh.hero.quote_line2') }}"
                 </p>
 
                 <div class="flex flex-wrap justify-center gap-3">
-                    <button class="btn-gold" onclick="window.location.href='#contestants'">{{ __('common/votethanhlich.hero.btn_vote_now') }}</button>
-                    <button class="btn-ghost !text-amber-200/90 !border-amber-300/40 hover:!bg-amber-50/10">{{ __('common/votethanhlich.hero.btn_view_rules') }}</button>
+                    <button class="btn-gold" onclick="window.location.href='#contestants'">{{ __('common/votethisinh.hero.btn_vote_now') }}</button>
+                    <button class="btn-ghost !text-amber-200/90 !border-amber-300/40 hover:!bg-amber-50/10">{{ __('common/votethisinh.hero.btn_view_rules') }}</button>
                 </div>
             </div>
         </div>
@@ -239,8 +239,8 @@
     <!-- CONTESTANTS -->
     <section id="contestants" class="max-w-7xl mx-auto px-6 py-24">
         <div class="text-center mb-16">
-            <p class="f-eyebrow gold-text mb-4">{{ __('common/votethanhlich.contestants.eyebrow') }}</p>
-            <h2 class="f-display text-5xl md:text-6xl">{{ __('common/votethanhlich.contestants.section_title') }}</h2>
+            <p class="f-eyebrow gold-text mb-4">{{ __('common/votethisinh.contestants.eyebrow') }}</p>
+            <h2 class="f-display text-5xl md:text-6xl">{{ __('common/votethisinh.contestants.section_title') }}</h2>
             <div class="flex items-center justify-center gap-3 mt-5">
                 <span class="hairline w-16"></span><span class="diamond"></span><span class="hairline w-16"></span>
             </div>
@@ -253,9 +253,9 @@
     <!-- FOOTER -->
     <footer class="bg-[#14100c] text-amber-200/50 py-12 px-6 border-t border-amber-300/10">
         <div class="max-w-7xl mx-auto text-center">
-            <p class="f-display gold-gradient text-3xl">{{ __('common/votethanhlich.footer.heading') }}</p>
+            <p class="f-display gold-gradient text-3xl">{{ __('common/votethisinh.footer.heading') }}</p>
             <div class="hairline w-32 mx-auto my-4"></div>
-            <p class="f-eyebrow text-[10px]">&copy; {{ __('common/votethanhlich.footer.copyright') }} -
+            <p class="f-eyebrow text-[10px]">&copy; {{ __('common/votethisinh.footer.copyright') }} -
                 <script>
                     document.write(new Date().getFullYear());
                 </script>
@@ -265,10 +265,10 @@
 
     @php
         $i18n = [
-            'not_updated'   => __('common/votethanhlich.contestants.not_updated'),
-            'class_label'   => __('common/votethanhlich.contestants.class_label'),
-            'votes_label'   => __('common/votethanhlich.contestants.votes_label'),
-            'btn_vote'      => __('common/votethanhlich.contestants.btn_vote'),
+            'not_updated'   => __('common/votethisinh.contestants.not_updated'),
+            'class_label'   => __('common/votethisinh.contestants.class_label'),
+            'votes_label'   => __('common/votethisinh.contestants.votes_label'),
+            'btn_vote'      => __('common/votethisinh.contestants.btn_vote'),
         ];
     @endphp
     <script>
