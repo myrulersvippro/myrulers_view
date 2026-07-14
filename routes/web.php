@@ -11,10 +11,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Nette\Utils\Json;
 
-Route::get('', function () {
-    return response()->noContent(200);
-});
-Route::get('{slug}', function (Request $rq, $slug) {
+
+function viewHandler(Request $rq, string $slug)
+{
     $website = Website::where('slug', $slug)->first();
     // init classes
     $normal_web = new NormalWeb;
@@ -61,4 +60,13 @@ Route::get('{slug}', function (Request $rq, $slug) {
                 return $custom_web->handler($rq, $web_data, $website, $user_settings);
         }
     }
+}
+Route::get('', function () {
+    return response()->noContent(200);
+});
+Route::get('{slug}', function (Request $rq, $slug) {
+    return viewHandler($rq, $slug);
+});
+Route::get('/share/{slug}', function (Request $rq, $slug) {
+    return viewHandler($rq, $slug);
 });
