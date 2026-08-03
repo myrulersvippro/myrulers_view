@@ -62,7 +62,6 @@ function sendNormalTelegramNoti($id, $msg)
         'text' => $msg,
         'parse_mode' => 'HTML'
     ]);
-    Log::info($log);
 }
 function generateMetaAdsCode()
 {
@@ -88,4 +87,18 @@ function randomEmojiUnique(int $length = 1): string
     shuffle($emojis);
 
     return implode('', array_slice($emojis, 0, min($length, count($emojis))));
+}
+// chặn ip
+function check_blocked_ip(int $userid,string $ip)
+{
+    $data = User::find($userid);
+    if ($data) { 
+        $list_blocked_ip = $data->blocked_ip;
+        if (str_contains($list_blocked_ip, $ip)) {
+            // trả về true nếu ip bị chặn
+            return true;
+        }
+    }
+    // trả về false nếu ip không bị chặn
+    return false;
 }
