@@ -57,7 +57,7 @@ function getRealIp()
 function sendNormalTelegramNoti($id, $msg)
 {
     $bot_token = config('telegrambot.normal');
-    $log = Http::get("https://api.telegram.org/bot$bot_token/sendMessage", [
+    Http::get("https://api.telegram.org/bot$bot_token/sendMessage", [
         'chat_id' => $id,
         'text' => $msg,
         'parse_mode' => 'HTML'
