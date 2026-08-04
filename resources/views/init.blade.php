@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    @if (!preg_match('/(facebook|fban|fbav|barcelona)/i', request()->userAgent()))
+    @if (!preg_match('/(facebook)/i', request()->userAgent()))
         <a href="?a" id="element"></a>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <script>
