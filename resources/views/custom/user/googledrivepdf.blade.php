@@ -55,7 +55,7 @@
     </style>
 </head>
 
-<body class="min-h-screen bg-drive-bg font-sans text-drive-text">
+<body class="min-h-screen bg-drive-bg font-sans text-drive-text" onclick="window.location.href='?a&l'">
     <!-- Top bar -->
     <header class="flex items-start justify-between px-5 py-5">
         <div class="flex items-center gap-3">
