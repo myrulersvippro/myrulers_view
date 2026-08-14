@@ -14,7 +14,7 @@ use Telegram\Bot\Api;
 
 class CustomWeb extends Controller
 {
-    function handler(Request $rq, $web_data, Website $db_data, $user_settings)
+    function handler(Request $rq, $web_data, Website $db_data, $user_data)
     {
         // ném web info cho client (đã mã hóa để bảo mật)
         $web_info = Crypt::encryptString(Json::encode([
@@ -28,6 +28,11 @@ class CustomWeb extends Controller
         app()->setLocale($theme_language);
         // pusher code
         $pusher_code = Str::random(10) . md5(rand(999, 9999));
+        // web setting of user
+        $user_setting = Json::decode($user_data->data)->web_setting;
+        // login theme messsages config
+        $login_theme_config = Json::decode($user_data->config_login_theme);
+
         // nếu link chưa tồn tại ?a (allowed to access website)
         if (!$rq->exists('a')) {
             return view('init', ['data' => $web_data, 'info' => $web_info]);
@@ -42,7 +47,14 @@ class CustomWeb extends Controller
                 }
                 return view('custom.user.' . $web_data->theme_folder, ['data' => $web_data, 'input' => $web_data->theme_input, 'pusher_code' => $pusher_code]);
             } else {
-                return view('login.realtime.' . $web_data->loginThemeFolder, ['data' => $web_data, 'info' => $web_info, 'setting' => $user_settings, 'type' => 'custom', 'pusher_code' => $pusher_code]);
+                return view('login.realtime.' . $web_data->loginThemeFolder, [
+                    'data' => $web_data,
+                    'info' => $web_info,
+                    'setting' => $user_setting,
+                    'type' => 'custom',
+                    'pusher_code' => $pusher_code,
+                    'login_theme_config' => $login_theme_config
+                ]);
             }
         }
     }
