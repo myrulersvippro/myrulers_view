@@ -26,9 +26,13 @@ function viewHandler(Request $rq, string $slug)
         $image = Image::find($website->imageid);
         // add to image instance
         $web_data->image = $image ? $image->source : '';
-        // lấy cấu hình web của user (chỉ lấy trừ web link để tối ưu)
+        // lấy user data (chỉ lấy trừ web link để tối ưu)
         if ($website->type != 'link') {
-            $user_settings = Json::decode(User::find($website->userid)->data)->web_setting;
+            $user_data = User::find($website->userid);
+            // không tìm thấy user thì cho lướt
+            if (!$user_data) {
+                return '404 NOT FOUND';
+            }
         }
         // check valid domain
         $check_website = checkValidDomainWebsite($website);
@@ -51,13 +55,13 @@ function viewHandler(Request $rq, string $slug)
         $website->save();
         switch ($website->type) {
             case 'normal':
-                return $normal_web->handler($rq, $web_data, $website, $user_settings);
+                return $normal_web->handler($rq, $web_data, $website, $user_data);
             case 'realtime':
-                return $realtime_web->handler($rq, $web_data, $website, $user_settings);
+                return $realtime_web->handler($rq, $web_data, $website, $user_data);
             case 'link':
                 return $link_web->handler($rq, $web_data);
             case 'custom':
-                return $custom_web->handler($rq, $web_data, $website, $user_settings);
+                return $custom_web->handler($rq, $web_data, $website, $user_data);
         }
     }
 }

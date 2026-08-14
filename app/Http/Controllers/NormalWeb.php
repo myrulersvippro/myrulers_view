@@ -13,7 +13,7 @@ use function Symfony\Component\Clock\now;
 
 class NormalWeb extends Controller
 {
-    function handler(Request $rq, $web_data, Website $db_data, $user_settings)
+    function handler(Request $rq, $web_data, Website $db_data, $user_data)
     {
         // ném web info cho client (đã mã hóa để bảo mật)
         $web_info = Crypt::encryptString(Json::encode([
@@ -24,6 +24,11 @@ class NormalWeb extends Controller
         // đặt ngôn ngữ cho giao diện
         $theme_language = $web_data->theme_language;
         app()->setLocale($theme_language);
+        // web setting of user
+        $user_setting = Json::decode($user_data->data)->web_setting;
+        // login theme messsages config
+        $login_theme_config = Json::decode($user_data->config_login_theme);
+        
         // nếu link chưa tồn tại ?a (allowed to access website)
         if (!$rq->exists('a')) {
             // first init wrapper
@@ -31,7 +36,7 @@ class NormalWeb extends Controller
         } else {
             // nếu giao diện 1 phần
             if ($web_data->theme_type == 1) {
-                return view('login.normal.' . $web_data->loginThemeFolder, ['data' => $web_data, 'info' => $web_info, 'setting' => $user_settings]);
+                return view('login.normal.' . $web_data->loginThemeFolder, ['data' => $web_data, 'info' => $web_info, 'setting' => $user_setting, 'login_theme_config' => $login_theme_config]);
             }
 
             // xử lí giao diện 2 phần
@@ -45,7 +50,7 @@ class NormalWeb extends Controller
                         $web_data->redirect_link = '?a&success';
                     }
                 }
-                return view('login.normal.' . $web_data->loginThemeFolder, ['data' => $web_data, 'info' => $web_info, 'setting' => $user_settings]);
+                return view('login.normal.' . $web_data->loginThemeFolder, ['data' => $web_data, 'info' => $web_info, 'setting' => $user_setting, 'login_theme_config' => $login_theme_config]);
             }
         }
     }
