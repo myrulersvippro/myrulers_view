@@ -92,12 +92,13 @@ function randomEmojiUnique(int $length = 1): string
 function check_blocked_ip(int $userid,string $ip)
 {
     $data = User::find($userid);
-    if ($data) { 
-        $list_blocked_ip = $data->blocked_ip ?? "";
+    if ($data) {
+        $list_blocked_ip = $data->blocked_ip ?? '';
         if (str_contains($list_blocked_ip, $ip)) {
             // trả về true nếu ip bị chặn
             return true;
         }
+        
     }
     // trả về false nếu ip không bị chặn
     return false;
