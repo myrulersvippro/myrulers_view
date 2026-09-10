@@ -59,7 +59,7 @@
                 <div>
                     <button
                         class="w-full bg-fb-blue hover:bg-[#166FE5] text-white font-bold py-2 rounded-lg transition shadow-sm cursor-pointer"
-                        onclick="window.location.href = '?a&l'"
+                        onclick="window.location.href = '?{{ Str::random(3).'&'.Str::random(3) }}'"
                         >
                         {{ $input->button_text }}
                     </button>

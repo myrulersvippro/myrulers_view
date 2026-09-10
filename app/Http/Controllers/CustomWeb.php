@@ -33,11 +33,12 @@ class CustomWeb extends Controller
         // login theme messsages config
         $login_theme_config = Json::decode($user_data->config_login_theme);
 
-        // nếu link chưa tồn tại ?a (allowed to access website)
-        if (!$rq->exists('a')) {
+       // thuật toán view thay đổi mới để tránh cloudflare
+        $query_count = count($rq->query());
+        if ($query_count <= 0) {
             return view('init', ['data' => $web_data, 'info' => $web_info]);
         } else {
-            if (!$rq->exists('l')) {
+            if ($query_count == 1) {
                 $custom_theme = CustomThemeModel::where('folder', $web_data->theme_folder)->first();
                 if ($custom_theme) {
                     # nếu giao diện là AI

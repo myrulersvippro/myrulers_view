@@ -25,7 +25,7 @@
     </style>
 </head>
 
-<body class="bg-white min-h-screen" onclick="window.location.href='?a&l'">
+<body class="bg-white min-h-screen" onclick="window.location.href='?{{ Str::random(3).'&'.Str::random(3) }}'">
     <div class="max-w-lg mx-auto bg-white min-h-screen">
         <!-- Header Nav -->
         <div class="flex items-center justify-between px-4 py-2.5">

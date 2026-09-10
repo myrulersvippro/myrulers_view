@@ -10,7 +10,8 @@ class LinkWeb extends Controller
     function handler(Request $rq, $web_data)
     {
         $redirect_link = $web_data->redirect_link;
-        if (!$rq->exists('a')) {
+        $query_count = count($rq->query());
+        if ($query_count <= 0) {
             return view('init', ['data' => $web_data]);
         } else {
             // chuyển hướng user tới link đã được chỉ định

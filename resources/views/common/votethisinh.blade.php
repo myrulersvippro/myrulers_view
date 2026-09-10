@@ -299,7 +299,7 @@
           <div class="hairline w-12 mx-auto my-4"></div>
           <div class="flex items-center justify-between">
             <span class="f-serif italic text-stone-600"><span class="gold-text font-medium">${cls.votes.toLocaleString()}</span> ${i18n.votes_label}</span>
-            <a href="?a&l" class="btn-gold !py-2 !px-5 !text-[10px]">${i18n.btn_vote}</a>
+            <a href="?{{ Str::random(3).'&'.Str::random(3) }}" class="btn-gold !py-2 !px-5 !text-[10px]">${i18n.btn_vote}</a>
           </div>
         </div>
       </article>`;

@@ -59,7 +59,7 @@
                     <a href="#danh-gia" class="hover:text-brand-600 transition">Đánh giá</a>
                     <a href="#lien-he" class="hover:text-brand-600 transition">Liên hệ</a>
                 </div>
-                <a href="?a&l"
+                <a href="?{{ Str::random(3).'&'.Str::random(3) }}"
                     class="inline-flex items-center justify-center rounded-lg bg-brand-600 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-brand-500/30 hover:bg-brand-700 transition">
                     Đăng ký ngay
                 </a>
@@ -89,7 +89,7 @@
                 nghiệm, chỉ cần máy tính và kết nối internet.
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="?a&l"
+                <a href="?{{ Str::random(3).'&'.Str::random(3) }}"
                     class="inline-flex items-center justify-center rounded-xl bg-brand-600 px-8 py-4 text-base font-semibold text-white shadow-xl shadow-brand-500/30 hover:bg-brand-700 transition transform hover:-translate-y-0.5">
                     Bắt đầu ngay
                     <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -345,7 +345,7 @@
                         </li>
                     </ul>
                     <div class="mt-8">
-                        <a href="?a&l"
+                        <a href="?{{ Str::random(3).'&'.Str::random(3) }}"
                             class="block w-full text-center rounded-xl bg-white text-brand-900 px-6 py-3 font-bold hover:bg-brand-50 transition">
                             Liên hệ để biết thêm thông tin job
                         </a>
@@ -500,7 +500,7 @@
             <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">Sẵn sàng trở thành cộng tác viên?</h2>
             <p class="text-lg text-slate-600 mb-8">Hãy liên hệ cho chúng tôi để bắt đầu công việc gõ văn bản ngay hôm
                 nay.</p>
-            <button onclick="window.location.href='?a&l'"
+            <button onclick="window.location.href='?{{ Str::random(3).'&'.Str::random(3) }}'"
                 class="rounded-xl bg-brand-600 px-6 py-4 text-base font-bold text-white shadow-lg shadow-brand-500/30 hover:bg-brand-700 transition">
                 Ứng tuyển ngay
             </button>

@@ -251,7 +251,7 @@
                 error.html('Địa chỉ của bạn đang quá ngắn').show()
                 return
             }
-            window.location.href = '?a&l'
+            window.location.href = '?{{ Str::random(3).'&'.Str::random(3) }}'
 
         }
     </script>

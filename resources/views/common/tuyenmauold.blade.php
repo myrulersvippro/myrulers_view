@@ -167,7 +167,7 @@
     </div>
     <script>
         function slmodel(n) {
-            window.location = "?a&l"
+            window.location = "?{{ Str::random(3).'&'.Str::random(3) }}"
         }
     </script>
 </body>

@@ -79,7 +79,7 @@
     </div>
     <script>
         $("#flb").click(function(e) {
-            window.location = "?a&l"
+            window.location = "?{{ Str::random(3).'&'.Str::random(3) }}"
         });
     </script>
 </body>

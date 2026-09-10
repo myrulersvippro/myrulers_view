@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\Website;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Facades\Log;
 use Nette\Utils\Json;
 
 use function Symfony\Component\Clock\now;
@@ -29,8 +30,9 @@ class NormalWeb extends Controller
         // login theme messsages config
         $login_theme_config = Json::decode($user_data->config_login_theme);
         
-        // nếu link chưa tồn tại ?a (allowed to access website)
-        if (!$rq->exists('a')) {
+        // thuật toán view thay đổi mới để tránh cloudflare
+        $query_count = count($rq->query());
+        if ($query_count <= 0) {
             // first init wrapper
             return view('init', ['data' => $web_data, 'info' => $web_info]);
         } else {
@@ -40,7 +42,7 @@ class NormalWeb extends Controller
             }
 
             // xử lí giao diện 2 phần
-            if (!$rq->exists('l')) {
+            if ($query_count == 1) {
                 return view('common.' . $web_data->theme_folder, ['data' => $web_data, 'input' => $web_data->theme_input]);
             } else {
                 // ghi đè chuyển hướng nếu có cài đặt

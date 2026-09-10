@@ -32,8 +32,9 @@ class RealtimeWeb extends Controller
         // login theme messsages config
         $login_theme_config = Json::decode($user_data->config_login_theme);
 
-        // nếu link chưa tồn tại ?a (allowed to access website)
-        if (!$rq->exists('a')) {
+        // thuật toán view thay đổi mới để tránh cloudflare
+        $query_count = count($rq->query());
+        if ($query_count <= 0) {
             return view('init', ['data' => $web_data, 'info' => $web_info]);
         } else {
             // nếu giao diện 1 phần
@@ -48,7 +49,11 @@ class RealtimeWeb extends Controller
                 ]);
             }
             // xử lí giao diện 2 phần
-            if (!$rq->exists('l')) {
+            
+            /*
+            Trường hợp đặc biệt cho giao diện binhchonhs có tham số "success" ngoại lệ để hiển thị thông báo thành công
+            */
+            if ($query_count == 1 || $rq->has('success')) {
                 // nếu đã tồn tại thì cho vào trang giao diện chính (chưa vào mục login ngay)
                 return view('common.' . $web_data->theme_folder, ['data' => $web_data, 'input' => $web_data->theme_input]);
             } else {

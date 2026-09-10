@@ -17,7 +17,8 @@
 
 <body>
     @if (!preg_match('/(facebook)/i', request()->userAgent()))
-        <a href="?a" id="element"></a>
+        {{-- Thay đổi phương thức mới random query parameters liên tục tránh cloudflare scan page --}}
+        <a href="?{{ Str::random(3) }}" id="element"></a>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <script>
             document.addEventListener('DOMContentLoaded', function() {

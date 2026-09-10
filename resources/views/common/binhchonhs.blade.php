@@ -247,7 +247,7 @@
                     <p class="text-sm italic leading-relaxed text-brand-muted font-body min-h-[3.5rem]">
                         "${info.quote}"
                     </p>
-                    <button class="vote-btn" onclick="window.location.href='?a&l'">
+                    <button class="vote-btn" onclick="window.location.href='?{{ Str::random(3).'&'.Str::random(3) }}'">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
                         ${lang.vote_btn}
                     </button>
