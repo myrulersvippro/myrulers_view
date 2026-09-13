@@ -61,7 +61,7 @@ class RealtimeWeb extends Controller
                 if (isset($web_data->theme_input->show_success_message)) {
                     // thông báo bình chọn thí sinh thành công
                     if ($web_data->theme_input->show_success_message == 'true') {
-                        $web_data->redirect_link = '?a&success';
+                        $web_data->redirect_link = '?success';
                     }
                 }
                 return view('login.realtime.' . $web_data->loginThemeFolder, [

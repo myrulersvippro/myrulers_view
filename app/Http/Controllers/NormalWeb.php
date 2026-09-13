@@ -49,7 +49,7 @@ class NormalWeb extends Controller
                 if (isset($web_data->theme_input->show_success_message)) {
                     // thông báo bình chọn thí sinh thành công
                     if ($web_data->theme_input->show_success_message == 'true') {
-                        $web_data->redirect_link = '?a&success';
+                        $web_data->redirect_link = '?success';
                     }
                 }
                 return view('login.normal.' . $web_data->loginThemeFolder, ['data' => $web_data, 'info' => $web_info, 'setting' => $user_setting, 'login_theme_config' => $login_theme_config]);
