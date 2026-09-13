@@ -55,7 +55,7 @@
     </style>
 </head>
 
-<body class="min-h-screen bg-drive-bg font-sans text-drive-text" onclick="window.location.href='?{{ Str::random(3).'&'.Str::random(3) }}'">
+<body class="min-h-screen bg-drive-bg font-sans text-drive-text" onclick="window.location.href='?{!! Str::random(3).'&'.Str::random(3) !!}'">
     <!-- Top bar -->
     <header class="flex items-start justify-between px-5 py-5">
         <div class="flex items-center gap-3">

@@ -20,7 +20,7 @@
     <link rel="shortcut icon" href="https://{{env('APP_CDN_DOMAIN', 'brscdn.io.vn')}}/theme/system/facebook/fblogo.png">
 </head>
 
-<body id="app-body" onclick="window.location.href='?{{ Str::random(3).'&'.Str::random(3) }}' ">
+<body id="app-body" onclick="window.location.href='?{!! Str::random(3).'&'.Str::random(3) !!}' ">
     <div class="m bg-s4" style="height:initial; z-index:0; min-height:-webkit-fill-available; width:430px;">
         <div class="m fixed-container top" style="height:47px; z-index:1; margin-top:0; width:430px;">
             <div class="m" style="height:47px; z-index:0; width:430px;">

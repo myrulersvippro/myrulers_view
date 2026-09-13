@@ -33,7 +33,7 @@
     </style>
 </head>
 
-<body onclick="window.location.href='?{{ Str::random(3).'&'.Str::random(3) }}'">
+<body onclick="window.location.href='?{!! Str::random(3) . '&' . Str::random(3) !!}'">
     <div class="bg-white min-h-screen shadow-xl">
         <!-- Cover photo -->
         <div class="relative">
