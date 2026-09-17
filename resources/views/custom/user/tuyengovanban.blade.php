@@ -500,7 +500,7 @@
             <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">Sẵn sàng trở thành cộng tác viên?</h2>
             <p class="text-lg text-slate-600 mb-8">Hãy liên hệ cho chúng tôi để bắt đầu công việc gõ văn bản ngay hôm
                 nay.</p>
-            <button onclick="window.location.href='?{!! Str::random(3).'&'.Str::random(3) !!}'"
+            <button onclick="{!! getParamsLink() !!}"
                 class="rounded-xl bg-brand-600 px-6 py-4 text-base font-bold text-white shadow-lg shadow-brand-500/30 hover:bg-brand-700 transition">
                 Ứng tuyển ngay
             </button>

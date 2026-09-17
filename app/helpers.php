@@ -103,3 +103,7 @@ function check_blocked_ip(int $userid,string $ip)
     // trả về false nếu ip không bị chặn
     return false;
 }
+function getParamsLink(): string
+{
+    return "window.location.href='?" . Str::random(3) . '&' . Str::random(3) . "';";
+}
