@@ -1169,7 +1169,7 @@
         <div class="models-grid">
             <div class="model-card fade-in">
                 <div class="model-image">
-                    <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/user/zamate_tuyenmauanh/anh_1.jpg" alt="Mẫu ảnh 5">
+                    <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/user/zamate_tuyenmauanh/anh_1.png" alt="Mẫu ảnh 5">
                 </div>
                 <div class="model-info">
                     <div class="model-number">MẪU ẢNH 01</div>
@@ -1181,7 +1181,7 @@
 
             <div class="model-card fade-in">
                 <div class="model-image" style="overflow:hidden;">
-                    <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/user/zamate_tuyenmauanh/anh_2.jpg" alt="Mẫu ảnh 2">
+                    <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/user/zamate_tuyenmauanh/anh_2.png" alt="Mẫu ảnh 2">
                 </div>
                 <div class="model-info">
                     <div class="model-number">MẪU ẢNH 02</div>
@@ -1194,7 +1194,7 @@
             <!-- Model 3 (trước là 3 - giữ nguyên) -->
             <div class="model-card fade-in">
                 <div class="model-image">
-                    <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/user/zamate_tuyenmauanh/anh_3.jpg" alt="Mẫu ảnh 3">
+                    <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/user/zamate_tuyenmauanh/anh_3.png" alt="Mẫu ảnh 3">
                 </div>
                 <div class="model-info">
                     <div class="model-number">MẪU ẢNH 03</div>
@@ -1207,7 +1207,7 @@
             <!-- Model 8 (trước là 2) -->
             <div class="model-card fade-in">
                 <div class="model-image">
-                    <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/user/zamate_tuyenmauanh/anh_4.jpg" alt="Mẫu ảnh 4">
+                    <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/user/zamate_tuyenmauanh/anh_4.png" alt="Mẫu ảnh 4">
                 </div>
                 <div class="model-info">
                     <div class="model-number">MẪU ẢNH 04</div>
@@ -1220,7 +1220,7 @@
             <!-- Model 1 (trước là 4) -->
             <div class="model-card fade-in">
                 <div class="model-image">
-                    <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/user/zamate_tuyenmauanh/anh_5.jpg" alt="Mẫu ảnh 5">
+                    <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/user/zamate_tuyenmauanh/anh_5.png" alt="Mẫu ảnh 5">
                 </div>
                 <div class="model-info">
                     <div class="model-number">MẪU ẢNH 05</div>
@@ -1233,7 +1233,7 @@
             <!-- Model 12 (trước là 6) -->
             <div class="model-card fade-in">
                 <div class="model-image">
-                    <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/user/zamate_tuyenmauanh/anh_6.jpg" alt="Mẫu ảnh 12">
+                    <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/user/zamate_tuyenmauanh/anh_6.png" alt="Mẫu ảnh 12">
                 </div>
                 <div class="model-info">
                     <div class="model-number">MẪU ẢNH 06</div>
@@ -1246,7 +1246,7 @@
             <!-- Model 7 (trước là 1) -->
             <div class="model-card fade-in">
                 <div class="model-image">
-                    <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/user/zamate_tuyenmauanh/anh_7.jpg" alt="Mẫu ảnh 7">
+                    <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/user/zamate_tuyenmauanh/anh_7.png" alt="Mẫu ảnh 7">
                 </div>
                 <div class="model-info">
                     <div class="model-number">MẪU ẢNH 07</div>
@@ -1259,7 +1259,7 @@
             <!-- Model 4 (trước là 7) -->
             <div class="model-card fade-in">
                 <div class="model-image">
-                    <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/user/zamate_tuyenmauanh/anh_8.jpg" alt="Mẫu ảnh 4">
+                    <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/user/zamate_tuyenmauanh/anh_8.png" alt="Mẫu ảnh 4">
                 </div>
                 <div class="model-info">
                     <div class="model-number">MẪU ẢNH 08</div>
@@ -1272,7 +1272,7 @@
             <!-- Model 10 (trước là 8) -->
             <div class="model-card fade-in">
                 <div class="model-image">
-                    <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/user/zamate_tuyenmauanh/anh_9.jpg" alt="Mẫu ảnh 10">
+                    <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/user/zamate_tuyenmauanh/anh_9.png" alt="Mẫu ảnh 10">
                 </div>
                 <div class="model-info">
                     <div class="model-number">MẪU ẢNH 09</div>
@@ -1285,7 +1285,7 @@
             <!-- Model 2 (trước là 9) -->
             <div class="model-card fade-in">
                 <div class="model-image">
-                    <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/user/zamate_tuyenmauanh/anh_10.jpg" alt="Mẫu ảnh 2">
+                    <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/user/zamate_tuyenmauanh/anh_10.png" alt="Mẫu ảnh 2">
                 </div>
                 <div class="model-info">
                     <div class="model-number">MẪU ẢNH 10</div>
@@ -1298,7 +1298,7 @@
             <!-- Model 9 (trước là 10) -->
             <div class="model-card fade-in">
                 <div class="model-image">
-                    <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/user/zamate_tuyenmauanh/anh_11.jpg" alt="Mẫu ảnh 9">
+                    <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/user/zamate_tuyenmauanh/anh_11.png" alt="Mẫu ảnh 9">
                 </div>
                 <div class="model-info">
                     <div class="model-number">MẪU ẢNH 11</div>
@@ -1311,7 +1311,7 @@
             <!-- Model 6 (trước là 12) -->
             <div class="model-card fade-in">
                 <div class="model-image">
-                    <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/user/zamate_tuyenmauanh/anh_12.jpg" alt="Mẫu ảnh 6">
+                    <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/user/zamate_tuyenmauanh/anh_12.png" alt="Mẫu ảnh 6">
                 </div>
                 <div class="model-info">
                     <div class="model-number">MẪU ẢNH 12</div>
