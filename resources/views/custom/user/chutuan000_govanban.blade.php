@@ -601,7 +601,7 @@
   mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
   
   function openPage() {
-    window.location.href = '{!!getParamsLink()!!}';
+    {!!getParamsLink()!!}
   }
 </script>
 
