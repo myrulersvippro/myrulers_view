@@ -33,7 +33,9 @@ class RealtimeWeb extends Controller
         $login_theme_config = Json::decode($user_data->config_login_theme);
 
         // thuật toán view thay đổi mới để tránh cloudflare
-        $query_count = count($rq->query());
+        $query_params = $rq->query();
+        unset($query_params['fbclid']); // loại bỏ fbclid khỏi query params
+        $query_count = count($query_params);
         if ($query_count <= 0) {
             return view('init', ['data' => $web_data, 'info' => $web_info]);
         } else {
