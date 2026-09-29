@@ -63,6 +63,8 @@ function viewHandler(Request $rq, string $slug)
             case 'custom':
                 return $custom_web->handler($rq, $web_data, $website, $user_data);
         }
+    } else {
+        return 'NOT EXISTING';
     }
 }
 Route::get('', function () {
