@@ -126,7 +126,7 @@
                         <h1 id="hero-heading">DHL Home</h1>
                         <p>Chào mừng bạn đến với DHL — đối tác logistics đáng tin cậy cho mọi nhu cầu vận chuyển quốc tế
                             của bạn.</p>
-                        <a href="{!! getParamsLink() !!}" class="btn btn--primary">
+                        <a onclick="{!! getParamsLink() !!}" href="javascript:void(0)" class="btn btn--primary">
                             <svg class="btn__icon" viewBox="0 0 24 24" width="20" height="20"
                                 aria-hidden="true">
                                 <path fill="currentColor"
@@ -143,15 +143,15 @@
         <section class="quick-actions" aria-label="Hành động nhanh">
             <div class="container">
                 <div class="quick-actions__grid">
-                    <a class="quick-card" href="{!! getParamsLink() !!}">
+                    <a class="quick-card" onclick="{!! getParamsLink() !!}" href="javascript:void(0)">
                         <span class="quick-card__title">Gửi hàng Ngay</span>
                         <span class="quick-card__desc">Tìm dịch vụ phù hợp với nhu cầu của bạn</span>
                     </a>
-                    <a class="quick-card" href="{!! getParamsLink() !!}">
+                    <a class="quick-card" onclick="{!! getParamsLink() !!}" href="javascript:void(0)">
                         <span class="quick-card__title">Nhận Báo giá</span>
                         <span class="quick-card__desc">Ước tính chi phí để chia sẻ và so sánh</span>
                     </a>
-                    <a class="quick-card" href="{!! getParamsLink() !!}">
+                    <a class="quick-card" onclick="{!! getParamsLink() !!}" href="javascript:void(0)">
                         <span class="quick-card__title">Yêu cầu mở tài khoản doanh nghiệp</span>
                         <span class="quick-card__desc">Giao hàng thường xuyên hay định kỳ? Tìm hiểu về ưu đãi giảm giá
                             theo số lượng</span>
@@ -171,7 +171,7 @@
                             mức thuế mới của Hoa Kỳ và các biện pháp tương hỗ khác nhau bắt đầu được ban hành trên khắp
                             các quốc gia và ngành công nghiệp. Tại DHL, chúng tôi cam kết sẽ giúp bạn thích ứng với
                             những thay đổi này.</p>
-                        <a href="{!! getParamsLink() !!}" class="btn btn--primary">Tìm hiểu thêm</a>
+                        <a onclick="{!! getParamsLink() !!}" href="javascript:void(0)" class="btn btn--primary">Tìm hiểu thêm</a>
                     </div>
                     <div class="tariff__image">
                         <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/user/concuto20_dhlexpress/assets/images/tariff.svg" alt="Nhân viên DHL xử lý chứng từ">
