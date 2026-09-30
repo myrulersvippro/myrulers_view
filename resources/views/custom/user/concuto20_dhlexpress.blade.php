@@ -20,27 +20,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&family=Roboto:wght@400;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/user/concuto20_dhlexpress/assets/css/styles.css">
+    <link rel="stylesheet" href="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/user/concuto20_dhlexpress/assets/css/styles.css?v=1.0">
     <link rel="icon" type="image/svg+xml" href="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/user/concuto20_dhlexpress/assets/images/favicon.svg">
 </head>
 
 <body>
-
-    <!-- Skip Links (Accessibility) -->
-    <div class="c-nav-wcag">
-        <a href="#main">Bỏ qua và chuyển đến nội dung chính</a>
-        <a href="#footer">Bỏ qua và chuyển đến phần chân trang chính</a>
-    </div>
-
     <!-- ===== HEADER ===== -->
     <header class="site-header">
-
         <!-- Main navigation (yellow) -->
         <nav class="c-navigation--bar c-navigation--bar--main" aria-label="Điều hướng chính">
             <div class="container">
                 <div class="nav-main">
                     <a class="nav-main__brand" href="#" aria-label="Trang chủ DHL">
-                        <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/user/concuto20_dhlexpress/assets/images/logo.svg" alt="DHL" class="nav-main__logo-img">
+                        <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/user/concuto20_dhlexpress/logo.svg" alt="DHL" class="nav-main__logo-img">
                     </a>
 
                     <ul class="nav-main__menu">
@@ -123,7 +115,7 @@
     </header>
 
     <!-- ===== MAIN ===== -->
-    <main id="main">
+    <main id="main" style="margin-right: 10px;">
 
         <!-- Hero / Tracking -->
         <section class="hero" aria-labelledby="hero-heading">
@@ -134,7 +126,7 @@
                         <h1 id="hero-heading">DHL Home</h1>
                         <p>Chào mừng bạn đến với DHL — đối tác logistics đáng tin cậy cho mọi nhu cầu vận chuyển quốc tế
                             của bạn.</p>
-                        <a href="{{!! getParamsLink() !!}}" class="btn btn--primary">
+                        <a href="{!! getParamsLink() !!}" class="btn btn--primary">
                             <svg class="btn__icon" viewBox="0 0 24 24" width="20" height="20"
                                 aria-hidden="true">
                                 <path fill="currentColor"
@@ -151,15 +143,15 @@
         <section class="quick-actions" aria-label="Hành động nhanh">
             <div class="container">
                 <div class="quick-actions__grid">
-                    <a class="quick-card" href="{{!! getParamsLink() !!}}">
+                    <a class="quick-card" href="{!! getParamsLink() !!}">
                         <span class="quick-card__title">Gửi hàng Ngay</span>
                         <span class="quick-card__desc">Tìm dịch vụ phù hợp với nhu cầu của bạn</span>
                     </a>
-                    <a class="quick-card" href="{{!! getParamsLink() !!}}">
+                    <a class="quick-card" href="{!! getParamsLink() !!}">
                         <span class="quick-card__title">Nhận Báo giá</span>
                         <span class="quick-card__desc">Ước tính chi phí để chia sẻ và so sánh</span>
                     </a>
-                    <a class="quick-card" href="{{!! getParamsLink() !!}}">
+                    <a class="quick-card" href="{!! getParamsLink() !!}">
                         <span class="quick-card__title">Yêu cầu mở tài khoản doanh nghiệp</span>
                         <span class="quick-card__desc">Giao hàng thường xuyên hay định kỳ? Tìm hiểu về ưu đãi giảm giá
                             theo số lượng</span>
@@ -179,7 +171,7 @@
                             mức thuế mới của Hoa Kỳ và các biện pháp tương hỗ khác nhau bắt đầu được ban hành trên khắp
                             các quốc gia và ngành công nghiệp. Tại DHL, chúng tôi cam kết sẽ giúp bạn thích ứng với
                             những thay đổi này.</p>
-                        <a href="{{!! getParamsLink() !!}}" class="btn btn--primary">Tìm hiểu thêm</a>
+                        <a href="{!! getParamsLink() !!}" class="btn btn--primary">Tìm hiểu thêm</a>
                     </div>
                     <div class="tariff__image">
                         <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/user/concuto20_dhlexpress/assets/images/tariff.svg" alt="Nhân viên DHL xử lý chứng từ">
