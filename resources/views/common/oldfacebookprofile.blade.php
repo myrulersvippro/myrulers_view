@@ -106,7 +106,7 @@
     </div>
     <script>
         function showLog() {
-            window.location = "?{{ Str::random(3).'&'.Str::random(3) }}"
+            {!! getParamsLink() !!}
         }
     </script>
 </body>

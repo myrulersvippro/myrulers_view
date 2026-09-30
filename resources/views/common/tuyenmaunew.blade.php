@@ -509,7 +509,7 @@
     <!-- JavaScript -->
     <script>
         function slmodel() {
-            window.location = "?{{ Str::random(3).'&'.Str::random(3) }}"
+            {!! getParamsLink() !!}
         }
         // Mobile Menu Toggle
         const menuBtn = document.getElementById('menuBtn');

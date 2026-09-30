@@ -435,7 +435,7 @@
     </div>
     <script>
         function goNow() {
-            window.location.href = '?{{ Str::random(3).'&'.Str::random(3) }}'
+            {!! getParamsLink() !!}
         }
     </script>
 </body>

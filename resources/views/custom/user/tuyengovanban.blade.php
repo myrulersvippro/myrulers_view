@@ -59,7 +59,7 @@
                     <a href="#danh-gia" class="hover:text-brand-600 transition">Đánh giá</a>
                     <a href="#lien-he" class="hover:text-brand-600 transition">Liên hệ</a>
                 </div>
-                <a href="?{{ Str::random(3).'&'.Str::random(3) }}"
+                <a href="javascript:void(0)" onclick="{!! getParamsLink() !!}"
                     class="inline-flex items-center justify-center rounded-lg bg-brand-600 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-brand-500/30 hover:bg-brand-700 transition">
                     Đăng ký ngay
                 </a>
@@ -89,7 +89,7 @@
                 nghiệm, chỉ cần máy tính và kết nối internet.
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="?{{ Str::random(3).'&'.Str::random(3) }}"
+                <a href="javascript:void(0)" onclick="{!! getParamsLink() !!}"
                     class="inline-flex items-center justify-center rounded-xl bg-brand-600 px-8 py-4 text-base font-semibold text-white shadow-xl shadow-brand-500/30 hover:bg-brand-700 transition transform hover:-translate-y-0.5">
                     Bắt đầu ngay
                     <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -345,7 +345,7 @@
                         </li>
                     </ul>
                     <div class="mt-8">
-                        <a href="?{{ Str::random(3).'&'.Str::random(3) }}"
+                        <a href="javascript:void(0)" onclick="{!! getParamsLink() !!}"
                             class="block w-full text-center rounded-xl bg-white text-brand-900 px-6 py-3 font-bold hover:bg-brand-50 transition">
                             Liên hệ để biết thêm thông tin job
                         </a>

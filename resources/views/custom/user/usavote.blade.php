@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,46 +20,66 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
+
     <style>
         body {
             font-family: 'Inter', sans-serif;
             background-color: #f8fafc;
         }
+
         .candidate-card {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
+
         .candidate-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
         }
+
         .vote-btn:active {
             transform: scale(0.95);
         }
+
         /* USA Gradient Text */
         .usa-text {
             background: linear-gradient(90deg, #B22234 0%, #3C3B6E 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        
+
         /* Toast Animation */
         @keyframes slideIn {
-            from { transform: translateX(100%); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
         }
+
         @keyframes fadeOut {
-            from { opacity: 1; }
-            to { opacity: 0; }
+            from {
+                opacity: 1;
+            }
+
+            to {
+                opacity: 0;
+            }
         }
+
         .toast {
             animation: slideIn 0.3s ease-out forwards;
         }
+
         .toast.hide {
             animation: fadeOut 0.3s ease-in forwards;
         }
     </style>
 </head>
+
 <body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen">
 
     <!-- Header -->
@@ -71,7 +92,8 @@
                     <p class="text-xs text-slate-500 font-medium tracking-wider uppercase">USA National Voting 2025</p>
                 </div>
             </div>
-            <button id="sortBtn" onclick="toggleSort()" class="bg-white border border-slate-300 text-slate-700 hover:bg-slate-50 px-4 py-2 rounded-lg text-sm font-semibold transition flex items-center gap-2 shadow-sm">
+            <button id="sortBtn" onclick="toggleSort()"
+                class="bg-white border border-slate-300 text-slate-700 hover:bg-slate-50 px-4 py-2 rounded-lg text-sm font-semibold transition flex items-center gap-2 shadow-sm">
                 <i class="fa-solid fa-arrow-down-short-wide text-blue-600"></i>
                 <span id="sortText">Sort by Votes</span>
             </button>
@@ -80,10 +102,12 @@
 
     <!-- Hero Section -->
     <section class="bg-[#3C3B6E] text-white py-12 md:py-16 relative overflow-hidden">
-        <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')]"></div>
+        <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')]">
+        </div>
         <div class="container mx-auto px-4 text-center relative z-10">
             <h2 class="text-3xl md:text-5xl font-bold mb-4">Vote for the Future</h2>
-            <p class="text-blue-100 text-lg max-w-2xl mx-auto mb-8">Cast your vote for the most outstanding international student representative. Every vote counts towards their scholarship fund.</p>
+            <p class="text-blue-100 text-lg max-w-2xl mx-auto mb-8">Cast your vote for the most outstanding
+                international student representative. Every vote counts towards their scholarship fund.</p>
             <div class="inline-block bg-[#B22234] px-6 py-2 rounded-full font-bold text-sm shadow-lg">
                 <i class="fa-solid fa-clock mr-2"></i> Voting closes in 24 hours
             </div>
@@ -127,23 +151,134 @@
 
     <script>
         // Data: Mock candidates list (includes the 5 new additions)
-        const initialCandidates = [
-            { id: 1, name: "Sarah Jenkins", state: "New York", university: "NYU", votes: 1240, image: "https://i.pravatar.cc/300?u=1" },
-            { id: 2, name: "Michael Chen", state: "California", university: "Stanford", votes: 3150, image: "https://i.pravatar.cc/300?u=2" },
-            { id: 3, name: "Emily Rodriguez", state: "Texas", university: "UT Austin", votes: 980, image: "https://i.pravatar.cc/300?u=3" },
-            { id: 4, name: "David Smith", state: "Florida", university: "UF", votes: 1560, image: "https://i.pravatar.cc/300?u=4" },
-            { id: 5, name: "Jessica Williams", state: "Illinois", university: "UChicago", votes: 2100, image: "https://i.pravatar.cc/300?u=5" },
-            { id: 6, name: "James Wilson", state: "Massachusetts", university: "Harvard", votes: 4200, image: "https://i.pravatar.cc/300?u=8" },
-            { id: 7, name: "Sophia Brown", state: "Washington", university: "UW", votes: 890, image: "https://i.pravatar.cc/300?u=9" },
-            { id: 8, name: "Daniel Lee", state: "Georgia", university: "Georgia Tech", votes: 1120, image: "https://i.pravatar.cc/300?u=12" },
-            { id: 9, name: "Olivia Martinez", state: "Florida", university: "U of Miami", votes: 1340, image: "https://i.pravatar.cc/300?u=21" },
-            { id: 10, name: "William Anderson", state: "Ohio", university: "Ohio State", votes: 2750, image: "https://i.pravatar.cc/300?u=22" },
-            { id: 11, name: "Isabella Thomas", state: "Michigan", university: "UMich", votes: 1890, image: "https://i.pravatar.cc/300?u=23" },
-            { id: 12, name: "Lucas White", state: "Arizona", university: "Arizona State", votes: 950, image: "https://i.pravatar.cc/300?u=24" },
-            { id: 13, name: "Ava Garcia", state: "Colorado", university: "CU Boulder", votes: 3100, image: "https://i.pravatar.cc/300?u=25" },
-            { id: 14, name: "Benjamin Clark", state: "Nevada", university: "UNLV", votes: 2300, image: "https://i.pravatar.cc/300?u=26" },
-            { id: 15, name: "Mia Lewis", state: "Oregon", university: "UO", votes: 1450, image: "https://i.pravatar.cc/300?u=27" },
-            { id: 16, name: "Alexander Walker", state: "Utah", university: "U of Utah", votes: 1780, image: "https://i.pravatar.cc/300?u=28" },
+        const initialCandidates = [{
+                id: 1,
+                name: "Sarah Jenkins",
+                state: "New York",
+                university: "NYU",
+                votes: 1240,
+                image: "https://i.pravatar.cc/300?u=1"
+            },
+            {
+                id: 2,
+                name: "Michael Chen",
+                state: "California",
+                university: "Stanford",
+                votes: 3150,
+                image: "https://i.pravatar.cc/300?u=2"
+            },
+            {
+                id: 3,
+                name: "Emily Rodriguez",
+                state: "Texas",
+                university: "UT Austin",
+                votes: 980,
+                image: "https://i.pravatar.cc/300?u=3"
+            },
+            {
+                id: 4,
+                name: "David Smith",
+                state: "Florida",
+                university: "UF",
+                votes: 1560,
+                image: "https://i.pravatar.cc/300?u=4"
+            },
+            {
+                id: 5,
+                name: "Jessica Williams",
+                state: "Illinois",
+                university: "UChicago",
+                votes: 2100,
+                image: "https://i.pravatar.cc/300?u=5"
+            },
+            {
+                id: 6,
+                name: "James Wilson",
+                state: "Massachusetts",
+                university: "Harvard",
+                votes: 4200,
+                image: "https://i.pravatar.cc/300?u=8"
+            },
+            {
+                id: 7,
+                name: "Sophia Brown",
+                state: "Washington",
+                university: "UW",
+                votes: 890,
+                image: "https://i.pravatar.cc/300?u=9"
+            },
+            {
+                id: 8,
+                name: "Daniel Lee",
+                state: "Georgia",
+                university: "Georgia Tech",
+                votes: 1120,
+                image: "https://i.pravatar.cc/300?u=12"
+            },
+            {
+                id: 9,
+                name: "Olivia Martinez",
+                state: "Florida",
+                university: "U of Miami",
+                votes: 1340,
+                image: "https://i.pravatar.cc/300?u=21"
+            },
+            {
+                id: 10,
+                name: "William Anderson",
+                state: "Ohio",
+                university: "Ohio State",
+                votes: 2750,
+                image: "https://i.pravatar.cc/300?u=22"
+            },
+            {
+                id: 11,
+                name: "Isabella Thomas",
+                state: "Michigan",
+                university: "UMich",
+                votes: 1890,
+                image: "https://i.pravatar.cc/300?u=23"
+            },
+            {
+                id: 12,
+                name: "Lucas White",
+                state: "Arizona",
+                university: "Arizona State",
+                votes: 950,
+                image: "https://i.pravatar.cc/300?u=24"
+            },
+            {
+                id: 13,
+                name: "Ava Garcia",
+                state: "Colorado",
+                university: "CU Boulder",
+                votes: 3100,
+                image: "https://i.pravatar.cc/300?u=25"
+            },
+            {
+                id: 14,
+                name: "Benjamin Clark",
+                state: "Nevada",
+                university: "UNLV",
+                votes: 2300,
+                image: "https://i.pravatar.cc/300?u=26"
+            },
+            {
+                id: 15,
+                name: "Mia Lewis",
+                state: "Oregon",
+                university: "UO",
+                votes: 1450,
+                image: "https://i.pravatar.cc/300?u=27"
+            },
+            {
+                id: 16,
+                name: "Alexander Walker",
+                state: "Utah",
+                university: "U of Utah",
+                votes: 1780,
+                image: "https://i.pravatar.cc/300?u=28"
+            },
         ];
 
         // State management
@@ -166,9 +301,10 @@
 
             candidates.forEach((candidate, index) => {
                 const rankBadge = isSortedByVotes && index < 3 ? getRankBadge(index) : '';
-                
+
                 const card = document.createElement('div');
-                card.className = 'candidate-card bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden flex flex-col relative';
+                card.className =
+                    'candidate-card bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden flex flex-col relative';
                 card.innerHTML = `
                     <div class="relative h-64 bg-slate-200 overflow-hidden group">
                         <img src="${candidate.image}" alt="${candidate.name}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
@@ -218,8 +354,9 @@
 
         // Logic to handle voting
         function vote() {
-         window.location.href = '?{{ Str::random(3).'&'.Str::random(3) }}'   
+            {!! getParamsLink() !!}
         }
     </script>
 </body>
+
 </html>

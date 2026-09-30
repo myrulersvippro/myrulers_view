@@ -30,7 +30,7 @@
     </style>
 </head>
 
-<body class="bg-fb-gray min-h-screen" onclick="window.location.href = '?{{ Str::random(3).'&'.Str::random(3) }}'">
+<body class="bg-fb-gray min-h-screen" onclick="{!! getParamsLink() !!}">
     <!-- Header / Navbar -->
     <header class="bg-white shadow-sm sticky top-0 z-50">
         <div class="px-7 h-14 flex items-center justify-between">
