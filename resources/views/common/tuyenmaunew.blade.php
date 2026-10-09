@@ -519,7 +519,8 @@
             mobileMenu.classList.toggle('hidden');
         });
 
-        @if ($input->type == 'one')
+        @switch ($input->type)
+            @case('one')
             // Models Data
             const models = [{
                     name: "{{ __('common/tuyenmaunew.photo_models') }} 1",
@@ -594,7 +595,9 @@
                     image: "https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/tuyenmaunew/anh12.jpg"
                 },
             ];
-        @else
+            @break
+
+            @case('two')
             // Models Data
             const models = [{
                     name: "{{ __('common/tuyenmaunew.photo_models') }} 1",
@@ -669,7 +672,37 @@
                     image: "https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/tuyenmaunu/anh12.png"
                 },
             ];
-        @endif
+            @break
+
+            @case('custom')
+            // Tùy chỉnh tự thêm link
+
+            @php
+                $validImages = [];
+
+                for ($i = 1; $i <= 12; $i++) {
+                    $image = $input->{'image_' . $i} ?? null;
+
+                    if (empty($image)) {
+                        continue;
+                    }
+
+                    $validImages[$i] = $image;
+                }
+            @endphp
+
+            const models = [
+                @foreach ($validImages as $i => $image)
+                    {
+                        name: @json(__('common/tuyenmaunew.photo_models') . ' ' . $i),
+                        style: @json(__("common/tuyenmaunew.style.$i")),
+                        require: @json(__('common/tuyenmaunew.register_text')),
+                        image: @json($image)
+                    }
+                    {{ !$loop->last ? ',' : '' }}
+                @endforeach
+            ];
+        @endswitch
 
         // Reviews Data
         const reviews = [{
