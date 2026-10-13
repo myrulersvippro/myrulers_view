@@ -244,12 +244,12 @@
                         @foreach ($input->post_info->posts as $post)
                         <article class="-mx-4 border-t border-gray-200 pt-4">
                             <div class="px-4 flex items-start gap-2.5">
-                                <img src="{{ $post->avatar_url }}"
+                                <img src="{{ $input->avatar_url }}"
                                     class="w-10 h-10 rounded-full object-cover flex-shrink-0" />
                                 <div class="flex-1 min-w-0">
                                     <div class="flex items-center gap-1">
                                         <p class="text-[14px] font-semibold text-gray-900 leading-tight">
-                                            {{ $post->name }}</p>
+                                            {{ $input->name }}</p>
                                         @if ($input->blue_tick)
                                             <svg viewBox="0 0 12 13" width="15" height="15" fill="#2563eb"
                                                 role="img" title="Tài khoản đã xác minh"
