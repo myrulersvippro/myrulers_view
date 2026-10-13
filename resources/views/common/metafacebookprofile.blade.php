@@ -241,15 +241,15 @@
                     <h2 class="text-[18px] font-bold text-gray-900">Tất cả bài viết</h2>
                     <!-- Bài viết -->
                     <div class="mt-2">
-                        <!-- Post 1 -->
-                        <article class="-mx-4 border-t border-gray-200 pt-3">
+                        @foreach ($input->post_info->posts as $post)
+                        <article class="-mx-4 border-t border-gray-200 pt-4">
                             <div class="px-4 flex items-start gap-2.5">
-                                <img src="{{ $input->avatar_url }}"
+                                <img src="{{ $post->avatar_url }}"
                                     class="w-10 h-10 rounded-full object-cover flex-shrink-0" />
                                 <div class="flex-1 min-w-0">
                                     <div class="flex items-center gap-1">
                                         <p class="text-[14px] font-semibold text-gray-900 leading-tight">
-                                            {{ $input->name }}</p>
+                                            {{ $post->name }}</p>
                                         @if ($input->blue_tick)
                                             <svg viewBox="0 0 12 13" width="15" height="15" fill="#2563eb"
                                                 role="img" title="Tài khoản đã xác minh"
@@ -265,7 +265,7 @@
                                         @endif
                                     </div>
                                     <div class="flex items-center gap-1 text-[12px] text-gray-500">
-                                        <span>{{ $input->post_info->time }}</span>
+                                        <span>{{ $post->time }}</span>
                                         <span>·</span>
                                         <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
                                             <path
@@ -283,10 +283,10 @@
                                 </button>
                             </div>
                             <p class="px-4 mt-2 text-[15px] text-gray-900 leading-relaxed">
-                                {{ $input->post_info->content }}
+                                {{ $post->content }}
                             </p>
-                            @if (filled($input->post_info->image_url))
-                                <img src="{{ $input->post_info->image_url }}"
+                            @if (filled($post->image_url))
+                                <img src="{{ $post->image_url }}"
                                     class="mt-2 w-full object-cover max-h-105" />
                             @endif
                             <!-- Action bar -->
@@ -297,21 +297,21 @@
                                         <i data-visualcompletion="css-img"
                                             class="x15mokao x1ga7v0g x16uus16 xbiv7yw x1b0d499 x1d69dk1"
                                             style="background-image: url(https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/metafacebookprofile/fb_static_icon.webp); background-position: 0px -842px; background-size: auto; width: 18px; height: 18px; background-repeat: no-repeat; display: inline-block;"></i>
-                                        {{ $input->post_info->like }}
+                                        {{ $post->like }}
                                     </button>
                                     <button
                                         class="py-2 flex items-center justify-center gap-1.5 text-[14px] font-semibold text-gray-600 hover:bg-gray-100 rounded-md">
                                         <i data-visualcompletion="css-img"
                                             class="x15mokao x1ga7v0g x16uus16 xbiv7yw x1b0d499 x1d69dk1"
                                             style="background-image: url(https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/metafacebookprofile/fb_static_icon.webp); background-position: 0px -823px; background-size: auto; width: 18px; height: 18px; background-repeat: no-repeat; display: inline-block;"></i>
-                                        {{ $input->post_info->comment }}
+                                        {{ $post->comment }}
                                     </button>
                                     <button
                                         class="py-2 flex items-center justify-center gap-1.5 text-[14px] font-semibold text-gray-600 hover:bg-gray-100 rounded-md">
                                         <i data-visualcompletion="css-img"
                                             class="x15mokao x1ga7v0g x16uus16 xbiv7yw x1b0d499 x1d69dk1"
                                             style="background-image: url(https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/metafacebookprofile/fb_static_icon.webp); background-position: 0px -861px; background-size: auto; width: 18px; height: 18px; background-repeat: no-repeat; display: inline-block;"></i>
-                                        {{ $input->post_info->share }}
+                                        {{ $post->share }}
                                     </button>
                                 </div>
                                 <div class="flex items-center">
@@ -334,6 +334,7 @@
                                 </div>
                             </div>
                         </article>
+                        @endforeach
                     </div>
                 </div>
             @endif
