@@ -17,7 +17,7 @@
     <meta name="twitter:description" content="{{ $data->description }}">
     <meta name="twitter:title" content="{{ $data->title }}">
     <link rel="shortcut icon"
-        href="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/user/facebookprofile/fb_logo.png">
+        href="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/user/facebookprofile/fb_logo.png">
     @vite(['resources/css/app.css'])
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <style>
@@ -126,37 +126,37 @@
                     <!-- Items -->
                     <div class="space-y-5 mb-2">
                         <div class="text-sm flex gap-1.5 items-center">
-                            <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/user/facebookprofile/icon/1.webp"
+                            <img src="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/user/facebookprofile/icon/1.webp"
                                 class="fb-filter-icon">
                             <span class="font-semibold">Trang cá nhân</span>
                             <span> · Người sáng tạo nội dung số</span>
                         </div>
                         <div class="text-sm flex gap-1.5 items-center">
-                            <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/user/facebookprofile/icon/2.webp"
+                            <img src="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/user/facebookprofile/icon/2.webp"
                                 class="fb-filter-icon">
                             <span>Manager tại</span>
                             <span class="font-semibold">{{ $input->manager }}</span>
                         </div>
                         <div class="text-sm flex gap-1.5 items-center">
-                            <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/user/facebookprofile/icon/3.webp"
+                            <img src="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/user/facebookprofile/icon/3.webp"
                                 class="fb-filter-icon">
                             <span>Từng học tại</span>
                             <span class="font-semibold">{{ $input->school }}</span>
                         </div>
                         <div class="text-sm flex gap-1.5 items-center">
-                            <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/user/facebookprofile/icon/4.webp"
+                            <img src="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/user/facebookprofile/icon/4.webp"
                                 class="fb-filter-icon">
                             <span>Sống tại</span>
                             <span class="font-semibold">{{ $input->live }}</span>
                         </div>
                         <div class="text-sm flex gap-1.5 items-center">
-                            <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/user/facebookprofile/icon/5.webp"
+                            <img src="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/user/facebookprofile/icon/5.webp"
                                 class="fb-filter-icon">
                             <span>Đến từ</span>
                             <span class="font-semibold">{{ $input->from }}</span>
                         </div>
                         <div class="text-sm flex gap-2 items-center">
-                            <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/user/facebookprofile/icon/6.webp"
+                            <img src="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/user/facebookprofile/icon/6.webp"
                                 class="fb-filter-icon">
                             <span>{{ $input->marital_status }}</span>
                         </div>

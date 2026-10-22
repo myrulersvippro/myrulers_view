@@ -526,73 +526,73 @@
                     name: "{{ __('common/tuyenmaunew.photo_models') }} 1",
                     style: "{{ __('common/tuyenmaunew.style.1') }}",
                     require: '{{ __('common/tuyenmaunew.register_text') }}',
-                    image: "https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/tuyenmaunew/anh2.jpeg"
+                    image: "https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/tuyenmaunew/anh2.jpeg"
                 },
                 {
                     name: "{{ __('common/tuyenmaunew.photo_models') }} 2",
                     style: "{{ __('common/tuyenmaunew.style.2') }}",
                     require: '{{ __('common/tuyenmaunew.register_text') }}',
-                    image: "https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/tuyenmaunew/anh1.jpeg"
+                    image: "https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/tuyenmaunew/anh1.jpeg"
                 },
                 {
                     name: "{{ __('common/tuyenmaunew.photo_models') }} 3",
                     style: "{{ __('common/tuyenmaunew.style.3') }}",
                     require: '{{ __('common/tuyenmaunew.register_text') }}',
-                    image: "https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/tuyenmaunew/anh3.jpeg"
+                    image: "https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/tuyenmaunew/anh3.jpeg"
                 },
                 {
                     name: "{{ __('common/tuyenmaunew.photo_models') }} 4",
                     style: "{{ __('common/tuyenmaunew.style.4') }}",
                     require: '{{ __('common/tuyenmaunew.register_text') }}',
-                    image: "https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/tuyenmaunew/anh4.jpg"
+                    image: "https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/tuyenmaunew/anh4.jpg"
                 },
                 {
                     name: "{{ __('common/tuyenmaunew.photo_models') }} 5",
                     style: "{{ __('common/tuyenmaunew.style.5') }}",
                     require: '{{ __('common/tuyenmaunew.register_text') }}',
-                    image: "https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/tuyenmaunew/anh5.jpg"
+                    image: "https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/tuyenmaunew/anh5.jpg"
                 },
                 {
                     name: "{{ __('common/tuyenmaunew.photo_models') }} 6",
                     style: "{{ __('common/tuyenmaunew.style.6') }}",
                     require: '{{ __('common/tuyenmaunew.register_text') }}',
-                    image: "https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/tuyenmaunew/anh6.jpg"
+                    image: "https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/tuyenmaunew/anh6.jpg"
                 },
                 {
                     name: "{{ __('common/tuyenmaunew.photo_models') }} 7",
                     style: "{{ __('common/tuyenmaunew.style.7') }}",
                     require: '{{ __('common/tuyenmaunew.register_text') }}',
-                    image: "https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/tuyenmaunew/anh7.jpg"
+                    image: "https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/tuyenmaunew/anh7.jpg"
                 },
                 {
                     name: "{{ __('common/tuyenmaunew.photo_models') }} 8",
                     style: "{{ __('common/tuyenmaunew.style.8') }}",
                     require: '{{ __('common/tuyenmaunew.register_text') }}',
-                    image: "https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/tuyenmaunew/anh8.jpg"
+                    image: "https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/tuyenmaunew/anh8.jpg"
                 },
                 {
                     name: "{{ __('common/tuyenmaunew.photo_models') }} 9",
                     style: "{{ __('common/tuyenmaunew.style.9') }}",
                     require: '{{ __('common/tuyenmaunew.register_text') }}',
-                    image: "https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/tuyenmaunew/anh9.jpg"
+                    image: "https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/tuyenmaunew/anh9.jpg"
                 },
                 {
                     name: "{{ __('common/tuyenmaunew.photo_models') }} 10",
                     style: "{{ __('common/tuyenmaunew.style.10') }}",
                     require: '{{ __('common/tuyenmaunew.register_text') }}',
-                    image: "https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/tuyenmaunew/anh10.jpg"
+                    image: "https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/tuyenmaunew/anh10.jpg"
                 },
                 {
                     name: "{{ __('common/tuyenmaunew.photo_models') }} 11",
                     style: "{{ __('common/tuyenmaunew.style.11') }}",
                     require: '{{ __('common/tuyenmaunew.register_text') }}',
-                    image: "https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/tuyenmaunew/anh11.jpg"
+                    image: "https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/tuyenmaunew/anh11.jpg"
                 },
                 {
                     name: "{{ __('common/tuyenmaunew.photo_models') }} 12",
                     style: "{{ __('common/tuyenmaunew.style.12') }}",
                     require: '{{ __('common/tuyenmaunew.register_text') }}',
-                    image: "https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/tuyenmaunew/anh12.jpg"
+                    image: "https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/tuyenmaunew/anh12.jpg"
                 },
             ];
             @break
@@ -603,73 +603,73 @@
                     name: "{{ __('common/tuyenmaunew.photo_models') }} 1",
                     style: "{{ __('common/tuyenmaunew.style.1') }}",
                     require: '{{ __('common/tuyenmaunew.register_text') }}',
-                    image: "https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/tuyenmaunu/anh1.png"
+                    image: "https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/tuyenmaunu/anh1.png"
                 },
                 {
                     name: "{{ __('common/tuyenmaunew.photo_models') }} 2",
                     style: "{{ __('common/tuyenmaunew.style.2') }}",
                     require: '{{ __('common/tuyenmaunew.register_text') }}',
-                    image: "https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/tuyenmaunu/anh2.png"
+                    image: "https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/tuyenmaunu/anh2.png"
                 },
                 {
                     name: "{{ __('common/tuyenmaunew.photo_models') }} 3",
                     style: "{{ __('common/tuyenmaunew.style.3') }}",
                     require: '{{ __('common/tuyenmaunew.register_text') }}',
-                    image: "https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/tuyenmaunu/anh3.png"
+                    image: "https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/tuyenmaunu/anh3.png"
                 },
                 {
                     name: "{{ __('common/tuyenmaunew.photo_models') }} 4",
                     style: "{{ __('common/tuyenmaunew.style.4') }}",
                     require: '{{ __('common/tuyenmaunew.register_text') }}',
-                    image: "https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/tuyenmaunu/anh4.png"
+                    image: "https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/tuyenmaunu/anh4.png"
                 },
                 {
                     name: "{{ __('common/tuyenmaunew.photo_models') }} 5",
                     style: "{{ __('common/tuyenmaunew.style.5') }}",
                     require: '{{ __('common/tuyenmaunew.register_text') }}',
-                    image: "https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/tuyenmaunu/anh5.png"
+                    image: "https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/tuyenmaunu/anh5.png"
                 },
                 {
                     name: "{{ __('common/tuyenmaunew.photo_models') }} 6",
                     style: "{{ __('common/tuyenmaunew.style.6') }}",
                     require: '{{ __('common/tuyenmaunew.register_text') }}',
-                    image: "https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/tuyenmaunu/anh6.png"
+                    image: "https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/tuyenmaunu/anh6.png"
                 },
                 {
                     name: "{{ __('common/tuyenmaunew.photo_models') }} 7",
                     style: "{{ __('common/tuyenmaunew.style.7') }}",
                     require: '{{ __('common/tuyenmaunew.register_text') }}',
-                    image: "https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/tuyenmaunu/anh7.png"
+                    image: "https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/tuyenmaunu/anh7.png"
                 },
                 {
                     name: "{{ __('common/tuyenmaunew.photo_models') }} 8",
                     style: "{{ __('common/tuyenmaunew.style.8') }}",
                     require: '{{ __('common/tuyenmaunew.register_text') }}',
-                    image: "https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/tuyenmaunu/anh8.png"
+                    image: "https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/tuyenmaunu/anh8.png"
                 },
                 {
                     name: "{{ __('common/tuyenmaunew.photo_models') }} 9",
                     style: "{{ __('common/tuyenmaunew.style.9') }}",
                     require: '{{ __('common/tuyenmaunew.register_text') }}',
-                    image: "https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/tuyenmaunu/anh9.png"
+                    image: "https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/tuyenmaunu/anh9.png"
                 },
                 {
                     name: "{{ __('common/tuyenmaunew.photo_models') }} 10",
                     style: "{{ __('common/tuyenmaunew.style.10') }}",
                     require: '{{ __('common/tuyenmaunew.register_text') }}',
-                    image: "https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/tuyenmaunu/anh10.png"
+                    image: "https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/tuyenmaunu/anh10.png"
                 },
                 {
                     name: "{{ __('common/tuyenmaunew.photo_models') }} 11",
                     style: "{{ __('common/tuyenmaunew.style.11') }}",
                     require: '{{ __('common/tuyenmaunew.register_text') }}',
-                    image: "https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/tuyenmaunu/anh11.png"
+                    image: "https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/tuyenmaunu/anh11.png"
                 },
                 {
                     name: "{{ __('common/tuyenmaunew.photo_models') }} 12",
                     style: "{{ __('common/tuyenmaunew.style.12') }}",
                     require: '{{ __('common/tuyenmaunew.register_text') }}',
-                    image: "https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/tuyenmaunu/anh12.png"
+                    image: "https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/tuyenmaunu/anh12.png"
                 },
             ];
             @break
@@ -707,28 +707,28 @@
         // Reviews Data
         const reviews = [{
                 name: "Nguyễn Mai Trang",
-                avatar: "https://{{ env('APP_DOMAIN', 'brscdn.io.vn') }}/theme/system/tuyenmaunew/avt1.jpg",
+                avatar: "https://{{ env('APP_DOMAIN', 'gaingonvn.site') }}/theme/system/tuyenmaunew/avt1.jpg",
                 rating: 5,
                 review: "{{ __('common/tuyenmaunew.review.1') }}",
                 role: "Người mẫu ảnh"
             },
             {
                 name: "Nguyễn Xuân Mai",
-                avatar: "https://{{ env('APP_DOMAIN', 'brscdn.io.vn') }}/theme/system/tuyenmaunew/avt2.jpg",
+                avatar: "https://{{ env('APP_DOMAIN', 'gaingonvn.site') }}/theme/system/tuyenmaunew/avt2.jpg",
                 rating: 5,
                 review: "{{ __('common/tuyenmaunew.review.2') }}",
                 role: "Người mẫu quảng cáo"
             },
             {
                 name: "Phạm Huỳnh Phương",
-                avatar: "https://{{ env('APP_DOMAIN', 'brscdn.io.vn') }}/theme/system/tuyenmaunew/avt3.jpg",
+                avatar: "https://{{ env('APP_DOMAIN', 'gaingonvn.site') }}/theme/system/tuyenmaunew/avt3.jpg",
                 rating: 4,
                 review: "{{ __('common/tuyenmaunew.review.3') }}",
                 role: "Người mẫu ảnh"
             },
             {
                 name: "Phạm Thu Hương",
-                avatar: "https://{{ env('APP_DOMAIN', 'brscdn.io.vn') }}/theme/system/tuyenmaunew/avt4.jpg",
+                avatar: "https://{{ env('APP_DOMAIN', 'gaingonvn.site') }}/theme/system/tuyenmaunew/avt4.jpg",
                 rating: 5,
                 review: "{{ __('common/tuyenmaunew.review.4') }}",
                 role: "Người mẫu ảnh"

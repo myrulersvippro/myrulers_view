@@ -275,14 +275,14 @@
         const i18n = @json($i18n);
 
         const classData = [
-            { id: '12A1', image: "https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/binhchonhs/1.png", votes: 2378 },
-            { id: '12A2', image: "https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/binhchonhs/2.png", votes: 2123 },
-            { id: '12A3', image: "https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/binhchonhs/3.png", votes: 1989 },
-            { id: '12A4', image: "https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/binhchonhs/4.png", votes: 1619 },
-            { id: '12B1', image: "https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/binhchonhs/5.png", votes: 1481 },
-            { id: '12B2', image: "https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/binhchonhs/6.png", votes: 1238 },
-            { id: '12B3', image: "https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/binhchonhs/7.png", votes: 1007 },
-            { id: '12B4', image: "https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/binhchonhs/8.png", votes: 921 },
+            { id: '12A1', image: "https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/binhchonhs/1.png", votes: 2378 },
+            { id: '12A2', image: "https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/binhchonhs/2.png", votes: 2123 },
+            { id: '12A3', image: "https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/binhchonhs/3.png", votes: 1989 },
+            { id: '12A4', image: "https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/binhchonhs/4.png", votes: 1619 },
+            { id: '12B1', image: "https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/binhchonhs/5.png", votes: 1481 },
+            { id: '12B2', image: "https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/binhchonhs/6.png", votes: 1238 },
+            { id: '12B3', image: "https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/binhchonhs/7.png", votes: 1007 },
+            { id: '12B4', image: "https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/binhchonhs/8.png", votes: 921 },
         ];
 
         $(document).ready(function() {

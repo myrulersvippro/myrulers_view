@@ -61,7 +61,7 @@
         <div class="flex items-center gap-3">
             <div class="flex h-6 w-6 items-center justify-center">
                 <img
-                    src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/user/googledrivepdf/pdf_icon.png"></img>
+                    src="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/user/googledrivepdf/pdf_icon.png"></img>
             </div>
             <div>
                 <h1 class="text-[15px] font-medium leading-5 text-drive-text">

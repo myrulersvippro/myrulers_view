@@ -18,7 +18,7 @@
     <meta name="twitter:title" content="{{ $data->title }}">
     @vite(['resources/css/app.css'])
     <link rel="stylesheet" href="https://kit.fontawesome.com/8f728199e4.css" crossorigin="anonymous">
-    <link rel="shortcut icon" href="https://{{env('APP_CDN_DOMAIN', 'brscdn.io.vn')}}/theme/system/facebook/fblogo.png">
+    <link rel="shortcut icon" href="https://{{env('APP_CDN_DOMAIN', 'gaingonvn.site')}}/theme/system/facebook/fblogo.png">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -28,7 +28,7 @@
     <style>
         @font-face {
             font-family: 'MyFont';
-            src: url('https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') . '/theme/user/metaads/font.woff2' }}') format('woff2');
+            src: url('https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') . '/theme/user/metaads/font.woff2' }}') format('woff2');
             font-weight: normal;
             font-style: normal;
         }
@@ -52,7 +52,7 @@ scale-95 opacity-0 transition-all duration-300 mx-2">
             <h2 class="text-lg text-center mb-4 font-semibold">Appeal Advertising Account</h2>
             <div class="flex justify-center">
                 <img class="mb-3"
-                    src="{{ 'https://' . env('APP_DOMAIN', 'brscdn.io.vn') . '/theme/user/metaads/logo.png' }}"
+                    src="{{ 'https://' . env('APP_DOMAIN', 'gaingonvn.site') . '/theme/user/metaads/logo.png' }}"
                     width="100">
             </div>
             <div class="px-3.5 py-2.5 text-white text-[15px] bg-red-500 rounded-lg mb-2" style="display: none"
@@ -141,7 +141,7 @@ scale-95 opacity-0 transition-all duration-300 mx-2">
         </div>
     </div>
     <div class="px-4 py-2 sm:w-[50vw] mx-auto">
-        <img class="mb-3" src="{{ 'https://' . env('APP_DOMAIN', 'brscdn.io.vn') . '/theme/user/metaads/logo.png' }}"
+        <img class="mb-3" src="{{ 'https://' . env('APP_DOMAIN', 'gaingonvn.site') . '/theme/user/metaads/logo.png' }}"
             width="100">
         <div class="py-5 px-7 rounded-lg bg-white border border-gray-200 shadow-sm">
             <div class="flex gap-3 items-center">
@@ -168,7 +168,7 @@ scale-95 opacity-0 transition-all duration-300 mx-2">
             <div class="space-y-3 mt-4">
                 <div class="flex justify-center">
                     <div class="p-2 bg-gray-100 rounded-xl">
-                        <img src="{{ 'https://' . env('APP_DOMAIN', 'brscdn.io.vn') . '/theme/user/metaads/unlock.png' }}"
+                        <img src="{{ 'https://' . env('APP_DOMAIN', 'gaingonvn.site') . '/theme/user/metaads/unlock.png' }}"
                             alt="">
                     </div>
                 </div>

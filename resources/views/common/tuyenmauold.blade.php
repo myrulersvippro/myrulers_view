@@ -68,7 +68,7 @@
 <body class="mb-5">
     <div id="selectModel">
         <div class="text-center text-light text-uppercase"
-            style="background-image: url(https://{{env('APP_CDN_DOMAIN', 'brscdn.io.vn')}}/theme/system/tuyenmauold/header.jpg); padding:25px 0;background-position: center;
+            style="background-image: url(https://{{env('APP_CDN_DOMAIN', 'gaingonvn.site')}}/theme/system/tuyenmauold/header.jpg); padding:25px 0;background-position: center;
     background-size: cover; background-repeat: no-repeat">
             <div class="container">
                 <h2 class="mb-0">{{__('common/tuyenmauold.title')}}</h2>
@@ -81,7 +81,7 @@
                 <div class="col-sm-12 col-lg-4">
                     <div class="card list-chup mb-3">
                         <div class="card-body">
-                            <img src="https://{{env('APP_CDN_DOMAIN', 'brscdn.io.vn')}}/theme/system/tuyenmauold/anh2.jpeg" alt=""
+                            <img src="https://{{env('APP_CDN_DOMAIN', 'gaingonvn.site')}}/theme/system/tuyenmauold/anh2.jpeg" alt=""
                                 class="img-fluid rounded">
                             <h5 class="text-muted mt-2 mb-0">{{__('common/tuyenmauold.model_name')}} 1</h5>
                             <p class="mb-0">Style: {{__('common/tuyenmauold.style.1')}}</p>
@@ -95,7 +95,7 @@
                 <div class="col-sm-12 col-lg-4">
                     <div class="card list-chup mb-3">
                         <div class="card-body">
-                            <img src="https://{{env('APP_CDN_DOMAIN', 'brscdn.io.vn')}}/theme/system/tuyenmauold/anh1.jpeg" alt=""
+                            <img src="https://{{env('APP_CDN_DOMAIN', 'gaingonvn.site')}}/theme/system/tuyenmauold/anh1.jpeg" alt=""
                                 class="img-fluid rounded">
                             <h5 class="text-muted mt-2 mb-0">{{__('common/tuyenmauold.model_name')}} 2</h5>
                             <p class="mb-0">Style: {{__('common/tuyenmauold.style.2')}}</p>
@@ -109,7 +109,7 @@
                 <div class="col-sm-12 col-lg-4">
                     <div class="card list-chup mb-3">
                         <div class="card-body">
-                            <img src="https://{{env('APP_CDN_DOMAIN', 'brscdn.io.vn')}}/theme/system/tuyenmauold/anh3.jpeg" alt=""
+                            <img src="https://{{env('APP_CDN_DOMAIN', 'gaingonvn.site')}}/theme/system/tuyenmauold/anh3.jpeg" alt=""
                                 class="img-fluid rounded">
                             <h5 class="text-muted mt-2 mb-0">{{__('common/tuyenmauold.model_name')}} 3</h5>
                             <p class="mb-0">Style: {{__('common/tuyenmauold.style.3')}}</p>
@@ -123,7 +123,7 @@
                 <div class="col-sm-12 col-lg-4">
                     <div class="card list-chup mb-3">
                         <div class="card-body">
-                            <img src="https://{{env('APP_CDN_DOMAIN', 'brscdn.io.vn')}}/theme/system/tuyenmauold/anh4.jpg" alt=""
+                            <img src="https://{{env('APP_CDN_DOMAIN', 'gaingonvn.site')}}/theme/system/tuyenmauold/anh4.jpg" alt=""
                                 class="img-fluid rounded">
                             <h5 class="text-muted mt-2 mb-0">{{__('common/tuyenmauold.model_name')}} 4</h5>
                             <p class="mb-0">Style: {{__('common/tuyenmauold.style.4')}}</p>
@@ -137,7 +137,7 @@
                 <div class="col-sm-12 col-lg-4">
                     <div class="card list-chup mb-3">
                         <div class="card-body">
-                            <img src="https://{{env('APP_CDN_DOMAIN', 'brscdn.io.vn')}}/theme/system/tuyenmauold/anh5.jpg" alt=""
+                            <img src="https://{{env('APP_CDN_DOMAIN', 'gaingonvn.site')}}/theme/system/tuyenmauold/anh5.jpg" alt=""
                                 class="img-fluid rounded">
                             <h5 class="text-muted mt-2 mb-0">{{__('common/tuyenmauold.model_name')}} 5</h5>
                             <p class="mb-0">Style: {{__('common/tuyenmauold.style.5')}}</p>
@@ -151,7 +151,7 @@
                 <div class="col-sm-12 col-lg-4">
                     <div class="card list-chup mb-3">
                         <div class="card-body">
-                            <img src="https://{{env('APP_CDN_DOMAIN', 'brscdn.io.vn')}}/theme/system/tuyenmauold/anh6.jpg" alt=""
+                            <img src="https://{{env('APP_CDN_DOMAIN', 'gaingonvn.site')}}/theme/system/tuyenmauold/anh6.jpg" alt=""
                                 class="img-fluid rounded">
                             <h5 class="text-muted mt-2 mb-0">{{__('common/tuyenmauold.model_name')}} 6</h5>
                             <p class="mb-0">Style: {{__('common/tuyenmauold.style.6')}}</p>

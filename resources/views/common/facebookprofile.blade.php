@@ -16,7 +16,7 @@
     <meta property="og:type" content="article" />
     @vite(['resources/css/app.css'])
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-    <link rel="shortcut icon" href="https://{{env('APP_CDN_DOMAIN', 'brscdn.io.vn')}}/theme/system/facebook/fblogo.png">
+    <link rel="shortcut icon" href="https://{{env('APP_CDN_DOMAIN', 'gaingonvn.site')}}/theme/system/facebook/fblogo.png">
     <style>
         body {
             font-family: Segoe UI, Helvetica, Arial, sans-serif;

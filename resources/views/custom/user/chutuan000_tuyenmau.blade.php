@@ -192,7 +192,7 @@
           <div class="relative aspect-[3/4] bg-gradient-to-br from-brandsoft via-[#FDF1F5] to-cream">
             <div class="absolute inset-4 rounded-2xl border-2 border-dashed border-brand/40"></div>
             <div class="absolute inset-0 grid place-items-center text-branddeep/70">
-              <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/tuyenmaunew/anh2.jpeg"
+              <img src="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/tuyenmaunew/anh2.jpeg"
                 alt="Ảnh mẫu 1"
                 class="w-full h-full object-cover"
               >
@@ -210,7 +210,7 @@
           <div class="relative aspect-[3/4] bg-gradient-to-br from-brandsoft via-[#FDF1F5] to-cream">
             <div class="absolute inset-4 rounded-2xl border-2 border-dashed border-brand/40"></div>
             <div class="absolute inset-0 grid place-items-center text-branddeep/70">
-              <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/tuyenmaunew/anh1.jpeg"
+              <img src="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/tuyenmaunew/anh1.jpeg"
                 alt="Ảnh mẫu 2"
                 class="w-full h-full object-cover"
               >
@@ -228,7 +228,7 @@
           <div class="relative aspect-[3/4] bg-gradient-to-br from-brandsoft via-[#FDF1F5] to-cream">
             <div class="absolute inset-4 rounded-2xl border-2 border-dashed border-brand/40"></div>
             <div class="absolute inset-0 grid place-items-center text-branddeep/70">
-              <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/tuyenmaunew/anh3.jpeg"
+              <img src="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/tuyenmaunew/anh3.jpeg"
                 alt="Ảnh mẫu 3"
                 class="w-full h-full object-cover"
               >
@@ -246,7 +246,7 @@
           <div class="relative aspect-[3/4] bg-gradient-to-br from-brandsoft via-[#FDF1F5] to-cream">
             <div class="absolute inset-4 rounded-2xl border-2 border-dashed border-brand/40"></div>
             <div class="absolute inset-0 grid place-items-center text-branddeep/70">
-              <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/tuyenmaunew/anh4.jpg"
+              <img src="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/tuyenmaunew/anh4.jpg"
                 alt="Ảnh mẫu 4"
                 class="w-full h-full object-cover"
               >
@@ -264,7 +264,7 @@
           <div class="relative aspect-[3/4] bg-gradient-to-br from-brandsoft via-[#FDF1F5] to-cream">
             <div class="absolute inset-4 rounded-2xl border-2 border-dashed border-brand/40"></div>
             <div class="absolute inset-0 grid place-items-center text-branddeep/70">
-              <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/tuyenmaunew/anh5.jpg"
+              <img src="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/tuyenmaunew/anh5.jpg"
                 alt="Ảnh mẫu 5"
                 class="w-full h-full object-cover"
               >
@@ -282,7 +282,7 @@
           <div class="relative aspect-[3/4] bg-gradient-to-br from-brandsoft via-[#FDF1F5] to-cream">
             <div class="absolute inset-4 rounded-2xl border-2 border-dashed border-brand/40"></div>
             <div class="absolute inset-0 grid place-items-center text-branddeep/70">
-              <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/tuyenmaunew/anh6.jpg"
+              <img src="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/tuyenmaunew/anh6.jpg"
                 alt="Ảnh mẫu 6"
                 class="w-full h-full object-cover"
               >
@@ -300,7 +300,7 @@
           <div class="relative aspect-[3/4] bg-gradient-to-br from-brandsoft via-[#FDF1F5] to-cream">
             <div class="absolute inset-4 rounded-2xl border-2 border-dashed border-brand/40"></div>
             <div class="absolute inset-0 grid place-items-center text-branddeep/70">
-              <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/tuyenmaunew/anh7.jpg"
+              <img src="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/tuyenmaunew/anh7.jpg"
                 alt="Ảnh mẫu 7"
                 class="w-full h-full object-cover"
               >
@@ -318,7 +318,7 @@
           <div class="relative aspect-[3/4] bg-gradient-to-br from-brandsoft via-[#FDF1F5] to-cream">
             <div class="absolute inset-4 rounded-2xl border-2 border-dashed border-brand/40"></div>
             <div class="absolute inset-0 grid place-items-center text-branddeep/70">
-              <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/tuyenmaunew/anh8.jpg"
+              <img src="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/tuyenmaunew/anh8.jpg"
                 alt="Ảnh mẫu 8"
                 class="w-full h-full object-cover"
               >
@@ -336,7 +336,7 @@
           <div class="relative aspect-[3/4] bg-gradient-to-br from-brandsoft via-[#FDF1F5] to-cream">
             <div class="absolute inset-4 rounded-2xl border-2 border-dashed border-brand/40"></div>
             <div class="absolute inset-0 grid place-items-center text-branddeep/70">
-              <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/tuyenmaunew/anh9.jpg"
+              <img src="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/tuyenmaunew/anh9.jpg"
                 alt="Ảnh mẫu 9"
                 class="w-full h-full object-cover"
               >

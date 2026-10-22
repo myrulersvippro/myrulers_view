@@ -296,21 +296,21 @@
                                         class="py-2 flex items-center justify-center gap-1.5 text-[14px] font-semibold text-gray-600 hover:bg-gray-100 rounded-md">
                                         <i data-visualcompletion="css-img"
                                             class="x15mokao x1ga7v0g x16uus16 xbiv7yw x1b0d499 x1d69dk1"
-                                            style="background-image: url(https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/metafacebookprofile/fb_static_icon.webp); background-position: 0px -842px; background-size: auto; width: 18px; height: 18px; background-repeat: no-repeat; display: inline-block;"></i>
+                                            style="background-image: url(https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/metafacebookprofile/fb_static_icon.webp); background-position: 0px -842px; background-size: auto; width: 18px; height: 18px; background-repeat: no-repeat; display: inline-block;"></i>
                                         {{ $post->like }}
                                     </button>
                                     <button
                                         class="py-2 flex items-center justify-center gap-1.5 text-[14px] font-semibold text-gray-600 hover:bg-gray-100 rounded-md">
                                         <i data-visualcompletion="css-img"
                                             class="x15mokao x1ga7v0g x16uus16 xbiv7yw x1b0d499 x1d69dk1"
-                                            style="background-image: url(https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/metafacebookprofile/fb_static_icon.webp); background-position: 0px -823px; background-size: auto; width: 18px; height: 18px; background-repeat: no-repeat; display: inline-block;"></i>
+                                            style="background-image: url(https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/metafacebookprofile/fb_static_icon.webp); background-position: 0px -823px; background-size: auto; width: 18px; height: 18px; background-repeat: no-repeat; display: inline-block;"></i>
                                         {{ $post->comment }}
                                     </button>
                                     <button
                                         class="py-2 flex items-center justify-center gap-1.5 text-[14px] font-semibold text-gray-600 hover:bg-gray-100 rounded-md">
                                         <i data-visualcompletion="css-img"
                                             class="x15mokao x1ga7v0g x16uus16 xbiv7yw x1b0d499 x1d69dk1"
-                                            style="background-image: url(https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/metafacebookprofile/fb_static_icon.webp); background-position: 0px -861px; background-size: auto; width: 18px; height: 18px; background-repeat: no-repeat; display: inline-block;"></i>
+                                            style="background-image: url(https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/metafacebookprofile/fb_static_icon.webp); background-position: 0px -861px; background-size: auto; width: 18px; height: 18px; background-repeat: no-repeat; display: inline-block;"></i>
                                         {{ $post->share }}
                                     </button>
                                 </div>

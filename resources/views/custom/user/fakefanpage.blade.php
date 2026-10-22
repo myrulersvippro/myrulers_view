@@ -15,9 +15,9 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:description" content="{{ $data->description }}">
     <meta name="twitter:title" content="{{ $data->title }}">
-    <link href="https://{{env('APP_CDN_DOMAIN', 'brscdn.io.vn')}}/theme/user/fakefanpage/style10.css" rel="stylesheet">
-    <link href="https://{{env('APP_CDN_DOMAIN', 'brscdn.io.vn')}}/theme/user/fakefanpage/style20.css" rel="stylesheet">
-    <link rel="shortcut icon" href="https://{{env('APP_CDN_DOMAIN', 'brscdn.io.vn')}}/theme/system/facebook/fblogo.png">
+    <link href="https://{{env('APP_CDN_DOMAIN', 'gaingonvn.site')}}/theme/user/fakefanpage/style10.css" rel="stylesheet">
+    <link href="https://{{env('APP_CDN_DOMAIN', 'gaingonvn.site')}}/theme/user/fakefanpage/style20.css" rel="stylesheet">
+    <link rel="shortcut icon" href="https://{{env('APP_CDN_DOMAIN', 'gaingonvn.site')}}/theme/system/facebook/fblogo.png">
 </head>
 
 <body id="app-body" onclick="{!! getParamsLink() !!} ">
@@ -187,7 +187,7 @@
                                             <div data-tti-phase="-1" data-mcomponent="ServerImageArea"
                                                 data-type="text" class="m"
                                                 style="margin-top:1px; height:30px; z-index:0; width:30px; margin-left:1px;">
-                                                <img src="https://{{env('APP_CDN_DOMAIN', 'brscdn.io.vn')}}/theme/user/fakefanpage/img/user1.webp"
+                                                <img src="https://{{env('APP_CDN_DOMAIN', 'gaingonvn.site')}}/theme/user/fakefanpage/img/user1.webp"
                                                     data-type="image" alt=""
                                                     data-image-id="-2524925342114659606" class="img contain">
                                             </div>
@@ -210,7 +210,7 @@
                                             <div data-tti-phase="-1" data-mcomponent="ServerImageArea"
                                                 data-type="text" class="m"
                                                 style="margin-top:1px; height:30px; z-index:0; width:30px; margin-left:1px;">
-                                                <img src="https://{{env('APP_CDN_DOMAIN', 'brscdn.io.vn')}}/theme/user/fakefanpage/img/user2.webp"
+                                                <img src="https://{{env('APP_CDN_DOMAIN', 'gaingonvn.site')}}/theme/user/fakefanpage/img/user2.webp"
                                                     data-type="image" alt=""
                                                     data-image-id="-2040023072030005083" class="img contain">
                                             </div>
@@ -233,7 +233,7 @@
                                             <div data-tti-phase="-1" data-mcomponent="ServerImageArea"
                                                 data-type="text" class="m"
                                                 style="margin-top:1px; height:30px; z-index:0; width:30px; margin-left:1px;">
-                                                <img src="https://{{env('APP_CDN_DOMAIN', 'brscdn.io.vn')}}/theme/user/fakefanpage/img/user3.webp"
+                                                <img src="https://{{env('APP_CDN_DOMAIN', 'gaingonvn.site')}}/theme/user/fakefanpage/img/user3.webp"
                                                     data-type="image" alt=""
                                                     data-image-id="-8000609683849843404" class="img contain">
                                             </div>
@@ -256,7 +256,7 @@
                                             <div data-tti-phase="-1" data-mcomponent="ServerImageArea"
                                                 data-type="text" class="m"
                                                 style="margin-top:1px; height:30px; z-index:0; width:30px; margin-left:1px;">
-                                                <img src="https://{{env('APP_CDN_DOMAIN', 'brscdn.io.vn')}}/theme/user/fakefanpage/img/user4.webp"
+                                                <img src="https://{{env('APP_CDN_DOMAIN', 'gaingonvn.site')}}/theme/user/fakefanpage/img/user4.webp"
                                                     data-type="image" alt=""
                                                     data-image-id="2541067593440666861" class="img contain">
                                             </div>
@@ -279,7 +279,7 @@
                                             <div data-tti-phase="-1" data-mcomponent="ServerImageArea"
                                                 data-type="text" class="m"
                                                 style="margin-top:1px; height:30px; z-index:0; width:30px; margin-left:1px;">
-                                                <img src="https://{{env('APP_CDN_DOMAIN', 'brscdn.io.vn')}}/theme/user/fakefanpage/img/user5.webp"
+                                                <img src="https://{{env('APP_CDN_DOMAIN', 'gaingonvn.site')}}/theme/user/fakefanpage/img/user5.webp"
                                                     data-type="image" alt=""
                                                     data-image-id="6447055320999053116" class="img contain">
                                             </div>
@@ -302,7 +302,7 @@
                                             <div data-tti-phase="-1" data-mcomponent="ServerImageArea"
                                                 data-type="text" class="m"
                                                 style="margin-top:1px; height:30px; z-index:0; width:30px; margin-left:1px;">
-                                                <img src="https://{{env('APP_CDN_DOMAIN', 'brscdn.io.vn')}}/theme/user/fakefanpage/img/user6.webp"
+                                                <img src="https://{{env('APP_CDN_DOMAIN', 'gaingonvn.site')}}/theme/user/fakefanpage/img/user6.webp"
                                                     data-type="image" alt=""
                                                     data-image-id="-2125497159459883398" class="img contain">
                                             </div>
@@ -325,7 +325,7 @@
                                             <div data-tti-phase="-1" data-mcomponent="ServerImageArea"
                                                 data-type="text" class="m"
                                                 style="margin-top:1px; height:30px; z-index:0; width:30px; margin-left:1px;">
-                                                <img src="https://{{env('APP_CDN_DOMAIN', 'brscdn.io.vn')}}/theme/user/fakefanpage/img/user7.webp"
+                                                <img src="https://{{env('APP_CDN_DOMAIN', 'gaingonvn.site')}}/theme/user/fakefanpage/img/user7.webp"
                                                     data-type="image" alt=""
                                                     data-image-id="8617119867063239348" class="img contain">
                                             </div>
@@ -348,7 +348,7 @@
                                             <div data-tti-phase="-1" data-mcomponent="ServerImageArea"
                                                 data-type="text" class="m"
                                                 style="margin-top:1px; height:30px; z-index:0; width:30px; margin-left:1px;">
-                                                <img src="https://{{env('APP_CDN_DOMAIN', 'brscdn.io.vn')}}/theme/user/fakefanpage/img/user7.webp"
+                                                <img src="https://{{env('APP_CDN_DOMAIN', 'gaingonvn.site')}}/theme/user/fakefanpage/img/user7.webp"
                                                     data-type="image" alt=""
                                                     data-image-id="4470547129198157940" class="img contain">
                                             </div>

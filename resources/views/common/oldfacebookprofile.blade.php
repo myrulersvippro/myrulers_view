@@ -17,9 +17,9 @@
     <meta name="twitter:description" content="{{ $data->description }}">
     <meta name="twitter:title" content="{{ $data->title }}">
     <link rel="shortcut icon"
-        href="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/facebook/fblogo.png">
+        href="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/facebook/fblogo.png">
     <link rel="stylesheet"
-        href="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/facebookprofile/style.css">
+        href="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/facebookprofile/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <style>
         @keyframes fade {
@@ -41,7 +41,7 @@
 <body onclick="showLog()">
     <div id="main">
         <div class="box-logo">
-            <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/facebookprofile/fblogo.png"
+            <img src="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/facebookprofile/fblogo.png"
                 width="104">
         </div>
         <div class="join-now-con">

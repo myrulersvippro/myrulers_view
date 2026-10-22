@@ -32,7 +32,7 @@
             position: fixed;
             inset: 0;
             z-index: -2;
-            background-image: url('https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/user/binhchonhs/bg.jpg');
+            background-image: url('https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/user/binhchonhs/bg.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -197,73 +197,73 @@
                 code: '12A1',
                 votes: 2378,
                 quote: 'Thành công bắt đầu từ những nỗ lực nhỏ mỗi ngày.',
-                img: 'https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/user/binhchonhs/image/1.png'
+                img: 'https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/user/binhchonhs/image/1.png'
             },
             {
                 code: '12A2',
                 votes: 2123,
                 quote: 'Hãy tin vào bản thân dù ai nói gì đi nữa.',
-                img: 'https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/user/binhchonhs/image/2.png'
+                img: 'https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/user/binhchonhs/image/2.png'
             },
             {
                 code: '12A3',
                 votes: 1989,
                 quote: 'Tương lai được quyết định bởi những gì bạn làm hôm nay.',
-                img: 'https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/user/binhchonhs/image/3.png'
+                img: 'https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/user/binhchonhs/image/3.png'
             },
             {
                 code: '12A4',
                 votes: 1619,
                 quote: 'Điều tuyệt vời luôn đến với ai kiên nhẫn chờ đợi.',
-                img: 'https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/user/binhchonhs/image/4.png'
+                img: 'https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/user/binhchonhs/image/4.png'
             },
             {
                 code: '12B1',
                 votes: 1481,
                 quote: 'Vươn lên từ khó khăn là cách trưởng thành nhanh nhất.',
-                img: 'https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/user/binhchonhs/image/5.png'
+                img: 'https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/user/binhchonhs/image/5.png'
             },
             {
                 code: '12B2',
                 votes: 1238,
                 quote: 'Niềm tin là sức mạnh thay đổi mọi thứ.',
-                img: 'https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/user/binhchonhs/image/6.png'
+                img: 'https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/user/binhchonhs/image/6.png'
             },
             {
                 code: '12B3',
                 votes: 1007,
                 quote: 'Mỗi thất bại là một bài học cho hành trình mới.',
-                img: 'https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/user/binhchonhs/image/7.png'
+                img: 'https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/user/binhchonhs/image/7.png'
             },
             {
                 code: '12B4',
                 votes: 921,
                 quote: 'Chỉ cần không bỏ cuộc, bạn sẽ đến được nơi mình muốn.',
-                img: 'https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/user/binhchonhs/image/8.png'
+                img: 'https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/user/binhchonhs/image/8.png'
             },
             {
                 code: '12C1',
                 votes: 800,
                 quote: 'Nụ cười là chìa khoá mở cánh cửa thành công.',
-                img: 'https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/user/binhchonhs/image/9.png'
+                img: 'https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/user/binhchonhs/image/9.png'
             },
             {
                 code: '12C2',
                 votes: 735,
                 quote: 'Không ai trở nên vĩ đại mà không từng dám mạo hiểm.',
-                img: 'https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/user/binhchonhs/image/10.png'
+                img: 'https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/user/binhchonhs/image/10.png'
             },
             {
                 code: '12C3',
                 votes: 600,
                 quote: 'Bạn chính là động lực lớn nhất của chính mình.',
-                img: 'https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/user/binhchonhs/image/11.png'
+                img: 'https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/user/binhchonhs/image/11.png'
             },
             {
                 code: '12C4',
                 votes: 522,
                 quote: 'Hãy lan toả lòng tốt để nhận lại những điều tốt đẹp.',
-                img: 'https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/user/binhchonhs/image/12.png'
+                img: 'https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/user/binhchonhs/image/12.png'
             },
 
         ];

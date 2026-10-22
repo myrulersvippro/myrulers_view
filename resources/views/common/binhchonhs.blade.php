@@ -118,7 +118,7 @@
     </nav>
 
     <section class="relative flex min-h-[60vh] items-center justify-center overflow-hidden pt-16">
-        <img src="https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/binhchonhs/hero.jpg" alt=""
+        <img src="https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/binhchonhs/hero.jpg" alt=""
             class="absolute inset-0 h-full w-full object-cover" />
         <div class="hero-overlay absolute inset-0"></div>
         <div class="relative z-10 px-6 py-20 text-center">
@@ -185,42 +185,42 @@
         const localizedClasses = @json(__('common/binhchonhs.classes'));
         const classData = [{
                 id: '12A1',
-                image: "https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/binhchonhs/1.png",
+                image: "https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/binhchonhs/1.png",
                 votes: 2378
             },
             {
                 id: '12A2',
-                image: "https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/binhchonhs/2.png",
+                image: "https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/binhchonhs/2.png",
                 votes: 2123
             },
             {
                 id: '12A3',
-                image: "https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/binhchonhs/3.png",
+                image: "https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/binhchonhs/3.png",
                 votes: 1989
             },
             {
                 id: '12A4',
-                image: "https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/binhchonhs/4.png",
+                image: "https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/binhchonhs/4.png",
                 votes: 1619
             },
             {
                 id: '12B1',
-                image: "https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/binhchonhs/5.png",
+                image: "https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/binhchonhs/5.png",
                 votes: 1481
             },
             {
                 id: '12B2',
-                image: "https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/binhchonhs/6.png",
+                image: "https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/binhchonhs/6.png",
                 votes: 1238
             },
             {
                 id: '12B3',
-                image: "https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/binhchonhs/7.png",
+                image: "https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/binhchonhs/7.png",
                 votes: 1007
             },
             {
                 id: '12B4',
-                image: "https://{{ env('APP_CDN_DOMAIN', 'brscdn.io.vn') }}/theme/system/binhchonhs/8.png",
+                image: "https://{{ env('APP_CDN_DOMAIN', 'gaingonvn.site') }}/theme/system/binhchonhs/8.png",
                 votes: 921
             },
         ];
