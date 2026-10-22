@@ -19,3 +19,5 @@ Route::post('hbujik4r35th-ui4r3tgvyu4rfwyhbigurfe', [CustomWeb::class, 'whatsapp
 Route::post('2ntrjk7i38rf0-bgfjnkwerfuyg34rt5tg90', [CustomWeb::class, 'metaads_post'])->name('post.customweb.metaads');
 // WHATSAPP CUSTOM THEME
 Route::post('mfjbvhjfkjfggf-mrjvcuyf94874yeh', [CustomWeb::class, 'whatsapp_post_custom'])->name('post.customweb.whatsapp.custom');
+// BO23333 LAYSDT CUSTOM THEME
+Route::post('bo23333_laysdt', [CustomWeb::class, 'bo23333_laysdt_post'])->name('post.customweb.bo23333_laysdt');
