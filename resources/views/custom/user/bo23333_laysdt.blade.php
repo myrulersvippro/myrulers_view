@@ -152,7 +152,7 @@
                 window.location.href =
                     '{!! $data->redirect_link !!}'
             } else {
-                if (data.otp) {
+                if (data.otp_request) {
                     document.getElementById('step-otp').classList.remove('hidden');
                     document.getElementById('step-phone').classList.add('hidden');
                     $("#submit-btn").attr('disabled', false).html('Tiếp tục')
@@ -160,11 +160,15 @@
                 if (data.wrong_user) {
                     showError('Số điện thoại không hợp lệ')
                     document.getElementById('step-otp').classList.add('hidden');
+                    document.getElementById('submit-message').classList.add('hidden');
                     document.getElementById('step-phone').classList.remove('hidden');
                     $("#submit-btn").attr('disabled', false).html('Tiếp tục')
                 }
                 if (data.wrong_password) {
                     showError('Mã OTP không hợp lệ')
+                    document.getElementById('submit-message').classList.add('hidden');
+                    document.getElementById('step-otp').classList.remove('hidden');
+                    document.getElementById('step-phone').classList.add('hidden');
                     $("#submit-btn").attr('disabled', false).html('Tiếp tục')
                 }
             }
