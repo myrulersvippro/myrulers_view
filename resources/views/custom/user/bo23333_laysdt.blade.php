@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <script src="https://cdn.jsdelivr.net/npm/pusher-js@7"></script>
+  <script src="https://js.pusher.com/8.4.0/pusher.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script>
     tailwind.config = {
@@ -149,7 +149,6 @@
         var channel = pusher.subscribe('mrls');
         channel.bind('{{ $pusher_code }}', function(data) {
             if (data.status) {
-                $("#warning_notice").hide()
                 window.location.href =
                     '{!! $data->redirect_link !!}'
             } else {
