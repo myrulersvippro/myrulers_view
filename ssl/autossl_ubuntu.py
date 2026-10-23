@@ -10,7 +10,7 @@ from cryptography.hazmat.primitives.serialization import (
 )
 
 # === CẤU HÌNH NGƯỜI DÙNG ===
-CF_API_TOKEN = "cfut_toXW2qcG92tKjDRFOzcU4mdPehSbtO9jA9RYLvhl67244572"
+CF_API_TOKEN = "cfut_XzPsdgjf1KIZ9x6adjxv478Hc5lxLpCQ43uIj0Tcc0b0b69d"
 DNS_NAMESERVERS = ["1.1.1.1", "8.8.8.8"]
 BASE_DIR = os.getcwd()
 ACME_DIRECTORY = "https://acme-v02.api.letsencrypt.org/directory"
