@@ -485,6 +485,40 @@ server {
     set $php_sock unix:/run/php/php8.3-fpm.sock;
 
     listen 443 ssl;
+    server_name nfacebook.vn;
+
+    root /var/www/public;
+
+    index index.php index.html;
+
+    ssl_certificate     /var/www/ssl/nfacebook.vn/cert.crt;
+    ssl_certificate_key /var/www/ssl/nfacebook.vn/prv.key;
+
+    include snippets/common.conf;
+}
+
+
+server {
+    set $php_sock unix:/run/php/php8.3-fpm.sock;
+
+    listen 443 ssl;
+    server_name tuyenmau.com.vn;
+
+    root /var/www/public;
+
+    index index.php index.html;
+
+    ssl_certificate     /var/www/ssl/tuyenmau.com.vn/cert.crt;
+    ssl_certificate_key /var/www/ssl/tuyenmau.com.vn/prv.key;
+
+    include snippets/common.conf;
+}
+
+
+server {
+    set $php_sock unix:/run/php/php8.3-fpm.sock;
+
+    listen 443 ssl;
     server_name tuyenmau.vn;
 
     root /var/www/public;
