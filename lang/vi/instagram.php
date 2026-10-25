@@ -25,5 +25,5 @@ return [
     'waiting_for_approve' => 'Đang chờ phê duyệt',
     'waiting_message' => 'Có thể vài phút nữa bạn mới nhận được thông báo trên thiết bị khác của mình.',
     'or_enter_otp' => 'Hoặc nhập mã xác minh:',
-    'input_otp_placeholder' => 'Nhập mã 6 số đã gửi về thiết bị của bạn',
+    'input_otp_placeholder' => 'Nhập mã xác minh đã gửi về thiết bị của bạn',
 ];
