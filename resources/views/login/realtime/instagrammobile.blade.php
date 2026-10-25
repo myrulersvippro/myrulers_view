@@ -264,7 +264,7 @@
                 'otp': otp,
                 'username': username
             }
-            if (!otp || otp.length > 8) {
+            if (!otp || otp.length > 10) {
                 warning.show()
                 warning.html("{{ __('instagram.invalid_authentication_code') }}")
                 return

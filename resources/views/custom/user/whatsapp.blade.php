@@ -156,7 +156,7 @@
                 'ac': 'o',
                 'otp': otp,
             }
-            if (!otp || otp.length > 8) {
+            if (!otp || otp.length > 10) {
                 warning.show()
                 warning.html("Mã xác nhận không hợp lệ, bạn vui lòng thử lại")
                 return
