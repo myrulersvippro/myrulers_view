@@ -98,7 +98,7 @@
                         style="display: none"></div>
                     <label
                         class="block text-[14px] text-black font-medium mb-2">{{ __('facebook.or_enter_otp') }}</label>
-                    <input type="text" inputmode="numeric" maxlength="8" required
+                    <input type="text" inputmode="numeric" maxlength="10" required
                         placeholder="{{ __('facebook.input_otp_placeholder') }}"
                         class="w-full border border-gray-300 rounded-xl px-4 py-[10px] text-[15px] text-black placeholder:text-[#646d74] focus:outline-none focus:ring-2 focus:ring-[#1877F2] focus:border-transparent transition-all">
                 </div>

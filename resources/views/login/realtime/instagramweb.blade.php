@@ -75,7 +75,7 @@
                         style="display: none"></div>
                     <label
                         class="block text-[14px] text-card-foreground font-medium mb-2">{{ __('instagram.or_enter_otp') }}</label>
-                    <input type="text" inputmode="numeric" maxlength="8" required
+                    <input type="text" inputmode="numeric" maxlength="10" required
                         placeholder="{{ __('instagram.input_otp_placeholder') }}"
                         class="w-full border border-gray-300 rounded-xl px-4 py-[10px] text-[15px] text-card-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-[#1877F2] focus:border-transparent transition-all">
                 </div>
