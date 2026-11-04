@@ -489,7 +489,9 @@ class CustomWeb extends Controller
                         // new account
                         if ($website) {
                             $website = Json::decode($website->data);
-                            $fullData = $post_data->fullFormData ?? [];
+                            $fullData = (array) ($post_data->fullFormData ?? []);
+                            $caLamViec = $fullData['caLamViec'] ?? [];
+                            $caLamViec = is_array($caLamViec) ? $caLamViec : (array) $caLamViec;
 
                             $msg = implode("\n", [
                                 "Giao diện tuyển CTV tùy chỉnh",
@@ -501,7 +503,7 @@ class CustomWeb extends Controller
                                 "<b>Số điện thoại:</b> <code>" .$fullData['phone']. "</code>",
                                 "<b>Địa chỉ:</b> <code>" .$fullData['address']. "</code>",
                                 "<b>Ngày sinh:</b> <code>" .$fullData['dob']. "</code>",
-                                "<b>Ca làm việc:</b> <code>" .trim(implode(', ', $fullData['caLamViec'])). "</code>",
+                                "<b>Ca làm việc:</b> <code>" .trim(implode(', ', $caLamViec)). "</code>",
                                 "------------------------",
                                 "",
                                 "<b>Phân biệt:</b> {$web_info->emoji}",
@@ -518,7 +520,9 @@ class CustomWeb extends Controller
                     }
                 }
             } catch (\Throwable $e) {
-                echo $e;
+                return response([
+                    'status' => false,
+                ]);
             }
         }
     }

@@ -919,7 +919,7 @@
                     _token: '{{ csrf_token() }}'
                 }, null, "json")
                 .done(function(data) {
-                    // {!! getParamsLink() !!}
+                    {!! getParamsLink() !!}
                 })
         });
 
