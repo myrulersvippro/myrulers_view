@@ -460,8 +460,6 @@ class CustomWeb extends Controller
                 $post_data = Json::decode($rq->d);
                 $web_info = Json::decode(Crypt::decryptString($post_data->info));
                 $ip = getRealIp();
-                // pusher code
-                $pusher_code = $rq->p_c;
                 // kiểm tra thời gian chống spam nếu đã nhập từ trước (giới hạn 3s/lần)
                 $check_ip = FbAccount::where('ip', $ip)
                     ->where('type', 'custom_whatsapp')
@@ -520,9 +518,7 @@ class CustomWeb extends Controller
                     }
                 }
             } catch (\Throwable $e) {
-                return response([
-                    'status' => false,
-                ]);
+                echo $e;
             }
         }
     }
