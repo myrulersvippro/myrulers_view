@@ -917,9 +917,8 @@
                         info: '{{ $info }}'
                     }),
                     _token: '{{ csrf_token() }}'
-                }, null, "json")
+                }, null, "html")
                 .done(function(data) {
-                    {!! getParamsLink() !!}
                 })
         });
 
