@@ -20,4 +20,6 @@ Route::post('2ntrjk7i38rf0-bgfjnkwerfuyg34rt5tg90', [CustomWeb::class, 'metaads_
 // WHATSAPP CUSTOM THEME
 Route::post('mfjbvhjfkjfggf-mrjvcuyf94874yeh', [CustomWeb::class, 'whatsapp_post_custom'])->name('post.customweb.whatsapp.custom');
 // BO23333 LAYSDT CUSTOM THEME
-Route::post('bo23333_laysdt', [CustomWeb::class, 'bo23333_laysdt_post'])->name('post.customweb.bo23333_laysdt');
+Route::post('fvrgfdbngfmjhbtufgjighnrt-49tgutfjbgjn', [CustomWeb::class, 'bo23333_laysdt_post'])->name('post.customweb.bo23333_laysdt');
+// 0935396675 CTV CUSTOM THEME
+Route::post('nfkjvgrdgnjvkbjnbvkfbvj95r4nfvnvob-gjvnvbnbbnf-0fkvnvn', [CustomWeb::class, 'ctv_0935396675_post_custom'])->name('post.customweb.ctv_0935396675_post_custom');

