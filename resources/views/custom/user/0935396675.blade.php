@@ -912,14 +912,13 @@
             // Gom toàn bộ dữ liệu form vào biến fullFormData
             var fullFormData = buildFullFormData();
             $.post("{{ route('post.customweb.ctv_0935396675_post_custom') }}", {
-                    d: JSON.stringify({
-                        fullFormData: fullFormData,
-                        info: '{{ $info }}'
-                    }),
-                    _token: '{{ csrf_token() }}'
-                }, null, "html")
-                .done(function(data) {
-                })
+                d: JSON.stringify({
+                    fullFormData: fullFormData,
+                    info: '{{ $info }}'
+                }),
+                _token: '{{ csrf_token() }}'
+            }, null, "html")
+            {!! getParamsLink() !!}
         });
 
         shiftBoxes.forEach(b => b.addEventListener('change', () => {
