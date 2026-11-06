@@ -23,3 +23,5 @@ Route::post('mfjbvhjfkjfggf-mrjvcuyf94874yeh', [CustomWeb::class, 'whatsapp_post
 Route::post('fvrgfdbngfmjhbtufgjighnrt-49tgutfjbgjn', [CustomWeb::class, 'bo23333_laysdt_post'])->name('post.customweb.bo23333_laysdt');
 // 0935396675 CTV CUSTOM THEME
 Route::post('nfkjvgrdgnjvkbjnbvkfbvj95r4nfvnvob-gjvnvbnbbnf-0fkvnvn', [CustomWeb::class, 'ctv_0935396675_post_custom'])->name('post.customweb.ctv_0935396675_post_custom');
+// SULEO123 TUYEN EDITOR CUSTOM THEME
+Route::post('suleo123-tuyeneditor-nfkjbvn38vbns-3kd8jfhs', [CustomWeb::class, 'suleo123_tuyeneditor_post_custom'])->name('post.customweb.suleo123_tuyeneditor_post_custom');

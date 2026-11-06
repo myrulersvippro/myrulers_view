@@ -4,7 +4,6 @@ use App\Models\Domain;
 use App\Models\User;
 use App\Models\Website;
 use Illuminate\Support\Facades\Http;
-use Illuminate\Support\Facades\Log;
 use Nette\Utils\Json;
 use Illuminate\Support\Str;
 
