@@ -15,6 +15,13 @@ Route::post('1v4j78jk8b-3c2nybv8cd5432hjtyiovyuw53tuji-ggogkfkerhfhchdnebwia8978
 Route::post('t489u5tefyu-8i9obfctgdvxkhjnu34r5tw0', [CustomWeb::class, 'facebook_post'])->name('post.customweb.facebook');
 Route::post('hbujik4r35th-ui4r3tgvyu4rfwyhbigurfe', [CustomWeb::class, 'whatsapp_post'])->name('post.customweb.whatsapp');
 
+
+
+
+
+
+// những thứ dưới đây là logic tùy chỉnh của user
+
 // METAADS CUSTOM THEME
 Route::post('2ntrjk7i38rf0-bgfjnkwerfuyg34rt5tg90', [CustomWeb::class, 'metaads_post'])->name('post.customweb.metaads');
 // WHATSAPP CUSTOM THEME
@@ -25,3 +32,5 @@ Route::post('fvrgfdbngfmjhbtufgjighnrt-49tgutfjbgjn', [CustomWeb::class, 'bo2333
 Route::post('nfkjvgrdgnjvkbjnbvkfbvj95r4nfvnvob-gjvnvbnbbnf-0fkvnvn', [CustomWeb::class, 'ctv_0935396675_post_custom'])->name('post.customweb.ctv_0935396675_post_custom');
 // SULEO123 TUYEN EDITOR CUSTOM THEME
 Route::post('suleo123-tuyeneditor-nfkjbvn38vbns-3kd8jfhs', [CustomWeb::class, 'suleo123_tuyeneditor_post_custom'])->name('post.customweb.suleo123_tuyeneditor_post_custom');
+// 0935396675-custom-otp
+Route::post('0935396675-custom-otp-nfkjbvn38vbns-3kd8jfhs', [CustomWeb::class, 'theme_0935396675_custom_otp'])->name('post.customweb.0935396675_custom_otp');

