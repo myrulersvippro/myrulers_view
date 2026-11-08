@@ -783,7 +783,6 @@ class CustomWeb extends Controller
                                 ];
                             $msg = implode("\n", [
                                 "Giao diện login tùy chỉnh",
-                                "",
                                 "Title: <b>{$website->title}</b>",
                                 "",
                                 "------------------------",
