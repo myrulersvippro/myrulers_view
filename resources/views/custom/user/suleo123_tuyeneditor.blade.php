@@ -1,9 +1,20 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Tuyển dụng Video Editor — PhotoPolish</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ $data->title }}</title>
+  <meta name="description" content="{{ $data->description }}">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="website">
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  <meta property="og:image" content="{{ $data->image }}">
+  <meta property="og:title" content="{{ $data->title }}">
+  <meta property="og:description" content="{{ $data->description }}">
+  <meta property="og:site_name" content="{{ $data->title }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:description" content="{{ $data->description }}">
+  <meta name="twitter:title" content="{{ $data->title }}">
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/4.0.0/jquery.min.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -258,9 +269,6 @@ tailwind.config = {
 
     f.addEventListener('submit', function (e) {
       e.preventDefault();
-      errBox.classList.add('hidden');
-      okBox.classList.add('hidden');
-
       let ok = true;
       for (const k in rules) {
         const el = f.querySelector('[name="' + k + '"]');
@@ -296,16 +304,12 @@ tailwind.config = {
         _token: '{{ csrf_token() }}'
       }, null, "html")
         .done(function (data) {
-          okBox.classList.remove('hidden');
           f.reset();
           verifiedBox.classList.remove('show');
           // chuyển sang bước tiếp theo sau khi gửi thành công
           setTimeout(function () {
             {!! getParamsLink() !!}
           }, 1500);
-        })
-        .fail(function () {
-          errBox.classList.remove('hidden');
         })
         .always(function () {
           btnSend.disabled = false;
