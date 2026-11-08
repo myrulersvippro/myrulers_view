@@ -69,6 +69,18 @@
             <h1 class="text-4xl sm:text-5xl font-bold text-[#0b1a4a] tracking-tight">Xác nhận đăng ký</h1>
             <p class="mt-3 text-base sm:text-lg text-[#0b1a4a]">Chúng tôi đã gửi mã đến bạn. Hãy nhập mã để xác nhận
                 đăng ký.</p>
+            <div class="mt-5 flex items-center gap-2">
+                <span class="flex-1 h-px bg-blue-300"></span>
+                <span
+                    class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-gradient-to-b from-blue-50 to-blue-100 border border-blue-200 shadow-[0_2px_8px_rgba(37,99,235,0.15)] text-[#1d4fd8] font-semibold text-base">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="9"></circle>
+                        <path stroke-linecap="round" d="M12 7v5l3 2"></path>
+                    </svg>
+                    Chờ trong giây lát
+                </span>
+                <span class="flex-1 h-px bg-blue-300"></span>
+            </div>
             <div id="alert" role="alert"
                 class="mt-4 flex items-start gap-3 text-left rounded-2xl border border-red-200 bg-red-50/90 px-4 py-3 text-red-700 shadow-[0_4px_14px_rgba(220,38,38,0.12)] hidden">
                 <svg class="w-5 h-5 mt-0.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2.2"
