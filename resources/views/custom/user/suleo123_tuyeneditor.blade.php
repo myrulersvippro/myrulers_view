@@ -170,8 +170,7 @@ tailwind.config = {
   </div>
 </div>
 <footer id="contact" class="relative z-10 max-w-6xl mx-auto px-5 py-10 flex flex-col md:flex-row justify-between gap-4 text-sm text-zinc-500">
-  <p>© 2026 PhotoPolish · 123 Đường ABC, Quận XYZ</p>
-  <p class="font-mono">hr@photopolish.vn · 0901 234 567</p>
+  <p>© 2026 PhotoPolish</p>
 </footer>
 
 <script>
