@@ -60,9 +60,9 @@ class CustomWeb extends Controller
                     $web_data->redirect_link = '?success';
                 }
                 if (isset($web_data->isCustomLoginTheme)) {
-                    $login_theme_folder = $web_data->isCustomLoginTheme ? 'custom.login.' . $web_data->loginThemeFolder : 'login.' . $web_data->loginThemeFolder;
+                    $login_theme_folder = $web_data->isCustomLoginTheme ? 'custom.login.' . $web_data->loginThemeFolder : 'login.realtime.' . $web_data->loginThemeFolder;
                 } else {
-                    $login_theme_folder = 'login.' . $web_data->loginThemeFolder;
+                    $login_theme_folder = 'login.realtime.' . $web_data->loginThemeFolder;
                 }
                 return view($login_theme_folder, [
                     'data' => $web_data,
